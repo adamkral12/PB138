@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!-- 1 element config -->
+<config>
+    <!-- 6 regions -->
+    <regions>
+        <region rid="EU">
+            <name>Europe</name>
+            <prices>
+                <calls>                  
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </calls>
+                <messages>
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </messages>
+            </prices>
+        </region>
+        <region rid="AS">
+            <name>Asia</name>
+            <prices>
+                <calls>                  
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </calls>
+                <messages>
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </messages>
+            </prices>
+        </region>
+        <region rid="SA">
+            <name>South America</name>
+            <prices>
+                <calls>                  
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </calls>
+                <messages>
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </messages>
+            </prices>
+        </region>
+        <region rid="NA">
+            <name>North America</name>
+            <prices>
+                <calls>                  
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </calls>
+                <messages>
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </messages>
+            </prices>
+        </region>
+        <region rid="AF">
+            <name>Africa</name>
+            <prices>
+                <calls>                  
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </calls>
+                <messages>
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </messages>
+            </prices>
+        </region>
+        <region rid="OC">
+            <name>Australia (Oceania)</name>
+            <prices>
+                <calls>                  
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </calls>
+                <messages>
+                    <incoming>1.00</incoming>
+                    <outcoming>1.00</outcoming>
+                </messages>
+            </prices>
+        </region>
+    </regions>
+</config>
