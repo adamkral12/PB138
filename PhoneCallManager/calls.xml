@@ -6,16 +6,16 @@ and open the template in the editor.
 -->
 
 <!-- example layout of calls.xml -->
-<root>
+<calls>
     <!-- 0...n calls -->
     <!-- unique cid - used as key -->
     <call cid="n">
-        <length></length> <!-- non empty int/float? > 0 (in seconds) -->
-        <price>\</price> <!-- non empty float, 2 decimals precision, > 0 -->
+        <length></length> <!-- non empty int > 0 (in seconds) -->
+     <!--   <price>\</price> non empty float, 2 decimals precision, > 0 -> calculated from config.xml -->
         <callee></callee> <!-- non empty string, length 9 -->
-        <destination></destination> <!-- non empty, pouze predvolba - zeme dohledatelna v config.xml? -->
+        <destination></destination> <!-- non empty, country id from config.xml? -->
         <direction></direction> <!-- one of "in" and "out" case-insensitive -->
-        <dateTime></dateTime> <!-- nevim jak to funguje v xml, poresit format -->
+        <dateTime>YYYY-MM-DDThh:mm:ss</dateTime> <!-- non empty, xs:dateTime -->
     </call>
     
-</root>
+</calls>
