@@ -10,15 +10,17 @@ import java.util.Date;
  *
  * @author xkral3, xvalko, xmikova
  */
-public class Call {
-    private int lenght;
-    private String callee;
-    private Country destination;
-    private Direction direction;
-    private Date dateTime;
-    private String note;
+public final class Call {
+    private final int id;
+    private final int lenght;
+    private final String callee;
+    private final Country destination;
+    private final Direction direction;
+    private final Date dateTime;
+    private final String note;
 
-    public Call(int lenght, String callee, Country destination, Direction direction, Date dateTime, String note) {
+    public Call(int id, int lenght, String callee, Country destination, Direction direction, Date dateTime, String note) {
+        this.id = id;
         this.lenght = lenght;
         this.callee = callee;
         this.destination = destination;
@@ -26,53 +28,33 @@ public class Call {
         this.dateTime = dateTime;
         this.note = note;
     }
+    
+    public final int getId() {
+        return id;
+    }
 
-    public int getLenght() {
+    public final int getLenght() {
         return lenght;
     }
 
-    public void setLenght(int lenght) {
-        this.lenght = lenght;
-    }
-
-    public String getCallee() {
+    public final String getCallee() {
         return callee;
     }
 
-    public void setCallee(String callee) {
-        this.callee = callee;
-    }
-
-    public Country getDestination() {
+    public final Country getDestination() {
         return destination;
     }
 
-    public void setDestination(Country destination) {
-        this.destination = destination;
-    }
-
-    public Direction getDirection() {
+    public final Direction getDirection() {
         return direction;
     }
 
-    public void setDirection(Direction direction) {
-        this.direction = direction;
-    }
-
-    public Date getDateTime() {
+    public final Date getDateTime() {
         return dateTime;
-    }
-
-    public void setDateTime(Date dateTime) {
-        this.dateTime = dateTime;
     }
 
     public String getNote() {
         return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
     }
     
 }
