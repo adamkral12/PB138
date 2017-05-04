@@ -5,7 +5,17 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-
-<root>
+<!-- example structure of messages.xml -->
+<messages>
+    <!-- 0..n messages, mid unique -->
+    <message mid="n">
+        <length></length> <!-- non empty int >= 0, number of chars -->
+        <!-- <price></price> // computed -->
+        <callee></callee> <!-- non empty string, length 9 -->
+        <destination></destination> <!-- non empty, country id from config.xml? -->
+        <direction></direction> <!-- one of "in" and "out" case-insensitive -->
+        <dateTime>YYYY-MM-DDThh:mm:ss</dateTime> <!-- non empty, xs:dateTime -->
+        <note></note> <!-- optional note -->
+    </message>
     
-</root>
+</messages>
