@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!-- example layout of calls.xml -->
+<root>
+    <!-- 0...n calls -->
+    <!-- unique cid - used as key -->
+    <call cid="n">
+        <length></length> <!-- non empty int/float? > 0 (in seconds) -->
+        <price>\</price> <!-- non empty float, 2 decimals precision, > 0 -->
+        <callee></callee> <!-- non empty string, length 9 -->
+        <destination></destination> <!-- non empty, pouze predvolba - zeme dohledatelna v config.xml? -->
+        <direction></direction> <!-- one of "in" and "out" case-insensitive -->
+        <dateTime></dateTime> <!-- nevim jak to funguje v xml, poresit format -->
+    </call>
+    
+</root>
