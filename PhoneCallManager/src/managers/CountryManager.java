@@ -30,6 +30,12 @@ public class CountryManager {
     private final static String HOME_COUNTRY = "CZE";
     private static List<Country> countries;
     
+    /**
+     * Parses countries from XML files
+     * @return List of all calls from XML in order they are stored, 
+     * null if error happened
+     * @throws XPathExpressionException from xPath
+     */
     private static List<Country> parseCountriesFromXML() 
             throws XPathExpressionException {
         File countriesXML = new File("countries.xml");
@@ -62,7 +68,11 @@ public class CountryManager {
         }
         return outCountries;
     }
-        
+    
+    /**
+     * Reload countries from XML file and stores them in countries variable
+     * @return True - countries were successfully parsed and saved, False - else
+     */
     public static boolean reloadCountries() {
         try {
             List<Country> parsedCountries = parseCountriesFromXML();
@@ -79,10 +89,19 @@ public class CountryManager {
         return false;
     }
     
+    /**
+     * Returns all countries
+     * @return All countries
+     */
     public List<Country> getAll() {
         return new ArrayList<>(countries);
     }
     
+    /**
+     * Returns country by its code
+     * @param id - Code of a country
+     * @return country with code id, null otherwise
+     */
     public Country getById(String id) {
         for (Country country : countries) {
             if (country.getId().equals(id)) {
@@ -92,6 +111,11 @@ public class CountryManager {
         return null;
     }
     
+    /**
+     * Returns countries in region
+     * @param region - region
+     * @return Countries under region region, null otherwise
+     */
     public List<Country> getByRegion(Region region) {
         List<Country> out = new ArrayList<>();
         for (Country country : countries) {
@@ -102,6 +126,12 @@ public class CountryManager {
         return out;
     }
     
+    /**
+     * Returns country of given prefix
+     * @param prefix - prefix of country
+     * @return List of countries, because USA and Canada have the same, 
+     * null otherwise
+     */
     public List<Country> getByPrefix(String prefix) {
         List<Country> out = new ArrayList<>();
         for (Country country : countries) {
@@ -112,6 +142,10 @@ public class CountryManager {
         return out;
     }
     
+    /**
+     * Returns home country
+     * @return home country
+     */
     public Country getHomeCountry() {
         return getById(HOME_COUNTRY);
     }
