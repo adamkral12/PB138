@@ -9,14 +9,37 @@ and open the template in the editor.
 <calls>
     <!-- 0...n calls -->
     <!-- unique cid - used as key -->
-    <call cid="n">
-        <length></length> <!-- non empty int > 0 (in seconds) -->
-     <!--   <price>\</price> non empty float, 2 decimals precision, > 0 -> calculated from config.xml -->
-        <callee></callee> <!-- non empty string, length 9 -->
-        <destination></destination> <!-- non empty, country id from config.xml? -->
-        <direction></direction> <!-- one of "in" and "out" case-insensitive -->
-        <dateTime>YYYY-MM-DDThh:mm:ss</dateTime> <!-- non empty, xs:dateTime -->
+    <call cid="1">
+        <length>63</length> <!-- non empty int > 0 (in seconds) -->
+     <!--   <price>\</price> non empty float, 2 decimals precision, > 0 -> calculated from regions.xml -->
+        <callee>905678678</callee> <!-- non empty string, length 9 -->
+        <destination>CZE</destination> <!-- non empty, country id from config.xml? -->
+        <direction>out</direction> <!-- one of "in" and "out" case-insensitive -->
+        <dateTime>2017-05-01T20:54:20</dateTime> <!-- non empty, xs:dateTime, format=YYYY-MM-DDThh:mm:ss-->
         <note></note> <!-- optional note -->
     </call>
-    
+    <call cid="2">
+        <length>125</length>
+        <callee>905678678</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-01T19:20:00</dateTime>
+        <note></note>
+    </call>
+    <call cid="3">
+        <length>5</length>
+        <callee>905678000</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-02T15:31:00</dateTime>
+        <note></note>
+    </call>
+    <call cid="4">
+        <length>15</length>
+        <callee>905678021</callee>
+        <destination>MEX</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-025T07:51:20</dateTime>
+        <note></note>
+    </call>
 </calls>
