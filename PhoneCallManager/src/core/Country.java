@@ -6,7 +6,7 @@
 package core;
 
 /**
- *
+ * Java Object for representing countries.
  * @author xkral3, xvalko, xmikova
  */
 final public class Country {

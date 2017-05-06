@@ -7,7 +7,7 @@ package core;
 import java.util.Date;
 
 /**
- *
+ * Java Object for representing calls.
  * @author xkral3, xvalko, xmikova
  */
 public final class Call {

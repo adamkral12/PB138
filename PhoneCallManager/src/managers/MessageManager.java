@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package core;
+package managers;
 
 /**
- * Direction of call or message, IN = incoming, OUT = outcoming.
- * @author xkral3, xvalko, xmikova
+ *
+ * @author marek
  */
-public enum Direction {
-  IN, OUT  
+public class MessageManager {
+    
 }
