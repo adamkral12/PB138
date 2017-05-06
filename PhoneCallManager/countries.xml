@@ -73,10 +73,64 @@ and open the template in the editor.
         <region>NA</region>
         <prefix>+52</prefix>
     </country>
-    <country cid="">
-        <name></name>
+    <country cid="BRA">
+        <name>Brazil</name>
         <!-- must match one of the rids in regions.xml -->
-        <region></region>
-        <prefix></prefix>
+        <region>SA</region>
+        <prefix>+55</prefix>
+    </country>
+    <country cid="BOL">
+        <name>Bolivia</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>SA</region>
+        <prefix>+591</prefix>
+    </country>
+    <country cid="CRI">
+        <name>Costa Rica</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>SA</region>
+        <prefix>+506</prefix>
+    </country>
+    <country cid="ARG">
+        <name>Argentina</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>SA</region>
+        <prefix>+54</prefix>
+    </country>
+    <country cid="AUS">
+        <name>Australia</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+61</prefix>
+    </country>
+    <country cid="NZL">
+        <name>New Zealand</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+64</prefix>
+    </country>
+    <country cid="CHN">
+        <name>China</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+86</prefix>
+    </country>
+    <country cid="HKG">
+        <name>Hong Kong</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+852</prefix>
+    </country>
+    <country cid="IND">
+        <name>India</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+91</prefix>
+    </country>
+    <country cid="MNG">
+        <name>Mongolia</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+976</prefix>
     </country>
 </countries>
