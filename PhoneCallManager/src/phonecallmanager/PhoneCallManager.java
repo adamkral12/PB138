@@ -5,6 +5,7 @@
  */
 package phonecallmanager;
 
+import core.Country;
 import core.Region;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -19,6 +20,7 @@ import javax.swing.JApplet;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import managers.CountryManager;
 import managers.RegionManager;
 
 /**
@@ -94,6 +96,9 @@ public class PhoneCallManager extends JApplet {
     }
     
     private void temporaryTesting() {
+        System.out.println("---TEST START--");
+        System.out.println("Parsing regions:");
+        
         RegionManager rm = new RegionManager();
         RegionManager.reloadRegions();
         
@@ -108,5 +113,28 @@ public class PhoneCallManager extends JApplet {
         System.out.println(rm.getById("NA").getName());
         
         System.out.println(rm.getHomeRegion().getName());
+        
+        System.out.println("Parsing countries");
+        CountryManager cm = new CountryManager();
+        CountryManager.reloadCountries();
+        
+        for(Country country : cm.getAll()) {
+            System.out.println(country.getId() + " " +
+                    country.getName() + " " + country.getPrefix() + " " +
+                    country.getRegion().getId());
+        }
+        System.out.println("");
+        
+        for(Country country : cm.getByRegion(rm.getById("AS"))) {
+            System.out.println(country.getId() + " " +
+                    country.getName() + " " + country.getPrefix() + " " +
+                    country.getRegion().getId());
+        }
+        System.out.println("");
+        
+        System.out.println(cm.getByPrefix("+421").get(0).getName());
+        
+        
+        System.out.println("---TEST END---");
     }
 }
