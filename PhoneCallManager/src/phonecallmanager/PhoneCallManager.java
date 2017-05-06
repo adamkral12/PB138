@@ -5,7 +5,9 @@
  */
 package phonecallmanager;
 
+import core.Call;
 import core.Country;
+import core.Direction;
 import core.Region;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -22,6 +24,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import managers.CountryManager;
 import managers.RegionManager;
+import managers.CallManager;
 
 /**
  *
@@ -103,37 +106,53 @@ public class PhoneCallManager extends JApplet {
         RegionManager.reloadRegions();
         
         for(Region region: rm.getAll()) {
-            System.out.println(region.getId() + " " +
-                    region.getName()+ " " + region.getPriceCallIncoming()+ " " +
-                    region.getPriceCallOutcoming()+ " " +
-                    region.getPriceMessageIncoming()+ " " +
-                    region.getPriceMessageOutcoming() + " ");
+            System.out.println(region);
         }
-        
-        System.out.println(rm.getById("NA").getName());
-        
-        System.out.println(rm.getHomeRegion().getName());
+        System.out.println("id = NA");
+        System.out.println(rm.getById("NA"));
+        System.out.println("Home region:");
+        System.out.println(rm.getHomeRegion());
         
         System.out.println("Parsing countries");
         CountryManager cm = new CountryManager();
         CountryManager.reloadCountries();
         
         for(Country country : cm.getAll()) {
-            System.out.println(country.getId() + " " +
-                    country.getName() + " " + country.getPrefix() + " " +
-                    country.getRegion().getId());
+            System.out.println(country);
         }
-        System.out.println("");
+        System.out.println("region AS");
         
         for(Country country : cm.getByRegion(rm.getById("AS"))) {
-            System.out.println(country.getId() + " " +
-                    country.getName() + " " + country.getPrefix() + " " +
-                    country.getRegion().getId());
+            System.out.println(country);
         }
-        System.out.println("");
+        System.out.println("prefix 421");
         
-        System.out.println(cm.getByPrefix("+421").get(0).getName());
+        System.out.println(cm.getByPrefix("+421").get(0));
         
+        System.out.println("Parsing calls:");
+        CallManager cam = new CallManager();
+        CallManager.reloadCalls();
+        
+        for(Call call : cam.getAll()) {
+            System.out.println(call);
+        }
+        System.out.println("id = 1");
+        System.out.println(cam.getById(1));
+        
+        System.out.println("IN");
+        for(Call call : cam.getByDirection(Direction.IN)) {
+            System.out.println(call);
+        }
+        
+        System.out.println("callee 905678678");
+        for(Call call : cam.getByCallee("905678678")) {
+            System.out.println(call);
+        }
+        
+        System.out.println("destination MEX");
+        for(Call call : cam.getByDestination(cm.getById("MEX"))) {
+            System.out.println(call);
+        }
         
         System.out.println("---TEST END---");
     }
