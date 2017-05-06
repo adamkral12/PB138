@@ -10,14 +10,14 @@ package core;
  * @author xkral3, xvalko, xmikova
  */
 public final class Region {
-    private final int id;
+    private final String id;
     private final String name;
     private final double priceCallIncoming;
     private final double priceCallOutcoming;
     private final double priceMessageIncoming;
     private final double priceMessageOutcoming;
 
-    public Region(int id, String name, double priceCallIncoming, double priceCallOutcoming, double priceMessageIncoming, double priceMessageOutcoming) {
+    public Region(String id, String name, double priceCallIncoming, double priceCallOutcoming, double priceMessageIncoming, double priceMessageOutcoming) {
         this.id = id;
         this.name = name;
         this.priceCallIncoming = priceCallIncoming;
@@ -26,7 +26,7 @@ public final class Region {
         this.priceMessageOutcoming = priceMessageOutcoming;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
