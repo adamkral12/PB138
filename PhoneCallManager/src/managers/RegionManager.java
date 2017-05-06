@@ -7,25 +7,77 @@ package managers;
 
 import java.util.List;
 import core.Region;
+import java.io.File;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 /**
  * Manages regions
  * Parses them from XML file,stores them in field regions, retrieves them by
  * parameters
- * @author marek
+ * @author xkral3, xvalko, xmikova
  */
 public class RegionManager {
     private final static String HOME_REGION = "EU";
     private static List<Region> regions;
+    
     /**
      * Parses XML document containing regions.
      * @return List of all regions from XML in order they are stored, null if 
      * error happened
      */
-    private static List<Region> parseRegionsFromXML() {
+    private static List<Region> parseRegionsFromXML() 
+            throws XPathExpressionException {
+        File regionsXML = new File("regions.xml");
         
-        return null;
+        Document doc = FileManager.getDocument(regionsXML);
+        
+        XPath xPath = XPathFactory.newInstance().newXPath();
+        
+        NodeList pRegions = (NodeList)xPath.evaluate("/regions/region",
+                    doc.getDocumentElement(),XPathConstants.NODESET);
+        List<Region> outRegions = new ArrayList<>();
+        
+        for(int i = 0; i < pRegions.getLength(); i++) {
+            Element e = (Element) pRegions.item(i);
+            
+            String rid = e.getAttribute("rid");
+            String name = (String) xPath.evaluate("name/text()", e, 
+                    XPathConstants.STRING);
+            
+            Double priceCallIncoming = Double.parseDouble((String) 
+                    xPath.evaluate("prices/calls/incoming/text()",
+                            e, XPathConstants.STRING));
+            
+            Double priceCallOutcoming = Double.parseDouble((String) 
+                    xPath.evaluate("prices/calls/outcoming/text()",
+                            e, XPathConstants.STRING));
+            
+            Double priceMessageIncoming = Double.parseDouble((String) 
+                    xPath.evaluate("prices/messages/incoming/text()",
+                            e, XPathConstants.STRING));
+            
+            Double priceMessageOutcoming = Double.parseDouble((String) 
+                    xPath.evaluate("prices/messages/outcoming/text()",
+                            e, XPathConstants.STRING));
+            
+            Region region = new Region(rid, name, priceCallIncoming,
+                    priceCallOutcoming,priceMessageIncoming,
+                    priceMessageOutcoming);
+            
+            outRegions.add(region);
+        }
+        
+        
+        return outRegions;
     }
     
     /**
@@ -33,14 +85,19 @@ public class RegionManager {
      * @return True - regions were successfully parsed and saved, False - else
      */
     public static boolean reloadRegions() {
-        List<Region> parsedRegions = parseRegionsFromXML();
-        if(parsedRegions != null) {
-            RegionManager.regions = new ArrayList<>(parsedRegions);
-            return true;
-        } else {
-            return false;
+        try {
+            List<Region> parsedRegions = parseRegionsFromXML();
+            if(parsedRegions != null) {
+                RegionManager.regions = new ArrayList<>(parsedRegions);
+                return true;
+            } else {
+                return false;
+            }
+        } catch (XPathExpressionException ex) {
+            Logger.getLogger(RegionManager.class.getName()).log(Level.SEVERE, 
+                    null, ex);
         }
-        
+        return false;
     }
     
     /**
