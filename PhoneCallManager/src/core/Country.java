@@ -10,19 +10,19 @@ package core;
  * @author xkral3, xvalko, xmikova
  */
 final public class Country {
-    private final int id;
+    private final String id;
     private final String name;
     private final Region region;
     private final String prefix;
 
-    public Country(int id, String name, Region region, String prefix) {
+    public Country(String id, String name, Region region, String prefix) {
         this.id = id;
         this.name = name;
         this.region = region;
         this.prefix = prefix;
     }
 
-    public final int getId() {
+    public final String getId() {
         return id;
     }
 
