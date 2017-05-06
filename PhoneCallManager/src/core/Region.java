@@ -5,6 +5,8 @@
  */
 package core;
 
+import java.util.Objects;
+
 /**
  * Java Object for representing regions.
  * @author xkral3, xvalko, xmikova
@@ -48,6 +50,24 @@ public final class Region {
 
     public double getPriceMessageOutcoming() {
         return priceMessageOutcoming;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof Region) {
+            Region region = (Region) o;
+            if(region.getId().equals(this.id)) {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = Objects.hashCode(this.id)^Objects.hashCode(name);
+        return hash;
     }
     
 }
