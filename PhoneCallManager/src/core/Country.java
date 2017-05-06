@@ -5,6 +5,8 @@
  */
 package core;
 
+import java.util.Objects;
+
 /**
  * Java Object for representing countries.
  * @author xkral3, xvalko, xmikova
@@ -38,5 +40,22 @@ final public class Country {
         return prefix;
     }
     
+    @Override
+    public boolean equals(Object o) {
+        if(o instanceof Country) {
+            Country country = (Country) o;
+            if(country.getId().equals(this.id)) {
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = Objects.hashCode(this.id)^Objects.hashCode(this.name);
+        return hash;
+    }
     
 }
