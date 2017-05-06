@@ -39,6 +39,14 @@ final public class Country {
     public final String getPrefix() {
         return prefix;
     }
+
+    @Override
+    public String toString() {
+        return "Country{" + "id=" + id + ", name=" + name + ", prefix=" + 
+                prefix + "region=" + region.getId()+'}';
+    }
+    
+    
     
     @Override
     public boolean equals(Object o) {

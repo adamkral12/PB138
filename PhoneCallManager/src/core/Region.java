@@ -51,6 +51,17 @@ public final class Region {
     public double getPriceMessageOutcoming() {
         return priceMessageOutcoming;
     }
+
+    @Override
+    public String toString() {
+        return "Region{" + "id=" + id + ", name=" + name + 
+                ", priceCallIncoming=" + priceCallIncoming + 
+                ", priceCallOutcoming=" + priceCallOutcoming + 
+                ", priceMessageIncoming=" + priceMessageIncoming + 
+                ", priceMessageOutcoming=" + priceMessageOutcoming + '}';
+    }
+    
+    
     
     @Override
     public boolean equals(Object o) {

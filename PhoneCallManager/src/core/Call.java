@@ -56,5 +56,12 @@ public final class Call {
     public String getNote() {
         return note;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Call{" + "id=" + id + ", lenght=" + lenght + ", callee=" + 
+                callee + ", direction=" + direction + ", dateTime=" + dateTime 
+                + ", note=" + note + "country" + destination.getId() +'}';
+    }
+        
 }
