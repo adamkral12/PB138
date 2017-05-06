@@ -13,4 +13,70 @@ and open the template in the editor.
         <region>EU</region>
         <prefix>+420</prefix>
     </country>
+    <country cid="SVK">
+        <name>Slovakia</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+421</prefix>
+    </country>
+    <country cid="AUT">
+        <name>Austria</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+43</prefix>
+    </country>
+    <country cid="HUN">
+        <name>Hungary</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+36</prefix>
+    </country>
+    <country cid="POL">
+        <name>Poland</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+48</prefix>
+    </country>
+    <country cid="EGY">
+        <name>Egypt</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AF</region>
+        <prefix>+20</prefix>
+    </country>
+    <country cid="ETH">
+        <name>Ethiopia</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AF</region>
+        <prefix>+251</prefix>
+    </country>
+    <country cid="ZWE">
+        <name>Zimbabwe</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AF</region>
+        <prefix>+263</prefix>
+    </country>
+    <country cid="CAN">
+        <name>Canada</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>NA</region>
+        <prefix>+1</prefix>
+    </country>
+    <country cid="USA">
+        <name>United States</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>NA</region>
+        <prefix>+1</prefix>
+    </country>
+    <country cid="MEX">
+        <name>Mexico</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>NA</region>
+        <prefix>+52</prefix>
+    </country>
+    <country cid="">
+        <name></name>
+        <!-- must match one of the rids in regions.xml -->
+        <region></region>
+        <prefix></prefix>
+    </country>
 </countries>
