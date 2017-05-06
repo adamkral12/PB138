@@ -5,6 +5,7 @@
  */
 package phonecallmanager;
 
+import core.Region;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javafx.application.Platform;
@@ -18,6 +19,7 @@ import javax.swing.JApplet;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import managers.RegionManager;
 
 /**
  *
@@ -75,6 +77,8 @@ public class PhoneCallManager extends JApplet {
     }
     
     private void createScene() {
+        temporaryTesting();
+        
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -89,4 +93,20 @@ public class PhoneCallManager extends JApplet {
         fxContainer.setScene(new Scene(root));
     }
     
+    private void temporaryTesting() {
+        RegionManager rm = new RegionManager();
+        RegionManager.reloadRegions();
+        
+        for(Region region: rm.getAll()) {
+            System.out.println(region.getId() + " " +
+                    region.getName()+ " " + region.getPriceCallIncoming()+ " " +
+                    region.getPriceCallOutcoming()+ " " +
+                    region.getPriceMessageIncoming()+ " " +
+                    region.getPriceMessageOutcoming() + " ");
+        }
+        
+        System.out.println(rm.getById("NA").getName());
+        
+        System.out.println(rm.getHomeRegion().getName());
+    }
 }
