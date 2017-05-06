@@ -8,14 +8,45 @@ and open the template in the editor.
 <!-- example structure of messages.xml -->
 <messages>
     <!-- 0..n messages, mid unique -->
-    <message mid="n">
-        <length></length> <!-- non empty int >= 0, number of chars -->
+    <message mid="1">
+        <length>143</length> <!-- non empty int >= 0, number of chars -->
         <!-- <price></price> // computed -->
-        <callee></callee> <!-- non empty string, length 9 -->
-        <destination></destination> <!-- non empty, country id from config.xml? -->
-        <direction></direction> <!-- one of "in" and "out" case-insensitive -->
-        <dateTime>YYYY-MM-DDThh:mm:ss</dateTime> <!-- non empty, xs:dateTime -->
+        <callee>905678678</callee> <!-- non empty string, length 9 -->
+        <destination>CZE</destination> <!-- non empty, country id from config.xml? -->
+        <direction>in</direction> <!-- one of "in" and "out" case-insensitive -->
+        <dateTime>2017-04-29T10:45:20</dateTime> <!-- non empty, xs:dateTime, format =YYYY-MM-DDThh:mm:ss -->
         <note></note> <!-- optional note -->
     </message>
-    
+    <message mid="2">
+        <length>123</length>
+        <callee>905678021</callee>
+        <destination>MEX</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-29T15:35:22</dateTime>
+        <note></note>
+    </message>
+    <message mid="3">
+        <length>87</length>
+        <callee>905678678</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-31T20:45:25</dateTime>
+        <note></note>
+    </message>
+    <message mid="4">
+        <length>98</length>
+        <callee>905678678</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-01T07:45:11</dateTime>
+        <note></note>
+    </message>
+    <message mid="5">
+        <length>250</length>
+        <callee>906536233</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-02T17:37:20</dateTime>
+        <note>2 messages</note>
+    </message>
 </messages>
