@@ -83,7 +83,7 @@ public class CountryManager {
                 return false;
             }
         } catch (XPathExpressionException ex) {
-            Logger.getLogger(RegionManager.class.getName()).log(Level.SEVERE, 
+            Logger.getLogger(CountryManager.class.getName()).log(Level.SEVERE, 
                     null, ex);
         }
         return false;
@@ -123,6 +123,9 @@ public class CountryManager {
                 out.add(country);
             }
         }
+        if(out.isEmpty()) {
+            return null;
+        }
         return out;
     }
     
@@ -138,6 +141,9 @@ public class CountryManager {
             if(country.getPrefix().equals(prefix)) {
                 out.add(country);
             }
+        }
+        if(out.isEmpty()) {
+            return null;
         }
         return out;
     }
