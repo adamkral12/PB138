@@ -60,8 +60,9 @@ public final class Call {
     @Override
     public String toString() {
         return "Call{" + "id=" + id + ", lenght=" + lenght + ", callee=" + 
-                callee + ", direction=" + direction + ", dateTime=" + dateTime 
-                + ", note=" + note + "country" + destination.getId() +'}';
+                callee + ", destination=" + destination.getId() + ", direction="
+                + direction + ", dateTime=" + dateTime 
+                + ", note=" + note +'}';
     }
         
 }
