@@ -8,6 +8,7 @@ package phonecallmanager;
 import core.Call;
 import core.Country;
 import core.Direction;
+import core.Message;
 import core.Region;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -25,6 +26,7 @@ import javax.swing.UIManager;
 import managers.CountryManager;
 import managers.RegionManager;
 import managers.CallManager;
+import managers.MessageManager;
 
 /**
  *
@@ -152,6 +154,31 @@ public class PhoneCallManager extends JApplet {
         System.out.println("destination MEX");
         for(Call call : cam.getByDestination(cm.getById("MEX"))) {
             System.out.println(call);
+        }
+        
+        System.out.println("Parsing messages:");
+        MessageManager mm = new MessageManager();
+        MessageManager.reloadMessages();
+        
+        for(Message message : mm.getAll()) {
+            System.out.println(message);
+        }
+        System.out.println("id = 2");
+        System.out.println(mm.getById(2));
+        
+        System.out.println("OUT");
+        for(Message message : mm.getByDirection(Direction.OUT)) {
+            System.out.println(message);
+        }
+        
+        System.out.println("callee 905678678");
+        for(Message message : mm.getByCallee("905678678")) {
+            System.out.println(message);
+        }
+        
+        System.out.println("destination MEX");
+        for(Message message : mm.getByDestination(cm.getById("MEX"))) {
+            System.out.println(message);
         }
         
         System.out.println("---TEST END---");
