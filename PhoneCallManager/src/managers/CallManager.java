@@ -36,7 +36,9 @@ public class CallManager {
         File callsXML = new File("calls.xml");
         
         Document doc = FileManager.getDocument(callsXML);
-        
+        if(doc == null) {
+            return null;
+        }
         XPath xPath = XPathFactory.newInstance().newXPath();
         
         NodeList pCalls = (NodeList)xPath.evaluate("/calls/call",
@@ -88,7 +90,9 @@ public class CallManager {
             outCalls.add(call);
         }
         
-        
+        if (outCalls.isEmpty()) {
+            return null;
+        }
         return outCalls;
     }
     

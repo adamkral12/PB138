@@ -41,7 +41,9 @@ public class CountryManager {
         File countriesXML = new File("countries.xml");
         
         Document doc = FileManager.getDocument(countriesXML);
-        
+        if(doc == null) {
+            return null;
+        }
         XPath xPath = XPathFactory.newInstance().newXPath();
         
         NodeList pCountries = (NodeList)xPath.evaluate("/countries/country",
@@ -65,6 +67,10 @@ public class CountryManager {
             
             
             outCountries.add(country);
+        }
+        
+        if(outCountries.isEmpty()) {
+            return null;
         }
         return outCountries;
     }

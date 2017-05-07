@@ -39,7 +39,9 @@ public class RegionManager {
         File regionsXML = new File("regions.xml");
         
         Document doc = FileManager.getDocument(regionsXML);
-        
+        if(doc == null) {
+            return null;
+        }
         XPath xPath = XPathFactory.newInstance().newXPath();
         
         NodeList pRegions = (NodeList)xPath.evaluate("/regions/region",
@@ -76,7 +78,9 @@ public class RegionManager {
             outRegions.add(region);
         }
         
-        
+        if (outRegions.isEmpty()) {
+            return null;
+        }
         return outRegions;
     }
     
