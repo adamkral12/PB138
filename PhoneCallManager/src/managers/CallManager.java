@@ -31,6 +31,11 @@ import org.w3c.dom.NodeList;
 public class CallManager {
     private static List<Call> calls;
     
+    /**
+     * Parses XML document containing calls.
+     * @return List of all calls from XML in order they are stored, null if 
+     * error happened
+     */
     private static List<Call> parseCallsFromXML() 
             throws XPathExpressionException {
         File callsXML = new File("calls.xml");
@@ -96,6 +101,10 @@ public class CallManager {
         return outCalls;
     }
     
+    /**
+     * Reloads calls from XML file and stores them in calls variable.
+     * @return True - calls were successfully parsed and saved, False - else
+     */
     public static boolean reloadCalls() {
         try {
             List<Call> parsedCalls = parseCallsFromXML();
@@ -112,10 +121,19 @@ public class CallManager {
         return false;
     }
     
+    /**
+     * Returns all calls
+     * @return List of all calls
+     */
     public List<Call> getAll() {
         return new ArrayList<>(calls);
     }
     
+    /**
+     * Returns call by given id
+     * @param id of a call
+     * @return call with id id
+     */
     public Call getById(int id) {
         for(Call call : getAll()) {
             if(call.getId() == id) {
@@ -125,6 +143,11 @@ public class CallManager {
         return null;
     }
     
+    /**
+     * Returns list of calls with specific callee
+     * @param callee of the calls
+     * @return List of calls with given callee
+     */
     public List<Call> getByCallee(String callee) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
@@ -138,6 +161,11 @@ public class CallManager {
         return out;
     }
     
+    /**
+     * Returns calls by given destination
+     * @param country of the call
+     * @return List of calls with specific country
+     */
     public List<Call> getByDestination(Country country) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
@@ -151,6 +179,11 @@ public class CallManager {
         return out;
     }
     
+    /**
+     * Returns calls by given direction
+     * @param direction of the calls
+     * @return List of calls
+     */
     public List<Call> getByDirection(Direction direction) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
@@ -164,6 +197,11 @@ public class CallManager {
         return out;
     }
     
+    /**
+     * Returns calls with specific date
+     * @param date of the call, must be the same as in call
+     * @return List of calls
+     */
     public List<Call> getByDate(Date date) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {

@@ -31,6 +31,11 @@ import org.w3c.dom.NodeList;
 public class MessageManager {
     private static List<Message> messages;
     
+    /**
+     * Parses XML document containing messages.
+     * @return List of all messages from XML in order they are stored, null if 
+     * error happened
+     */
     private static List<Message> parseMessagesFromXML() 
             throws XPathExpressionException {
         File messagesXML = new File("messages.xml");
@@ -94,6 +99,10 @@ public class MessageManager {
         return outMessages;
     }
     
+    /**
+     * Reloads messages from XML file and stores them in messages variable.
+     * @return True - messages were successfully parsed and saved, False - else
+     */
     public static boolean reloadMessages() {
         try {
             List<Message> parsedMessages = parseMessagesFromXML();
@@ -109,10 +118,19 @@ public class MessageManager {
         return false;
     }
     
+    /**
+     * Returns all messages
+     * @return all messages
+     */
     public List<Message> getAll() {
         return new ArrayList<>(messages);
     }
     
+    /**
+     * Returns message by given id
+     * @param id of the message
+     * @return message with id id
+     */
     public Message getById(int id) {
         for(Message message : getAll()) {
             if(message.getId() == id) {
@@ -122,6 +140,11 @@ public class MessageManager {
         return null;
     }
     
+    /**
+     * Returns messages with a specific callee
+     * @param callee of the messages
+     * @return List of messages
+     */
     public List<Message> getByCallee(String callee) {
         List<Message> out = new ArrayList<>();
         for(Message message : getAll()) {
@@ -136,6 +159,11 @@ public class MessageManager {
         return out;
     }
     
+    /**
+     * Returns messages by given destination
+     * @param country of the message
+     * @return  List of messages
+     */
     public List<Message> getByDestination(Country country) {
         List<Message> out = new ArrayList<>();
         for(Message message : getAll()) {
@@ -149,6 +177,11 @@ public class MessageManager {
         return out;
     }
     
+    /**
+     * Returns messages by given direction
+     * @param direction of the messages
+     * @return List of messages
+     */
     public List<Message> getByDirection(Direction direction) {
         List<Message> out = new ArrayList<>();
         for(Message message : getAll()) {
@@ -162,6 +195,11 @@ public class MessageManager {
         return out;
     }
     
+    /**
+     * Return messages with specific date
+     * @param date of the message
+     * @return List of messages
+     */
     public List<Message> getByDate(Date date) {
         List<Message> out = new ArrayList<>();
         for(Message message : getAll()) {
