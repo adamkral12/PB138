@@ -57,6 +57,15 @@ public final class Message {
     public String getNote() {
         return note;
     }
+
+    @Override
+    public String toString() {
+        return "Message{" + "id=" + id + ", lenght=" + lenght + ", callee=" + 
+                callee + ", destination=" + destination.getId() + ", direction="
+                + direction + ", dateTime=" + dateTime + ", note=" + note + '}';
+    }
+    
+    
     
     
 }
