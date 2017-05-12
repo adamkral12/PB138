@@ -37,6 +37,90 @@ and open the template in the editor.
         <region>EU</region>
         <prefix>+48</prefix>
     </country>
+    <country cid="GRE">
+        <name>Greece</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+30</prefix>
+    </country>
+    <country cid="NTH">
+        <name>Netherlands</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+31</prefix>
+    </country>
+    <country cid="BEL">
+        <name>Belgium</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+32</prefix>
+    </country>
+    <country cid="FR">
+        <name>France</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+33</prefix>
+    </country>	
+    <country cid="SPA">
+        <name>Spain</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+34</prefix>
+    </country>
+    <country cid="GIB">
+        <name>Gibraltar</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+350</prefix>
+    </country>
+    <country cid="POR">
+        <name>Portugal</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+351</prefix>
+    </country>
+    <country cid="LUX">
+        <name>Luxembourg</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+352</prefix>
+    </country>
+    <country cid="IRE">
+        <name>Ireland</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+353</prefix>
+    </country>
+    <country cid="ICE">
+        <name>Iceland</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+354</prefix>
+    </country>
+    <country cid="ALB">
+        <name>Albania</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+355</prefix>
+    </country>
+    <country cid="MAL">
+        <name>Malta</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+356</prefix>
+    </country>
+    <country cid="LIT">
+        <name>Lithuania</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+370</prefix>
+    </country>
+    <country cid="CRO">
+        <name>Croatia</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>EU</region>
+        <prefix>+385</prefix>
+    </country>  
     <country cid="EGY">
         <name>Egypt</name>
         <!-- must match one of the rids in regions.xml -->
@@ -96,7 +180,7 @@ and open the template in the editor.
         <!-- must match one of the rids in regions.xml -->
         <region>SA</region>
         <prefix>+54</prefix>
-    </country>
+    </country>   
     <country cid="AUS">
         <name>Australia</name>
         <!-- must match one of the rids in regions.xml -->
@@ -109,6 +193,78 @@ and open the template in the editor.
         <region>OC</region>
         <prefix>+64</prefix>
     </country>
+    <country cid="MAL">
+        <name>Malaysia</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+60</prefix>
+    </country>
+    <country cid="ISA">
+        <name>Indonesia</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+62</prefix>
+    </country>
+    <country cid="PHI">
+        <name>Philippines</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+63</prefix>
+    </country>
+    <country cid="SGP">
+        <name>Singapore</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+65</prefix>
+    </country>
+    <country cid="THA">
+        <name>Thailand</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+66</prefix>
+    </country>
+    <country cid="BRU">
+        <name>Brunei</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+673</prefix>
+    </country>
+    <country cid="NAU">
+        <name>Nauru</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+674</prefix>
+    </country>
+    <country cid="TON">
+        <name>Tonga</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+676</prefix>
+    </country>
+    <country cid="SOI">
+        <name>Solomon Islands</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+677</prefix>
+    </country>
+    <country cid="FIJ">
+        <name>Fiji</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+679</prefix>
+    </country>
+    <country cid="PAL">
+        <name>Palau</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+680</prefix>
+    </country>
+    <country cid="TUV">
+        <name>Tuvalu</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>OC</region>
+        <prefix>+688</prefix>
+    </country>    
     <country cid="CHN">
         <name>China</name>
         <!-- must match one of the rids in regions.xml -->
@@ -132,5 +288,107 @@ and open the template in the editor.
         <!-- must match one of the rids in regions.xml -->
         <region>AS</region>
         <prefix>+976</prefix>
+    </country>
+    <country cid="TUR">
+        <name>Turkey</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+90</prefix>
+    </country>
+    <country cid="PAK">
+        <name>Pakistan</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+92</prefix>
+    </country>
+    <country cid="AFG">
+        <name>Afghanistan</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+93</prefix>
+    </country>
+    <country cid="SRL">
+        <name>Sri Lanka</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+94</prefix>
+    </country>
+    <country cid="MYA">
+        <name>Myanmar</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+95</prefix>
+    </country>
+    <country cid="QTR">
+        <name>Qatar</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+974</prefix>
+    </country>
+    <country cid="OMA">
+        <name>Oman</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+968</prefix>
+    </country>
+    <country cid="NEP">
+        <name>Nepal</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+977</prefix>
+    </country>
+    <country cid="IRN">
+        <name>Iran</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+98</prefix>
+    </country>
+    <country cid="SKO">
+        <name>South Korea</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+82</prefix>
+    </country>
+    <country cid="LAO">
+        <name>Laos</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+856</prefix>
+    </country>
+    <country cid="BAN">
+        <name>Bangladesh</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+880</prefix>
+    </country>
+    <country cid="TAI">
+        <name>Taiwan</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+886</prefix>
+    </country>
+    <country cid="UZB">
+        <name>Uzbekistan</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+998</prefix>
+    </country>
+    <country cid="GEO">
+        <name>Georgia</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+995</prefix>
+    </country>
+    <country cid="ISR">
+        <name>Israel</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+972</prefix>
+    </country>
+    <country cid="SAA">
+        <name>Saudi Arabia</name>
+        <!-- must match one of the rids in regions.xml -->
+        <region>AS</region>
+        <prefix>+996</prefix>
     </country>
 </countries>
