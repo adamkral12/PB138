@@ -11,11 +11,11 @@ and open the template in the editor.
         <name>Europe</name>
         <prices>
             <calls>                  
-                <incoming>1.00</incoming>
+                <incoming>0.00</incoming>
                 <outcoming>1.00</outcoming>
             </calls>
             <messages>
-                <incoming>1.00</incoming>
+                <incoming>0.00</incoming>
                 <outcoming>1.00</outcoming>
             </messages>
         </prices>
@@ -24,12 +24,12 @@ and open the template in the editor.
         <name>Asia</name>
         <prices>
             <calls>                  
-                <incoming>1.00</incoming>
-                <outcoming>1.00</outcoming>
+                <incoming>5.00</incoming>
+                <outcoming>4.00</outcoming>
             </calls>
             <messages>
-                <incoming>1.00</incoming>
-                <outcoming>1.00</outcoming>
+                <incoming>2.00</incoming>
+                <outcoming>2.00</outcoming>
             </messages>
         </prices>
     </region>
@@ -37,12 +37,12 @@ and open the template in the editor.
         <name>South America</name>
         <prices>
             <calls>                  
-                <incoming>1.00</incoming>
-                <outcoming>1.00</outcoming>
+                <incoming>10.00</incoming>
+                <outcoming>5.00</outcoming>
             </calls>
             <messages>
-                <incoming>1.00</incoming>
-                <outcoming>1.00</outcoming>
+                <incoming>10.00</incoming>
+                <outcoming>5.00</outcoming>
             </messages>
         </prices>
     </region>
@@ -50,12 +50,12 @@ and open the template in the editor.
         <name>North America</name>
         <prices>
             <calls>                  
-                <incoming>1.00</incoming>
+                <incoming>4.00</incoming>
                 <outcoming>1.00</outcoming>
             </calls>
             <messages>
-                <incoming>1.00</incoming>
-                <outcoming>1.00</outcoming>
+                <incoming>2.00</incoming>
+                <outcoming>22.00</outcoming>
             </messages>
         </prices>
     </region>
@@ -63,12 +63,12 @@ and open the template in the editor.
         <name>Africa</name>
         <prices>
             <calls>                  
-                <incoming>1.00</incoming>
-                <outcoming>1.00</outcoming>
+                <incoming>10.00</incoming>
+                <outcoming>10.00</outcoming>
             </calls>
             <messages>
-                <incoming>1.00</incoming>
-                <outcoming>1.00</outcoming>
+                <incoming>8.00</incoming>
+                <outcoming>8.00</outcoming>
             </messages>
         </prices>
     </region>
@@ -76,12 +76,12 @@ and open the template in the editor.
         <name>Australia (Oceania)</name>
         <prices>
             <calls>                  
-                <incoming>1.00</incoming>
-                <outcoming>1.00</outcoming>
+                <incoming>20.00</incoming>
+                <outcoming>10.00</outcoming>
             </calls>
             <messages>
-                <incoming>1.00</incoming>
-                <outcoming>1.00</outcoming>
+                <incoming>10.00</incoming>
+                <outcoming>8.00</outcoming>
             </messages>
         </prices>
     </region>
