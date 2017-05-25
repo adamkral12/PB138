@@ -10,7 +10,11 @@ import core.Direction;
 import java.util.List;
 import core.Message;
 import java.io.File;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -77,19 +81,16 @@ public class MessageManager {
                     XPathConstants.STRING);
             String pDate = (String) xPath.evaluate("dateTime/text()", e, 
                     XPathConstants.STRING);
-            String[] parsedDateAndTime = pDate.split("T");//T\\d{2}:\\d{2}:\\d{2}$");
-            String[] parsedDate = parsedDateAndTime[0].split("-");
-            String[] parsedTime = parsedDateAndTime[1].split(":");
-            
-            Date date = new Date(Integer.parseInt(parsedDate[0])-1900,
-                                Integer.parseInt(parsedDate[1])-1,
-                                Integer.parseInt(parsedDate[2]),
-                                Integer.parseInt(parsedTime[0]),
-                                Integer.parseInt(parsedTime[1]),
-                                Integer.parseInt(parsedTime[2]));
-            
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+            Calendar cal = Calendar.getInstance();
+            try {
+                cal.setTime(df.parse(pDate));
+            } catch (ParseException ex) {
+                System.out.println("Getting time and date for the message failed.");
+            }
+                        
             Message message = new Message(mid, length, callee, destination, 
-                    direction, date, note);
+                    direction, cal, note);
             
             outMessages.add(message);
         }

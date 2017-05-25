@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package core;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Java Object for representing calls.
@@ -16,10 +18,10 @@ public final class Call {
     private final String callee;
     private final Country destination;
     private final Direction direction;
-    private final Date dateTime;
+    private final Calendar dateTime;
     private final String note;
 
-    public Call(int id, int lenght, String callee, Country destination, Direction direction, Date dateTime, String note) {
+    public Call(int id, int lenght, String callee, Country destination, Direction direction, Calendar dateTime, String note) {
         this.id = id;
         this.lenght = lenght;
         this.callee = callee;
@@ -49,7 +51,7 @@ public final class Call {
         return direction;
     }
 
-    public final Date getDateTime() {
+    public final Calendar getDateTime() {
         return dateTime;
     }
 
@@ -61,7 +63,7 @@ public final class Call {
     public String toString() {
         return "Call{" + "id=" + id + ", lenght=" + lenght + ", callee=" + 
                 callee + ", destination=" + destination.getId() + ", direction="
-                + direction + ", dateTime=" + dateTime 
+                + direction + ", dateTime=" + dateTime.getTime()
                 + ", note=" + note +'}';
     }
         

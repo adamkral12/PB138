@@ -5,6 +5,7 @@
  */
 package core;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -17,10 +18,11 @@ public final class Message {
     private final String callee;
     private final Country destination;
     private final Direction direction;
-    private final Date dateTime;
+    private final Calendar dateTime;
     private final String note;
 
-    public Message(int id, int lenght, String callee, Country destination, Direction direction, Date dateTime, String note) {
+    public Message(int id, int lenght, String callee, Country destination, 
+            Direction direction, Calendar dateTime, String note) {
         this.id = id;
         this.lenght = lenght;
         this.callee = callee;
@@ -50,7 +52,7 @@ public final class Message {
         return direction;
     }
 
-    public Date getDateTime() {
+    public Calendar getDateTime() {
         return dateTime;
     }
 
@@ -62,7 +64,7 @@ public final class Message {
     public String toString() {
         return "Message{" + "id=" + id + ", lenght=" + lenght + ", callee=" + 
                 callee + ", destination=" + destination.getId() + ", direction="
-                + direction + ", dateTime=" + dateTime + ", note=" + note + '}';
+                + direction + ", dateTime=" + dateTime.getTime() + ", note=" + note + '}';
     }
     
     
