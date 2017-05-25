@@ -99,7 +99,7 @@ public class CountryManager {
      * Returns all countries
      * @return All countries
      */
-    public List<Country> getAll() {
+    public static List<Country> getAll() {
         return new ArrayList<>(countries);
     }
     
@@ -108,7 +108,7 @@ public class CountryManager {
      * @param id - Code of a country
      * @return country with code id, null otherwise
      */
-    public Country getById(String id) {
+    public static Country getById(String id) {
         for (Country country : countries) {
             if (country.getId().equals(id)) {
                 return country;
@@ -122,7 +122,7 @@ public class CountryManager {
      * @param region - region
      * @return Countries under region region, null otherwise
      */
-    public List<Country> getByRegion(Region region) {
+    public static List<Country> getByRegion(Region region) {
         List<Country> out = new ArrayList<>();
         for (Country country : countries) {
             if(country.getRegion().equals(region)) {
@@ -141,7 +141,7 @@ public class CountryManager {
      * @return List of countries, because USA and Canada have the same, 
      * null otherwise
      */
-    public List<Country> getByPrefix(String prefix) {
+    public static List<Country> getByPrefix(String prefix) {
         List<Country> out = new ArrayList<>();
         for (Country country : countries) {
             if(country.getPrefix().equals(prefix)) {
@@ -158,7 +158,7 @@ public class CountryManager {
      * Returns home country
      * @return home country
      */
-    public Country getHomeCountry() {
+    public static Country getHomeCountry() {
         return getById(HOME_COUNTRY);
     }
     

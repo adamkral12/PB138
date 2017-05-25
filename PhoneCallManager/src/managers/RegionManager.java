@@ -108,7 +108,7 @@ public class RegionManager {
      * Returns all regions
      * @return All regions
      */
-    public List<Region> getAll() {
+    public static List<Region> getAll() {
         return new ArrayList<>(RegionManager.regions);
     }
     
@@ -117,7 +117,7 @@ public class RegionManager {
      * @param id - Code of a region
      * @return Region with code id, null otherwise
      */
-    public Region getById(String id) {
+    public static Region getById(String id) {
         
         for (Region region : getAll()) {
             if(region.getId().equals(id)) {
@@ -132,7 +132,7 @@ public class RegionManager {
      * @param name - Name of a region
      * @return Region with name name, null otherwise
      */
-    public Region getByName(String name) {
+    public static Region getByName(String name) {
         for (Region region : getAll()) {
             if(region.getName().equals(name)) {
                 return region;
@@ -145,7 +145,7 @@ public class RegionManager {
      * Returns home region
      * @return home region
      */
-    public Region getHomeRegion() {
+    public static Region getHomeRegion() {
         return getById(HOME_REGION);
     }
     

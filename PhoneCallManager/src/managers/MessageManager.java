@@ -122,7 +122,7 @@ public class MessageManager {
      * Returns all messages
      * @return all messages
      */
-    public List<Message> getAll() {
+    public static List<Message> getAll() {
         return new ArrayList<>(messages);
     }
     
@@ -131,7 +131,7 @@ public class MessageManager {
      * @param id of the message
      * @return message with id id
      */
-    public Message getById(int id) {
+    public static Message getById(int id) {
         for(Message message : getAll()) {
             if(message.getId() == id) {
                 return message;
@@ -145,7 +145,7 @@ public class MessageManager {
      * @param callee of the messages
      * @return List of messages
      */
-    public List<Message> getByCallee(String callee) {
+    public static List<Message> getByCallee(String callee) {
         List<Message> out = new ArrayList<>();
         for(Message message : getAll()) {
             if(message.getCallee().equals(callee)) {
@@ -164,7 +164,7 @@ public class MessageManager {
      * @param country of the message
      * @return  List of messages
      */
-    public List<Message> getByDestination(Country country) {
+    public static List<Message> getByDestination(Country country) {
         List<Message> out = new ArrayList<>();
         for(Message message : getAll()) {
             if(message.getDestination().equals(country)) {
@@ -182,7 +182,7 @@ public class MessageManager {
      * @param direction of the messages
      * @return List of messages
      */
-    public List<Message> getByDirection(Direction direction) {
+    public static List<Message> getByDirection(Direction direction) {
         List<Message> out = new ArrayList<>();
         for(Message message : getAll()) {
             if(message.getDirection() == direction) {
@@ -200,7 +200,7 @@ public class MessageManager {
      * @param date of the message
      * @return List of messages
      */
-    public List<Message> getByDate(Date date) {
+    public static List<Message> getByDate(Date date) {
         List<Message> out = new ArrayList<>();
         for(Message message : getAll()) {
             if(message.getDateTime().equals(date)) {

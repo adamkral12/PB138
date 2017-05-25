@@ -125,7 +125,7 @@ public class CallManager {
      * Returns all calls
      * @return List of all calls
      */
-    public List<Call> getAll() {
+    public static List<Call> getAll() {
         return new ArrayList<>(calls);
     }
     
@@ -134,7 +134,7 @@ public class CallManager {
      * @param id of a call
      * @return call with id id
      */
-    public Call getById(int id) {
+    public static Call getById(int id) {
         for(Call call : getAll()) {
             if(call.getId() == id) {
                 return call;
@@ -148,7 +148,7 @@ public class CallManager {
      * @param callee of the calls
      * @return List of calls with given callee
      */
-    public List<Call> getByCallee(String callee) {
+    public static List<Call> getByCallee(String callee) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
             if(call.getCallee().equals(callee)) {
@@ -166,7 +166,7 @@ public class CallManager {
      * @param country of the call
      * @return List of calls with specific country
      */
-    public List<Call> getByDestination(Country country) {
+    public static List<Call> getByDestination(Country country) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
             if(call.getDestination().equals(country)) {
@@ -184,7 +184,7 @@ public class CallManager {
      * @param direction of the calls
      * @return List of calls
      */
-    public List<Call> getByDirection(Direction direction) {
+    public static List<Call> getByDirection(Direction direction) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
             if(call.getDirection() == direction) {
@@ -202,7 +202,7 @@ public class CallManager {
      * @param date of the call, must be the same as in call
      * @return List of calls
      */
-    public List<Call> getByDate(Date date) {
+    public static List<Call> getByDate(Date date) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
             if(call.getDateTime().equals(date)) {
