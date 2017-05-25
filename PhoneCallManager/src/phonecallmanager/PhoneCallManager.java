@@ -26,6 +26,7 @@ import javax.swing.UIManager;
 import managers.CountryManager;
 import managers.RegionManager;
 import managers.CallManager;
+import managers.LoadDataManager;
 import managers.MessageManager;
 
 /**
@@ -101,11 +102,12 @@ public class PhoneCallManager extends JApplet {
     }
 
     private void temporaryTesting() {
+        LoadDataManager.loadData();
         System.out.println("---TEST START--");
         System.out.println("Parsing regions:");
 
-        RegionManager rm = new RegionManager();
-        RegionManager.reloadRegions();
+        //RegionManager rm = new RegionManager();
+        //RegionManager.reloadRegions();
 
         for (Region region : RegionManager.getAll()) {
             System.out.println(region);
@@ -116,8 +118,8 @@ public class PhoneCallManager extends JApplet {
         System.out.println(RegionManager.getHomeRegion());
 
         System.out.println("Parsing countries");
-        CountryManager cm = new CountryManager();
-        CountryManager.reloadCountries();
+        //CountryManager cm = new CountryManager();
+        //CountryManager.reloadCountries();
 
         for (Country country : CountryManager.getAll()) {
             System.out.println(country);
@@ -132,8 +134,8 @@ public class PhoneCallManager extends JApplet {
         System.out.println(CountryManager.getByPrefix("+421").get(0));
 
         System.out.println("Parsing calls:");
-        CallManager cam = new CallManager();
-        CallManager.reloadCalls();
+        //CallManager cam = new CallManager();
+        //CallManager.reloadCalls();
 
         for (Call call : CallManager.getAll()) {
             System.out.println(call);
@@ -157,8 +159,8 @@ public class PhoneCallManager extends JApplet {
         }
 
         System.out.println("Parsing messages:");
-        MessageManager mm = new MessageManager();
-        MessageManager.reloadMessages();
+        //MessageManager mm = new MessageManager();
+        //MessageManager.reloadMessages();
 
         for (Message message : MessageManager.getAll()) {
             System.out.println(message);
