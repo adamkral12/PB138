@@ -29,17 +29,33 @@ public class CallTableModel extends AbstractTableModel {
     }
     @Override
     public int getRowCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return calls.size();
     }
 
     @Override
     public int getColumnCount() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return 6;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Call call = calls.get(rowIndex);
+        switch (columnIndex) {
+            case 0:
+                return call.getDateTime(); 
+            case 1:
+                return call.getCallee();
+            case 2:
+                return call.getDestination();
+            case 3:
+                return call.getDirection();
+            case 4:
+                return call.getLenght();
+            case 5:
+                return call.getNote();
+            default:
+                throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
+        }
     }
     
         private static class RetrieveSwingWorker extends SwingWorker<Void, Void> {
