@@ -32,7 +32,7 @@ public class LoadDataManager {
         return instance;
     }
     
-    public final void loadData() {
+    private void loadData() {
         regionManager.reloadRegions();
         countryManager.reloadCountries();
         callManager.reloadCalls();

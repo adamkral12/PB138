@@ -43,17 +43,57 @@ public class CallTableModel extends AbstractTableModel {
         Call call = calls.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return call.getDateTime(); 
+                return call.getDateTime().getTime(); 
             case 1:
-                return call.getCallee();
+                return call.getDestination().getPrefix() + " " + call.getCallee();
             case 2:
-                return call.getDestination();
+                return call.getDestination().getName();
             case 3:
                 return call.getDirection();
             case 4:
                 return call.getLenght();
             case 5:
                 return call.getNote();
+            default:
+                throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
+        }
+    }
+    
+    @Override
+    public String getColumnName(int columnIndex) {
+        switch (columnIndex) {
+            case 0:
+                return texts.getString("DATETIME");
+            case 1:
+                return texts.getString("CALLEE");
+            case 2:
+                return texts.getString("DESTINATION");
+            case 3:
+                return texts.getString("DIRECTION");
+            case 4:
+                return texts.getString("LENGTH");
+            case 5:
+                return texts.getString("NOTE");
+            default:
+                throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
+        }
+    }
+
+    @Override
+    public Class<?> getColumnClass(int columnIndex) {
+        switch (columnIndex) {
+            case 0:
+                return Long.class;
+            case 1:
+                return String.class;
+            case 2:
+                return String.class;
+            case 3:
+                return String.class;
+            case 4:
+                return Integer.class;
+            case 5:
+                return String.class;
             default:
                 throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
         }
