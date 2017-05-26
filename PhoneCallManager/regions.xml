@@ -55,7 +55,7 @@ and open the template in the editor.
             </calls>
             <messages>
                 <incoming>2.00</incoming>
-                <outcoming>22.00</outcoming>
+                <outcoming>2.00</outcoming>
             </messages>
         </prices>
     </region>
