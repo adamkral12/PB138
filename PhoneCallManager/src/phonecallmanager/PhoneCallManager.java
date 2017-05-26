@@ -28,6 +28,7 @@ import managers.RegionManager;
 import managers.CallManager;
 import managers.LoadDataManager;
 import managers.MessageManager;
+import managers.PriceManager;
 
 /**
  *
@@ -181,6 +182,24 @@ public class PhoneCallManager extends JApplet {
         System.out.println("destination MEX");
         for (Message message : MessageManager.getByDestination(CountryManager.getById("MEX"))) {
             System.out.println(message);
+        }
+        
+        System.out.println("Testing prices");
+        
+        Double[] callPrices = {0.0, 2.0, 0.0, 0.0, 1.0};
+        
+        for(Call call : CallManager.getAll()) {
+            System.out.println("Price of call " + call.getId() + " : "
+                    + PriceManager.getPrice(call)+ 
+                    ", should  be " + callPrices[call.getId()]);
+        }
+        
+        Double[] messagePrices = {0.0, 0.0, 2.0, 1.0, 1.0, 2.0};
+        
+        for(Message message : MessageManager.getAll()) {
+            System.out.println("Price of message " + message.getId() + " : "
+                    + PriceManager.getPrice(message)+ 
+                    ", should  be " + messagePrices[message.getId()]);
         }
 
         System.out.println("---TEST END---");
