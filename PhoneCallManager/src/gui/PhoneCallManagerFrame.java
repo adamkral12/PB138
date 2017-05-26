@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 public class PhoneCallManagerFrame extends javax.swing.JFrame {
 
     private final CallTableModel callModel;
-    //private final MessageTableModel messageModel;
+    private final MessageTableModel messageModel;
     
    private static final ResourceBundle texts = ResourceBundle.getBundle("i18n/texts");
     /**
@@ -19,6 +19,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         //log.info("Starting Ponecallmanager frame");
         initComponents();
         callModel = (CallTableModel) jTableCalls.getModel();
+        messageModel = (MessageTableModel) jTableMessages.getModel();
     }
 
     /**
@@ -30,32 +31,39 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableMessages = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableCalls = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(900, 300));
 
+        jTableMessages.setModel(new gui.MessageTableModel(messageModel));
+        jScrollPane2.setViewportView(jTableMessages);
+
+        jTabbedPane2.addTab("Messages", jScrollPane2);
+
         jTableCalls.setModel(new CallTableModel(callModel));
-        jTableCalls.setMaximumSize(new java.awt.Dimension(850, 250));
-        jTableCalls.setMinimumSize(new java.awt.Dimension(850, 250));
+        jTableCalls.setMaximumSize(new java.awt.Dimension(850, 150));
+        jTableCalls.setMinimumSize(new java.awt.Dimension(850, 150));
         jScrollPane1.setViewportView(jTableCalls);
+
+        jTabbedPane2.addTab("Calls", jScrollPane1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 714, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -101,6 +109,10 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTableCalls;
+    private javax.swing.JTable jTableMessages;
     // End of variables declaration//GEN-END:variables
 }
