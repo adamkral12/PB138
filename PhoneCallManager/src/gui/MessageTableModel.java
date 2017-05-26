@@ -4,6 +4,7 @@ import core.Message;
 import managers.MessageManager;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import javax.swing.table.AbstractTableModel;
@@ -83,7 +84,7 @@ public class MessageTableModel extends AbstractTableModel {
     public Class<?> getColumnClass(int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return Long.class;
+                return Date.class;
             case 1:
                 return String.class;
             case 2:

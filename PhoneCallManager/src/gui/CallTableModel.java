@@ -6,14 +6,18 @@
 package gui;
 
 import core.Call;
+import core.Direction;
 import managers.LoadDataManager;
 import managers.CallManager;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.SwingWorker;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -83,13 +87,13 @@ public class CallTableModel extends AbstractTableModel {
     public Class<?> getColumnClass(int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return Long.class;
+                return Date.class;
             case 1:
                 return String.class;
             case 2:
                 return String.class;
             case 3:
-                return String.class;
+                return Direction.class;
             case 4:
                 return Integer.class;
             case 5:

@@ -20,6 +20,10 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         initComponents();
         callModel = (CallTableModel) jTableCalls.getModel();
         messageModel = (MessageTableModel) jTableMessages.getModel();
+      //  TableRowSorter sorter = new TableRowSorter<CallTableModel>(callModel);
+       // jTableCalls.setRowSorter(sorter);
+       jTableCalls.setAutoCreateRowSorter(true);
+       jTableMessages.setAutoCreateRowSorter(true);
     }
 
     /**
