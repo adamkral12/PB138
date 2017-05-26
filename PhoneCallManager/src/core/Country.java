@@ -43,7 +43,7 @@ final public class Country {
     @Override
     public String toString() {
         return "Country{" + "id=" + id + ", name=" + name + ", prefix=" + 
-                prefix + "region=" + region.getId()+'}';
+                prefix + ", region=" + region.getId()+'}';
     }
     
     
