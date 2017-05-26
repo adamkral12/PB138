@@ -39,7 +39,7 @@ public class Testing {
         System.out.println("---TEST START--");
         //true - run test, false - dont ; in if statement
         // <editor-fold defaultstate="collapsed" desc="TEST: List all objects, do basic stuff if them">
-        if(false) {
+        if(true) {
             System.out.println("TEST: List all objects, do basic stuff if them");
             
             
@@ -126,7 +126,7 @@ public class Testing {
         // </editor-fold>
         
         // <editor-fold defaultstate="collapsed" desc="TEST : Price tests">
-        if(false){
+        if(true){
             System.out.println("Testing prices");
 
             Double[] callPrices = {0.0, 2.0, 0.0, 0.0, 1.0};
@@ -147,7 +147,7 @@ public class Testing {
         }
         // </editor-fold>
         // <editor-fold defaultstate="collapsed" desc="TEST : Sort tests">
-        if(false) {
+        if(true) {
             System.out.println("SORTING TESTS");
             // <editor-fold defaultstate="collapsed" desc="TEST : Sorting calls">
             if(true) {
@@ -405,8 +405,10 @@ public class Testing {
         // </editor-fold>
         // <editor-fold defaultstate="collapsed" desc="TEST : get by day,month,year">
         if(true) {
+            System.out.println("Get by date: 2017-05-01");
             System.out.println("Calls");
             Calendar cal = Calendar.getInstance();
+            //POZOR: mesiace sa cisluju od 0
             cal.set(2017,4,1);
             
             
