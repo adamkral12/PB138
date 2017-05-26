@@ -35,7 +35,7 @@ public class Testing {
     public static void testing() {
         
         System.out.println("Loading data");
-        LoadDataManager.loadData();
+        LoadDataManager loadDataManager = LoadDataManager.getInstance();
         System.out.println("---TEST START--");
         //true - run test, false - dont ; in if statement
         // <editor-fold defaultstate="collapsed" desc="TEST: List all objects, do basic stuff if them">

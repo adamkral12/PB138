@@ -10,10 +10,48 @@ package managers;
  * @author pmikova
  */
 public class LoadDataManager {
-    public static void loadData() {
-        RegionManager.reloadRegions();
-        CountryManager.reloadCountries();
-        CallManager.reloadCalls();
-        MessageManager.reloadMessages();
+    
+    private static LoadDataManager instance;
+    private final RegionManager regionManager;
+    private final CountryManager countryManager;
+    private final CallManager callManager;
+    private final MessageManager messageManager;
+    
+    private LoadDataManager() {
+        regionManager = new RegionManager();
+        countryManager = new CountryManager();
+        callManager = new CallManager();
+        messageManager = new MessageManager();
+        this.loadData();
+    }
+    
+    public static LoadDataManager getInstance() {
+        if (instance == null) {
+            instance = new LoadDataManager();
+        }
+        return instance;
+    }
+    
+    public final void loadData() {
+        regionManager.reloadRegions();
+        countryManager.reloadCountries();
+        callManager.reloadCalls();
+        messageManager.reloadMessages();
+    }
+    
+    public RegionManager getRegionManager() {
+        return regionManager;
+    }
+    
+    public CountryManager getCountryManager() {
+        return countryManager;
+    }
+    
+    public CallManager getCallManager() {
+        return callManager;
+    }
+    
+    public MessageManager getMessageManager() {
+        return messageManager;
     }
 }

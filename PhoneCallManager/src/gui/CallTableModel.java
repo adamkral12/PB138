@@ -6,6 +6,7 @@
 package gui;
 
 import core.Call;
+import managers.LoadDataManager;
 import managers.CallManager;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -65,7 +66,7 @@ public class CallTableModel extends AbstractTableModel {
         
         public RetrieveSwingWorker(CallTableModel callModel){
             this.tableModel = new WeakReference<>(callModel);
-            callManager = Data.getInstance().getCallManager();
+            callManager = LoadDataManager.getInstance().getCallManager();
         }
         
         @Override
