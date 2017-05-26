@@ -8,12 +8,17 @@ package managers;
 import core.*;
 
 /**
- *
+ * Calculates prices of calls and messages.
  * @author marek
  */
 public class PriceManager {
     private static final double PRICE = 1.0;
     
+    /**
+     * calculates price of a call
+     * @param call of which price will be calculated
+     * @return price of a call, -1 if direction was not specified
+     */
     public static double getPrice(Call call) {
         Region reg = call.getDestination().getRegion();
         switch(call.getDirection()) {
@@ -30,6 +35,11 @@ public class PriceManager {
         return -1;
     }
     
+    /**
+     * Calculates price of a message
+     * @param message of which price will be calculated
+     * @return price of a message, -1 if direction was not specified
+     */
     public static double getPrice(Message message) {
         Region reg = message.getDestination().getRegion();
         switch(message.getDirection()) {
