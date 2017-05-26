@@ -203,7 +203,7 @@ public class CallManager {
      * @param date of the call, must be the same as in call
      * @return List of calls
      */
-    public static List<Call> getByDate(Date date) {
+    public static List<Call> getByDate(Calendar date) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
             if(call.getDateTime().equals(date)) {
@@ -215,6 +215,54 @@ public class CallManager {
         }
         return out;
     }
+    
+    public static List<Call> getByDay(Calendar cal) {
+        List<Call> out = new ArrayList();
+        for(Call call : getAll()) {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+            if(fmt.format(cal.getTime())
+                    .equals(fmt.format(call.getDateTime().getTime()))) {
+                out.add(call);
+            }
+        }
+        if(out.isEmpty()) {
+            return null;
+        }
+        return out;
+    
+    }
+    
+    public static List<Call> getByMonth(Calendar cal) {
+        List<Call> out = new ArrayList();
+        for(Call call : getAll()) {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyyMM");
+            if(fmt.format(cal.getTime())
+                    .equals(fmt.format(call.getDateTime().getTime()))) {
+                out.add(call);
+            }
+        }
+        if(out.isEmpty()) {
+            return null;
+        }
+        return out;
+    }
+    
+    public static List<Call> getByYear(Calendar cal) {
+        List<Call> out = new ArrayList();
+        for(Call call : getAll()) {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyy");
+            if(fmt.format(cal.getTime())
+                    .equals(fmt.format(call.getDateTime().getTime()))) {
+                out.add(call);
+            }
+        }
+        if(out.isEmpty()) {
+            return null;
+        }
+        return out;
+    }
+    
+    
     
     
 }

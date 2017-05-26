@@ -213,4 +213,50 @@ public class MessageManager {
         }
         return out;        
     }
+    
+    public static List<Message> getByDay(Calendar cal) {
+        List<Message> out = new ArrayList();
+        for(Message message : getAll()) {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+            if(fmt.format(cal.getTime())
+                    .equals(fmt.format(message.getDateTime().getTime()))) {
+                out.add(message);
+            }
+        }
+        if(out.isEmpty()) {
+            return null;
+        }
+        return out;
+    
+    }
+    
+    public static List<Message> getByMonth(Calendar cal) {
+        List<Message> out = new ArrayList();
+        for(Message message : getAll()) {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyyMM");
+            if(fmt.format(cal.getTime())
+                    .equals(fmt.format(message.getDateTime().getTime()))) {
+                out.add(message);
+            }
+        }
+        if(out.isEmpty()) {
+            return null;
+        }
+        return out;
+    }
+    
+    public static List<Message> getByYear(Calendar cal) {
+        List<Message> out = new ArrayList();
+        for(Message message : getAll()) {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyy");
+            if(fmt.format(cal.getTime())
+                    .equals(fmt.format(message.getDateTime().getTime()))) {
+                out.add(message);
+            }
+        }
+        if(out.isEmpty()) {
+            return null;
+        }
+        return out;
+    }
 }

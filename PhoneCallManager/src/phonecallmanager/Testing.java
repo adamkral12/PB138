@@ -12,7 +12,9 @@ import core.Message;
 import core.Region;
 import core.SortParameter;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
+import java.util.GregorianCalendar;
 import java.util.List;
 import managers.CallManager;
 import managers.CountryManager;
@@ -35,7 +37,7 @@ public class Testing {
         System.out.println("Loading data");
         LoadDataManager.loadData();
         System.out.println("---TEST START--");
-        
+        //true - run test, false - dont ; in if statement
         // <editor-fold defaultstate="collapsed" desc="TEST: List all objects, do basic stuff if them">
         if(false) {
             System.out.println("TEST: List all objects, do basic stuff if them");
@@ -145,7 +147,7 @@ public class Testing {
         }
         // </editor-fold>
         // <editor-fold defaultstate="collapsed" desc="TEST : Sort tests">
-        if(true) {
+        if(false) {
             System.out.println("SORTING TESTS");
             // <editor-fold defaultstate="collapsed" desc="TEST : Sorting calls">
             if(true) {
@@ -401,7 +403,45 @@ public class Testing {
         
         }
         // </editor-fold>
-        
+        // <editor-fold defaultstate="collapsed" desc="TEST : get by day,month,year">
+        if(true) {
+            System.out.println("Calls");
+            Calendar cal = Calendar.getInstance();
+            cal.set(2017,4,1);
+            
+            
+            System.out.println("Get by day");
+            
+            for(Call call : CallManager.getByDay(cal)) {
+                System.out.println(call);
+            }
+            System.out.println("Get by month");
+            for(Call call : CallManager.getByMonth(cal)) {
+                System.out.println(call);
+            }
+            System.out.println("Get by year");
+            for(Call call : CallManager.getByYear(cal)) {
+                System.out.println(call);
+            }
+            System.out.println("Messages");
+            
+            
+            System.out.println("Get by day");
+            
+            for(Message message : MessageManager.getByDay(cal)) {
+                System.out.println(message);
+            }
+            System.out.println("Get by month");
+            for(Message message : MessageManager.getByMonth(cal)) {
+                System.out.println(message);
+            }
+            System.out.println("Get by year");
+            for(Message message : MessageManager.getByYear(cal)) {
+                System.out.println(message);
+            }
+            
+        }
+        // </editor-fold>
         System.out.println("---TEST END---");
     }
     
