@@ -20,7 +20,7 @@ import javax.swing.SwingWorker;
  */
 public class CallTableModel extends AbstractTableModel {
 
-    private static final ResourceBundle texts = ResourceBundle.getBundle("gui/texts");
+    private static final ResourceBundle texts = ResourceBundle.getBundle("i18n/texts");
     private static List<Call> calls = new ArrayList<>();
 
     public CallTableModel(CallTableModel callModel) {
