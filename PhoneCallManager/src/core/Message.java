@@ -12,7 +12,7 @@ import java.util.Date;
  * Java Object for representing messages.
  * @author xkral3, xvalko, xmikova
  */
-public final class Message {
+public final class Message{
     private final int id;
     private final int lenght;
     private final String callee;

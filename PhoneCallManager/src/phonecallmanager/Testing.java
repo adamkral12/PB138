@@ -28,7 +28,7 @@ import managers.SortManager;
  */
 public class Testing {
     
-    private static void 
+    
     
     public static void testing() {
         
@@ -147,34 +147,257 @@ public class Testing {
         // <editor-fold defaultstate="collapsed" desc="TEST : Sort tests">
         if(true) {
             System.out.println("SORTING TESTS");
+            // <editor-fold defaultstate="collapsed" desc="TEST : Sorting calls">
+            if(true) {
 
-            System.out.println("Sort calls by id");
+                System.out.println("Sort calls by id");
 
-            List<Call> unsortedCalls = new ArrayList<>();
-            unsortedCalls.add(CallManager.getById(3));
-            unsortedCalls.add(CallManager.getById(2));
-            unsortedCalls.add(CallManager.getById(4));
-            unsortedCalls.add(CallManager.getById(1));
+                List<Call> unsortedCalls = CallManager.getAll();
+                Collections.shuffle(unsortedCalls);
 
-            for (Call call : SortManager.sort(unsortedCalls, SortParameter.ID)) {
-                System.out.println(call);
-            }
+                for (Call call : SortManager.sortCalls(unsortedCalls, SortParameter.ID)) {
+                    System.out.println(call);
+                }
 
-            System.out.println("Sort callsby id, reversed order");
-            Collections.shuffle(unsortedCalls);
+                System.out.println("Sort callsby id, reversed order");
+                Collections.shuffle(unsortedCalls);
 
-            for (Call call : SortManager.sortReversed(unsortedCalls
-                    , SortParameter.ID)) {
-                System.out.println(call);
-            }
+                for (Call call : SortManager.sortCallsReversed(unsortedCalls
+                        , SortParameter.ID)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort calls by Length");
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCalls(unsortedCalls
+                        , SortParameter.LENGTH)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort call by Length, reversed order");
+
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCallsReversed(unsortedCalls
+                        , SortParameter.LENGTH)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort calls by Callee");
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCalls(unsortedCalls
+                        , SortParameter.CALLEE)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort call by Callee, reversed order");
+
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCallsReversed(unsortedCalls
+                        , SortParameter.CALLEE)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort calls by Destination");
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCalls(unsortedCalls
+                        , SortParameter.DEST)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort call by Destination, reversed order");
+
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCallsReversed(unsortedCalls
+                        , SortParameter.DEST)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort calls by Region");
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCalls(unsortedCalls
+                        , SortParameter.REG)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort call by Region, reversed order");
+
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCallsReversed(unsortedCalls
+                        , SortParameter.REG)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort calls by Direction, IN first");
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCalls(unsortedCalls
+                        , SortParameter.DIR)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort call by Direction, reversed order, "
+                        + "OUT first");
+
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCallsReversed(unsortedCalls
+                        , SortParameter.DIR)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort calls by Date");
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCalls(unsortedCalls
+                        , SortParameter.DATE)) {
+                    System.out.println(call);
+                }
+
+                System.out.println("Sort call by Date, reversed order");
+
+                Collections.shuffle(unsortedCalls);
+
+                for (Call call : SortManager.sortCallsReversed(unsortedCalls
+                        , SortParameter.DATE)) {
+                    System.out.println(call);
+                }
             
-            System.out.println("Sort calls by Length");
-            Collections.shuffle(unsortedCalls);
-
-            for (Call call : SortManager.sortReversed(unsortedCalls
-                    , SortParameter.LENGTH)) {
-                System.out.println(call);
             }
+            // </editor-fold>
+            
+            
+            // <editor-fold defaultstate="collapsed" desc="TEST : Sorting calls">
+            if(true) {
+                
+                System.out.println("Sort messages by id");
+
+                List<Message> unsortedMessages = MessageManager.getAll();
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessages(unsortedMessages, SortParameter.ID)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort messages by id, reversed order");
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessagesReversed(unsortedMessages
+                        , SortParameter.ID)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort messages by Length");
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessagesReversed(unsortedMessages
+                        , SortParameter.LENGTH)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort messages by Length, reversed order");
+
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessages(unsortedMessages
+                        , SortParameter.LENGTH)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort messages by Callee");
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessages(unsortedMessages
+                        , SortParameter.CALLEE)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort message by Callee, reversed order");
+
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessagesReversed(unsortedMessages
+                        , SortParameter.CALLEE)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort message by Destination");
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessages(unsortedMessages
+                        , SortParameter.DEST)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort message by Destination, reversed order");
+
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessagesReversed(unsortedMessages
+                        , SortParameter.DEST)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort message by Region");
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessages(unsortedMessages
+                        , SortParameter.REG)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort message by Region, reversed order");
+
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessagesReversed(unsortedMessages
+                        , SortParameter.REG)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort message by Direction, IN first");
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessages(unsortedMessages
+                        , SortParameter.DIR)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort message by Direction, reversed order, "
+                        + "OUT first");
+
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessagesReversed(unsortedMessages
+                        , SortParameter.DIR)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort message by Date");
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessages(unsortedMessages
+                        , SortParameter.DATE)) {
+                    System.out.println(message);
+                }
+
+                System.out.println("Sort message by Date, reversed order");
+
+                Collections.shuffle(unsortedMessages);
+
+                for (Message message : SortManager.sortMessagesReversed(unsortedMessages
+                        , SortParameter.DATE)) {
+                    System.out.println(message);
+                }
+            }
+            // </editor-fold>
         
         }
         // </editor-fold>

@@ -12,7 +12,7 @@ import java.util.Locale;
  * Java Object for representing calls.
  * @author xkral3, xvalko, xmikova
  */
-public final class Call {
+public final class Call{
     private final int id;
     private final int lenght;
     private final String callee;
