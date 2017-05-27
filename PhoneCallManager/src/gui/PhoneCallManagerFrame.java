@@ -169,6 +169,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         String text = "(?i)" + jTextFieldFilter.getText();
         if ("Nothing".equals(selected)) {
             callList = CallManager.getAll();
+            messageList = MessageManager.getAll();
         } else {
             if ("Date".equals(selected)) {
               //callList = CallManager.getByDate();
@@ -197,6 +198,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         }
         
         callModel.updateTable(callList, callModel);
+        messageModel.updateTable(messageList, messageModel);
     }  
     /**
      * @param args the command line arguments

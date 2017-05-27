@@ -140,9 +140,9 @@ public class CallTableModel extends AbstractTableModel {
         private final List<Call> callList;
         private final WeakReference<CallTableModel> tableModel; 
         
-        public UpdateSwingWorker(List<Call> callList, CallTableModel workModel) {
+        public UpdateSwingWorker(List<Call> callList, CallTableModel callModel) {
             System.out.println("updating calls " + calls);
-            this.tableModel = new WeakReference<>(workModel);
+            this.tableModel = new WeakReference<>(callModel);
             this.callList = callList;
         }
 
@@ -155,9 +155,9 @@ public class CallTableModel extends AbstractTableModel {
 
         @Override
         protected void done() {
-            CallTableModel workModel = tableModel.get();
-            if (workModel != null){
-                workModel.fireTableDataChanged();
+            CallTableModel callModel = tableModel.get();
+            if (callModel != null){
+                callModel.fireTableDataChanged();
             }
         }
     }

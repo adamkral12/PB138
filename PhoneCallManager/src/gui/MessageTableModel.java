@@ -133,5 +133,38 @@ public class MessageTableModel extends AbstractTableModel {
             }
         }
     }
+        
+    private static class UpdateSwingWorker extends SwingWorker<Void, Void> {
+
+        private final List<Message> messageList;
+        private final WeakReference<MessageTableModel> tableModel; 
+        
+        public UpdateSwingWorker(List<Message> messageList, MessageTableModel messageModel) {
+            System.out.println("updating messages " + messages);
+            this.tableModel = new WeakReference<>(messageModel);
+            this.messageList = messageList;
+        }
+
+        @Override
+        protected Void doInBackground() throws Exception {
+            System.out.println("Updating messages: " + messages);
+            messages = this.messageList;
+            return null;
+        }
+
+        @Override
+        protected void done() {
+            MessageTableModel messageModel = tableModel.get();
+            if (messageModel != null){
+                messageModel.fireTableDataChanged();
+            }
+        }
+    }
+
+    public void updateTable (List<Message> calls,  MessageTableModel messageModel){
+        UpdateSwingWorker updateSwingWorker = new UpdateSwingWorker(calls, messageModel);
+        updateSwingWorker.execute();       
+        //setValueAt(aValue, rowIndex, columnIndex);
+    }        
 
 }
