@@ -57,7 +57,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
      //  TableRowSorter<CallTableModel> sorter = jTableCalls.getRowSorter();
 
        
-  JPanel pnl = new JPanel();
+    JPanel pnl = new JPanel();
     pnl.add(new JLabel("Filter expression:"));
     final JTextField txtFE = new JTextField(25);
     pnl.add(txtFE);
@@ -180,7 +180,11 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                 //accepts year-month yyyy-MM
                 //accepts year-month-day yyyy-MM-dd
                 //accepts whole format year-month-dayThh:mm:ss
-                if(text.contains("T")) {
+                if(text.isEmpty()) {
+                    callList = CallManager.getAll();
+                    messageList = MessageManager.getAll();
+                    
+                } else if(text.contains("T")) {
                     //ak obsahuje T, musi sediet cely format
                     Calendar cal = Calendar.getInstance();
                     try {
@@ -200,7 +204,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                             //obsahuje 1-krat '-', takze format yyyy-MM 
                             Calendar cal = Calendar.getInstance();
                             try {
-                                cal.set(Integer.parseInt(dateFields[0]), Integer.parseInt(dateFields[1]), 1);
+                                cal.set(Integer.parseInt(dateFields[0]), (Integer.parseInt(dateFields[1])-1), 1);
                                 callList = CallManager.getByMonth(cal);
                                 messageList = MessageManager.getByMonth(cal);
                             } catch (NumberFormatException e) {
@@ -212,7 +216,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                             //obsahuje 2-krat '-', takze foramt yyyy-MM-dd
                             Calendar cal = Calendar.getInstance();
                             try {
-                                cal.set(Integer.parseInt(dateFields[0]), Integer.parseInt(dateFields[1]), Integer.parseInt(dateFields[2]));
+                                cal.set(Integer.parseInt(dateFields[0]), Integer.parseInt(dateFields[1]) - 1, Integer.parseInt(dateFields[2]));
                                 callList = CallManager.getByDay(cal);
                                 messageList = MessageManager.getByDay(cal);
                             } catch (NumberFormatException e) {
@@ -242,7 +246,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                 }
               //callList = CallManager.getByDate(text);
               //messageList = MessageManager.getByDate(text);
-               throw new UnsupportedOperationException("Implement CallManager.getByDate(String substringDate) method!");
+               //throw new UnsupportedOperationException("Implement CallManager.getByDate(String substringDate) method!");
             } else if ("Callee".equals(selected)) {
                 callList = CallManager.getByCallee(text);
                 messageList = MessageManager.getByCallee(text);
@@ -254,12 +258,20 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
             } else if ("Destination".equals(selected)) {
                 //throw new UnsupportedOperationException("Implement CallManager.getByDestination(List<Country> CountryManager.getByName(String substringDestination)) method!");
                 //TO BE TESTED
-                callList = CallManager.getByDestination(CountryManager.getByName(text));
-                messageList = MessageManager.getByDestination(CountryManager.getByName(text));              
+                if(text.isEmpty()) {
+                    callList = CallManager.getAll();
+                    messageList = MessageManager.getAll();
+                } else {
+                    callList = CallManager.getByDestination(CountryManager.getByName(text));
+                    messageList = MessageManager.getByDestination(CountryManager.getByName(text));              
+                }
             } else if ("Direction".equals(selected)) {
                 //throw new UnsupportedOperationException("Implement CallManager.getByDirection(String substringDirection) method!");
                 //TO BE TESTED
-                if("in".contains(text.toLowerCase())) {
+                if(text.isEmpty()) {
+                    callList = CallManager.getAll();
+                    messageList = MessageManager.getAll();
+                } else if("in".contains(text.toLowerCase())) {
                     callList = CallManager.getByDirection(Direction.IN); 
                     messageList = MessageManager.getByDirection(Direction.IN);                              
                 } else if ("out".contains(text.toLowerCase())) {

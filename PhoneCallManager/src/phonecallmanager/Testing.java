@@ -404,7 +404,7 @@ public class Testing {
         }
         // </editor-fold>
         // <editor-fold defaultstate="collapsed" desc="TEST : get by day,month,year">
-        if(false) {
+        if(true) {
             System.out.println("Get by date: 2017-05-01");
             System.out.println("Calls");
             Calendar cal = Calendar.getInstance();
@@ -446,7 +446,7 @@ public class Testing {
         // </editor-fold>
         
         // <editor-fold defaultstate="collapsed" desc="TEST : Filter tests">
-        if(true) {
+        if(false) {
             System.out.println("Filter tests");
             
             if(true) {
