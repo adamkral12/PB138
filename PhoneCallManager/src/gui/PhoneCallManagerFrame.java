@@ -170,30 +170,33 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         if ("Nothing".equals(selected)) {
             callList = CallManager.getAll();
         } else {
-            int col = -1;
             if ("Date".equals(selected)) {
-                col = 0;
+              //callList = CallManager.getByDate();
+               throw new UnsupportedOperationException("Implement CallManager.getByDate(String substringDate) method!");
             } else if ("Callee".equals(selected)) {
-            //    callList = callManager.getByDestination(text);
-                System.out.println("Get by callee 420 " + callManager.getByCallee("420"));
+            //    callList = CallManager.getByCallee(text);
+                  throw new UnsupportedOperationException("Implement CallManager.getByCallee(String substringCallee) method!");
             } else if ("Prefix".equals(selected)) {
-                col = 2;
+                //callList = CallManager.getByPrefix(text);
+                throw new UnsupportedOperationException("Implement CallManager.getByPrefix(String substringPrefix) method!");
             } else if ("Destination".equals(selected)) {
-                col = 3;
-                callList = CallManager.getByDestination(callList, CountryManager.getById("MEX"));
+                throw new UnsupportedOperationException("Implement CallManager.getByDestination(String substringDestination) method!");
+              //  callList = CallManager.getByDestination(CountryManager.getByName(text));
             } else if ("Direction".equals(selected)) {
-                col = 4;
+                throw new UnsupportedOperationException("Implement CallManager.getByDirection(String substringDirection) method!");
+              //  callList = CallManager.getByDestination(CountryManager.getByName(text));                
             } else if ("Length".equals(selected)) {
-                col = 5;
+                throw new UnsupportedOperationException("Implement CallManager.getByLength(String substringNote) method!");
+              //  callList = CallManager.getByLength(text);                 
             } else if ("Note".equals(selected)) {
-                col = 6;
+                throw new UnsupportedOperationException("Implement CallManager.getByNote(String substringNote) method!");
+              //  callList = CallManager.getByNote(CountryManager.getByNote(text));                 
             }
             System.out.println("text " + text);
-            System.out.println("col " + col);
-            callModel.updateTable(callList, callModel);
-           // sorterMessages.setRowFilter(RowFilter.regexFilter(text, col));
-           // sorterCalls.setRowFilter(RowFilter.regexFilter(text, col));            
+       
         }
+        
+        callModel.updateTable(callList, callModel);
     }  
     /**
      * @param args the command line arguments

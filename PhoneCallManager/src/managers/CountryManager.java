@@ -117,6 +117,20 @@ public class CountryManager {
         return null;
     }
     
+        /**
+     * Returns country by its name (or substring of name)
+     * @param name - name of a country
+     * @return country with code id, null otherwise
+     */
+    public static Country getByName(String name) {
+        for (Country country : countries) {
+            if (country.getId().contains(name)) {
+                return country;
+            }
+        }
+        return null;
+    }
+    
     /**
      * Returns countries in region
      * @param region - region
@@ -144,7 +158,7 @@ public class CountryManager {
     public static List<Country> getByPrefix(String prefix) {
         List<Country> out = new ArrayList<>();
         for (Country country : countries) {
-            if(country.getPrefix().equals(prefix)) {
+            if(country.getPrefix().contains(prefix)) {
                 out.add(country);
             }
         }
