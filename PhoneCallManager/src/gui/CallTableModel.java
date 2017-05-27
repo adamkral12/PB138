@@ -12,6 +12,7 @@ import managers.CallManager;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -143,13 +144,18 @@ public class CallTableModel extends AbstractTableModel {
         public UpdateSwingWorker(List<Call> callList, CallTableModel callModel) {
             System.out.println("updating calls " + calls);
             this.tableModel = new WeakReference<>(callModel);
-            this.callList = callList;
+            if (callList != null) {
+                this.callList = callList;
+            } else {
+                this.callList = Collections.emptyList();
+            }
+
         }
 
         @Override
         protected Void doInBackground() throws Exception {
             System.out.println("Updating calls: " + calls);
-            calls = this.callList;
+                calls = this.callList;
             return null;
         }
 

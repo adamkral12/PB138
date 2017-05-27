@@ -5,6 +5,7 @@ import core.Message;
 import managers.MessageManager;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -142,7 +143,11 @@ public class MessageTableModel extends AbstractTableModel {
         public UpdateSwingWorker(List<Message> messageList, MessageTableModel messageModel) {
             System.out.println("updating messages " + messages);
             this.tableModel = new WeakReference<>(messageModel);
-            this.messageList = messageList;
+            if (messageList != null) {
+                this.messageList = messageList;
+            } else {
+                this.messageList = Collections.emptyList();
+            }
         }
 
         @Override

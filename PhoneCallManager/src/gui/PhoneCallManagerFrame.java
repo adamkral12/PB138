@@ -170,8 +170,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         if ("Nothing".equals(selected)) {
             callList = CallManager.getAll();
             messageList = MessageManager.getAll();
-        } else {
-            if ("Date".equals(selected)) {
+        } else if ("Date".equals(selected)) {
               //callList = CallManager.getByDate();
                throw new UnsupportedOperationException("Implement CallManager.getByDate(String substringDate) method!");
             } else if ("Callee".equals(selected)) {
@@ -193,9 +192,8 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                 throw new UnsupportedOperationException("Implement CallManager.getByNote(String substringNote) method!");
               //  callList = CallManager.getByNote(CountryManager.getByNote(text));                 
             }
+        
             System.out.println("text " + text);
-       
-        }
         
         callModel.updateTable(callList, callModel);
         messageModel.updateTable(messageList, messageModel);
