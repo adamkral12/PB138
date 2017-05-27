@@ -25,12 +25,12 @@ public class PriceManager {
             case IN:
                 //destination of our customer
                 return PRICE * reg.getPriceCallIncoming()
-                        * (Math.ceil(call.getLenght() / 60.0));
+                        * (Math.ceil(call.getLength() / 60.0));
                 
             case OUT:
                 //destionation of callee
                 return PRICE * reg.getPriceCallOutcoming()
-                        * (Math.ceil(call.getLenght() / 60.0));
+                        * (Math.ceil(call.getLength() / 60.0));
         }
         return -1;
     }
@@ -46,12 +46,12 @@ public class PriceManager {
             case IN:
                 //destination of our customer
                 return PRICE * reg.getPriceMessageIncoming()
-                        * (Math.ceil(message.getLenght() / 160.0));
+                        * (Math.ceil(message.getLength() / 160.0));
                 
             case OUT:
                 //destionation of callee
                 return PRICE * reg.getPriceMessageOutcoming()
-                        * (Math.ceil(message.getLenght() / 160.0));
+                        * (Math.ceil(message.getLength() / 160.0));
         }
         return -1;
     }

@@ -14,16 +14,16 @@ import java.util.Locale;
  */
 public final class Call{
     private final int id;
-    private final int lenght;
+    private final int length;
     private final String callee;
     private final Country destination;
     private final Direction direction;
     private final Calendar dateTime;
     private final String note;
 
-    public Call(int id, int lenght, String callee, Country destination, Direction direction, Calendar dateTime, String note) {
+    public Call(int id, int length, String callee, Country destination, Direction direction, Calendar dateTime, String note) {
         this.id = id;
-        this.lenght = lenght;
+        this.length = length;
         this.callee = callee;
         this.destination = destination;
         this.direction = direction;
@@ -35,8 +35,8 @@ public final class Call{
         return id;
     }
 
-    public final int getLenght() {
-        return lenght;
+    public final int getLength() {
+        return length;
     }
 
     public final String getCallee() {
@@ -61,7 +61,7 @@ public final class Call{
     
      @Override
     public String toString() {
-        return "Call{" + "id=" + id + ", lenght=" + lenght + ", callee=" + 
+        return "Call{" + "id=" + id + ", lenght=" + length + ", callee=" + 
                 callee + ", destination=" + destination.getId() + ", direction="
                 + direction + ", dateTime=" + dateTime.getTime()
                 + ", note=" + note +'}';

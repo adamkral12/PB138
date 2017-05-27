@@ -56,7 +56,7 @@ public class MessageTableModel extends AbstractTableModel {
             case 4:
                 return message.getDirection();
             case 5:
-                return message.getLenght();
+                return message.getLength();
             case 6:
                 return message.getNote();
             default:
@@ -152,7 +152,6 @@ public class MessageTableModel extends AbstractTableModel {
 
         @Override
         protected Void doInBackground() throws Exception {
-            System.out.println("Updating messages: " + messages);
             messages = this.messageList;
             return null;
         }

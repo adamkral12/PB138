@@ -14,17 +14,17 @@ import java.util.Date;
  */
 public final class Message{
     private final int id;
-    private final int lenght;
+    private final int length;
     private final String callee;
     private final Country destination;
     private final Direction direction;
     private final Calendar dateTime;
     private final String note;
 
-    public Message(int id, int lenght, String callee, Country destination, 
+    public Message(int id, int length, String callee, Country destination, 
             Direction direction, Calendar dateTime, String note) {
         this.id = id;
-        this.lenght = lenght;
+        this.length = length;
         this.callee = callee;
         this.destination = destination;
         this.direction = direction;
@@ -36,8 +36,8 @@ public final class Message{
         return id;
     }
 
-    public int getLenght() {
-        return lenght;
+    public int getLength() {
+        return length;
     }
 
     public String getCallee() {
@@ -62,7 +62,7 @@ public final class Message{
 
     @Override
     public String toString() {
-        return "Message{" + "id=" + id + ", lenght=" + lenght + ", callee=" + 
+        return "Message{" + "id=" + id + ", lenght=" + length + ", callee=" + 
                 callee + ", destination=" + destination.getId() + ", direction="
                 + direction + ", dateTime=" + dateTime.getTime() + ", note=" + note + '}';
     }

@@ -180,6 +180,33 @@ public class CallManager {
         return out;
     }
     
+    
+    /**
+     * Returns call(s) by given length from given set of calls
+     * @param legnth of the calls
+     * @return List of calls with given length (substring)
+     */
+    public static List<Call> getByLength(String length) {
+        return getByLength(getAll(), length);
+    }
+    
+        /**
+     * Returns call(s) by given note from given set of calls
+     * @param list list of calls to get call from
+     * @param note of a call
+     * @return List<Call> list of calls with note containing substring
+     */
+    public static List<Call> getByLength(List<Call> list, String length) {
+        List<Call> out = new ArrayList<Call>();
+        for(Call call : list) {
+            String lengthString = String.valueOf(call.getLength());
+            if(lengthString.toLowerCase().contains(length.toLowerCase())) {
+                out.add(call);
+            }
+        }
+        return out;
+    }    
+    
     /**
      * Returns list of calls with specific callee from all stored calls
      * @param callee of the calls

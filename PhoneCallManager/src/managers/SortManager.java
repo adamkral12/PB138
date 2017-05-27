@@ -63,7 +63,7 @@ public class SortManager {
                 break;
             case LENGTH:
                 Collections.sort(out,
-                        (c1, c2) -> compareInt(c1.getLenght(), c2.getLenght()));
+                        (c1, c2) -> compareInt(c1.getLength(), c2.getLength()));
                 break;
             case CALLEE:
                 Collections.sort(out,
@@ -112,7 +112,7 @@ public class SortManager {
                 break;
             case LENGTH:
                 Collections.sort(out,
-                        (m2, m1) -> compareInt(m1.getLenght(), m2.getLenght()));
+                        (m2, m1) -> compareInt(m1.getLength(), m2.getLength()));
                 break;
             case CALLEE:
                 Collections.sort(out,

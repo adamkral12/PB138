@@ -154,19 +154,19 @@ public class MessageManager {
     }
     
     /**
-     * Returns message(s) by given note from given set of calls
-     * @param note of the calls
-     * @return List of calls with given note (substring)
+     * Returns message(s) by given note from given set of messages
+     * @param note of the mesages
+     * @return List of messages with given note (substring)
      */
     public static List<Message> getByNote(String note) {
         return getByNote(getAll(), note);
     }
     
         /**
-     * Returns call(s) by given note from given set of calls
-     * @param list list of calls to get call from
-     * @param note of a call
-     * @return List<Call> list of calls with note containing substring
+     * Returns message(s) by given note from given set of messages
+     * @param list list of messages to get message from
+     * @param note of a message
+     * @return List<Message> list of messages with note containing substring
      */
     public static List<Message> getByNote(List<Message> list, String note) {
         List<Message> out = new ArrayList<Message>();
@@ -189,7 +189,7 @@ public class MessageManager {
     
     /**
      * Returns messages with a specific callee from given list of messages
-     * @param list list of calls to filter from
+     * @param list list of messages to filter from
      * @param callee of the messages
      * @return List of messages
      */
@@ -206,6 +206,32 @@ public class MessageManager {
         
         return out;
     }
+    
+    /**
+     * Returns message(s) by given length from given set of messages
+     * @param legnth of the messages
+     * @return List of messages with given length (substring)
+     */
+    public static List<Message> getByLength(String length) {
+        return getByLength(getAll(), length);
+    }
+    
+        /**
+     * Returns message(s) by given note from given set of messages
+     * @param list list of messages to get message from
+     * @param note of a message
+     * @return List<Message> list of messages with note containing substring
+     */
+    public static List<Message> getByLength(List<Message> list, String length) {
+        List<Message> out = new ArrayList<Message>();
+        for(Message message : list) {
+            String lengthString = String.valueOf(message.getLength());
+            if(lengthString.toLowerCase().contains(length.toLowerCase())) {
+                out.add(message);
+            }
+        }
+        return out;
+    }      
     
     /**
      * Returns messages by given destination from all stored calls

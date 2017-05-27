@@ -58,7 +58,7 @@ public class CallTableModel extends AbstractTableModel {
             case 4:
                 return call.getDirection();
             case 5:
-                return call.getLenght();
+                return call.getLength();
             case 6:
                 return call.getNote();
             default:
@@ -154,7 +154,6 @@ public class CallTableModel extends AbstractTableModel {
 
         @Override
         protected Void doInBackground() throws Exception {
-            System.out.println("Updating calls: " + calls);
                 calls = this.callList;
             return null;
         }
