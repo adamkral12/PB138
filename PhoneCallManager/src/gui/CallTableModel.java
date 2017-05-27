@@ -71,9 +71,9 @@ public class CallTableModel extends AbstractTableModel {
             case 0:
                 return texts.getString("DATETIME");
             case 1:
-                return texts.getString("CALLEE");
-            case 2:
                 return texts.getString("PREFIX");                
+            case 2:
+                return texts.getString("CALLEE");                
             case 3:
                 return texts.getString("DESTINATION");
             case 4:
@@ -137,19 +137,19 @@ public class CallTableModel extends AbstractTableModel {
         
     private static class UpdateSwingWorker extends SwingWorker<Void, Void> {
 
-        private final List<Call> calls;
-        private final CallManager callManager;
+        private final List<Call> callList;
         private final WeakReference<CallTableModel> tableModel; 
         
-        public UpdateSwingWorker(List<Call> calls, CallTableModel workModel) {
-            this.calls = calls;
+        public UpdateSwingWorker(List<Call> callList, CallTableModel workModel) {
+            System.out.println("updating calls " + calls);
             this.tableModel = new WeakReference<>(workModel);
-            callManager = LoadDataManager.getInstance().getCallManager();           
+            this.callList = callList;
         }
 
         @Override
         protected Void doInBackground() throws Exception {
             System.out.println("Updating calls: " + calls);
+            calls = this.callList;
             return null;
         }
 
@@ -157,9 +157,16 @@ public class CallTableModel extends AbstractTableModel {
         protected void done() {
             CallTableModel workModel = tableModel.get();
             if (workModel != null){
-            workModel.fireTableDataChanged();
+                workModel.fireTableDataChanged();
             }
         }
-    }    
+    }
+
+    public void updateTable (List<Call> calls,  CallTableModel callModel){
+        UpdateSwingWorker updateSwingWorker = new UpdateSwingWorker(calls, callModel);
+        updateSwingWorker.execute();       
+        //setValueAt(aValue, rowIndex, columnIndex);
+    }
+    
     
 }

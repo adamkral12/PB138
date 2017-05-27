@@ -452,7 +452,7 @@ public class Testing {
             if(true) {
                 System.out.println("All calls");
                 List<Call> list = CallManager.getAll();
-                for(Call call : list) {
+             /*   for(Call call : list) {
                     System.out.println(call);
                 }
                 System.out.println("Filter calls by OUTcoming");
@@ -461,7 +461,17 @@ public class Testing {
                 for(Call call : list) {
                     System.out.println(call);
                 }
-
+               */
+           /*     System.out.println("Filter calls by callee");
+              //  list = CallManager.getAll();
+                list = CallManager.getByCallee(list, "+ 420");
+                if (null == list) {
+                    System.out.println("no calls");
+                }
+                for(Call call : list) {
+                    System.out.println(call);
+                }
+*/
                 System.out.println("than by destination Mexico");
                 list = CallManager.getByDestination(list, CountryManager.getById("MEX"));
                 for(Call call : list) {

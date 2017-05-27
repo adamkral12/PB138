@@ -1,6 +1,7 @@
 package gui;
 
 import core.Call;
+import core.Country;
 import core.Message;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -167,18 +168,19 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         TableRowSorter<TableModel> sorterCalls = (TableRowSorter<TableModel>) jTableCalls.getRowSorter();
         String text = "(?i)" + jTextFieldFilter.getText();
         if ("Nothing".equals(selected)) {
-            sorterMessages.setRowFilter(null);
-            sorterCalls.setRowFilter(null);            
+            callList = CallManager.getAll();
         } else {
             int col = -1;
             if ("Date".equals(selected)) {
                 col = 0;
             } else if ("Callee".equals(selected)) {
-           //     callList = callManager.getByCallee(text);
+            //    callList = callManager.getByDestination(text);
+                System.out.println("Get by callee 420 " + callManager.getByCallee("420"));
             } else if ("Prefix".equals(selected)) {
                 col = 2;
             } else if ("Destination".equals(selected)) {
                 col = 3;
+                callList = CallManager.getByDestination(callList, CountryManager.getById("MEX"));
             } else if ("Direction".equals(selected)) {
                 col = 4;
             } else if ("Length".equals(selected)) {
@@ -188,6 +190,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
             }
             System.out.println("text " + text);
             System.out.println("col " + col);
+            callModel.updateTable(callList, callModel);
            // sorterMessages.setRowFilter(RowFilter.regexFilter(text, col));
            // sorterCalls.setRowFilter(RowFilter.regexFilter(text, col));            
         }

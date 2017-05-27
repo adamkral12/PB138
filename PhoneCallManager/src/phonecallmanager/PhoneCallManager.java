@@ -92,7 +92,7 @@ public class PhoneCallManager extends JApplet {
 
     private void createScene() {
         Testing.testing();
-
+/*
         Button btn = new Button();
     //    btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
@@ -104,7 +104,7 @@ public class PhoneCallManager extends JApplet {
         });
         StackPane root = new StackPane();
         root.getChildren().add(btn);
-        fxContainer.setScene(new Scene(root));
+        fxContainer.setScene(new Scene(root));*/
     }
 
     
