@@ -154,6 +154,31 @@ public class MessageManager {
     }
     
     /**
+     * Returns message(s) by given note from given set of calls
+     * @param note of the calls
+     * @return List of calls with given note (substring)
+     */
+    public static List<Message> getByNote(String note) {
+        return getByNote(getAll(), note);
+    }
+    
+        /**
+     * Returns call(s) by given note from given set of calls
+     * @param list list of calls to get call from
+     * @param note of a call
+     * @return List<Call> list of calls with note containing substring
+     */
+    public static List<Message> getByNote(List<Message> list, String note) {
+        List<Message> out = new ArrayList<Message>();
+        for(Message message : list) {
+            if(message.getNote().toLowerCase().contains(note.toLowerCase())) {
+                out.add(message);
+            }
+        }
+        return out;
+    }    
+    
+    /**
      * Returns list of messages by specific callee from all messages
      * @param callee of the messages
      * @return List of messages
@@ -171,7 +196,7 @@ public class MessageManager {
     public static List<Message> getByCallee(List<Message> list, String callee) {
         List<Message> out = new ArrayList<>();
         for(Message message : list) {
-            if(message.getCallee().equals(callee)) {
+            if(message.getCallee().toLowerCase().contains(callee.toLowerCase())) {
                 out.add(message);
             }
         }
