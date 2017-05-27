@@ -183,7 +183,7 @@ public class CallManager {
     
     /**
      * Returns call(s) by given length from given set of calls
-     * @param legnth of the calls
+     * @param length of the calls
      * @return List of calls with given length (substring)
      */
     public static List<Call> getByLength(String length) {
@@ -265,6 +265,16 @@ public class CallManager {
         return out;
     }
     
+    public static List<Call> getByDestination(List<Country> countries) {
+        List<Call> out = new ArrayList();
+        for(Call call : getAll()) {
+            if(countries.contains(call.getDestination())) {
+                out.add(call);
+            }
+        }
+        return out;
+    }
+    
     /**
      * Returns calls by given direction from all calls
      * @param direction of the calls
@@ -294,6 +304,8 @@ public class CallManager {
         return out;
     }
     
+    
+    
     /**
      * Returns calls with specific date from all calls
      * @param date of the call, must be the same as in call
@@ -320,6 +332,17 @@ public class CallManager {
             return null;
         }
         return out;
+    }
+    
+    public static List<Call> getByPrefix(List<Country> countries) {
+        List<Call> out = new ArrayList<>();
+        for(Call call : getAll()) {
+            if(countries.contains(call.getDestination())) {
+                out.add(call);
+            }
+        }
+        return out;
+            
     }
     
     /**

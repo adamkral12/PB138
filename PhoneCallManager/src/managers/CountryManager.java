@@ -158,7 +158,7 @@ public class CountryManager {
     public static List<Country> getByPrefix(String prefix) {
         List<Country> out = new ArrayList<>();
         for (Country country : countries) {
-            if(country.getPrefix().contains(prefix)) {
+            if(country.getPrefix().toLowerCase().contains(prefix.toLowerCase())) {
                 out.add(country);
             }
         }

@@ -2,10 +2,14 @@ package gui;
 
 import core.Call;
 import core.Country;
+import core.Direction;
 import core.Message;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.ResourceBundle;
 import javax.swing.JButton;
@@ -171,6 +175,71 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
             callList = CallManager.getAll();
             messageList = MessageManager.getAll();
         } else if ("Date".equals(selected)) {
+                //format yyyy-MM-ddThh:mm:ss
+                //accepts year yyyy
+                //accepts year-month yyyy-MM
+                //accepts year-month-day yyyy-MM-dd
+                //accepts whole format year-month-dayThh:mm:ss
+                if(text.contains("T")) {
+                    //ak obsahuje T, musi sediet cely format
+                    Calendar cal = Calendar.getInstance();
+                    try {
+                        cal.setTime(new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss").parse(text));
+                    } catch (ParseException e) {
+                        //TODO show allert window with correct format samlpes
+                        System.out.println("wrong date format");
+                    }
+                    callList = CallManager.getByDate(cal);
+                    messageList = MessageManager.getByDate(cal);
+                } else {
+                    //ak neobsahuje T, musi byt rok, rok-mesiac, rok-mesiac-den
+                    if(text.contains("-")) {
+                        //obsahuje -, takze rok-mesiac, alebo rok-mesiac-den
+                        String[] dateFields = text.split("-");
+                        if(dateFields.length == 2) {
+                            //obsahuje 1-krat '-', takze format yyyy-MM 
+                            Calendar cal = Calendar.getInstance();
+                            try {
+                                cal.set(Integer.parseInt(dateFields[0]), Integer.parseInt(dateFields[1]), 1);
+                                callList = CallManager.getByMonth(cal);
+                                messageList = MessageManager.getByMonth(cal);
+                            } catch (NumberFormatException e) {
+                                //TODO show alert window with correct format smaples
+                                System.out.println("wrong date");
+                            }
+                            
+                        } else if(dateFields.length == 3) {
+                            //obsahuje 2-krat '-', takze foramt yyyy-MM-dd
+                            Calendar cal = Calendar.getInstance();
+                            try {
+                                cal.set(Integer.parseInt(dateFields[0]), Integer.parseInt(dateFields[1]), Integer.parseInt(dateFields[2]));
+                                callList = CallManager.getByDay(cal);
+                                messageList = MessageManager.getByDay(cal);
+                            } catch (NumberFormatException e) {
+                                //TODO show alert window with correct format smaples
+                                System.out.println("wrong date");
+                            }
+                            
+                        } else {
+                            //TODO show alert window with correct format smaples
+                            System.out.println("wrong date");
+                        }
+                    } else {
+                        //neobsahuje '-', takze len format yyyy akceptujem
+                        Calendar cal = Calendar.getInstance();
+                        try {
+                            cal.set(Integer.parseInt(text), 0, 1);
+                            callList = CallManager.getByYear(cal);
+                            messageList = MessageManager.getByYear(cal);
+                        } catch (NumberFormatException e) {
+                            //TODO show alert windows with ocrrect format samples
+                            System.out.println("wrong year");
+                        }
+                        
+                        
+                    }
+                    
+                }
               //callList = CallManager.getByDate(text);
               //messageList = MessageManager.getByDate(text);
                throw new UnsupportedOperationException("Implement CallManager.getByDate(String substringDate) method!");
@@ -178,17 +247,29 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                 callList = CallManager.getByCallee(text);
                 messageList = MessageManager.getByCallee(text);
             } else if ("Prefix".equals(selected)) {
-                throw new UnsupportedOperationException("Implement CallManager.getByPrefix(List<Country> CountryManager.getByPrefix(String substringPrefix)) method!");
-                //callList = CallManager.getByPrefix(CountryManager.getByPrefix(text));
-                //messageList = MessageManager.getByPrefix(CountryManager.getByPrefix(text));
+                //throw new UnsupportedOperationException("Implement CallManager.getByPrefix(List<Country> CountryManager.getByPrefix(String substringPrefix)) method!");
+                //TO BE TESTED
+                callList = CallManager.getByPrefix(CountryManager.getByPrefix(text));
+                messageList = MessageManager.getByPrefix(CountryManager.getByPrefix(text));
             } else if ("Destination".equals(selected)) {
-                throw new UnsupportedOperationException("Implement CallManager.getByDestination(List<Country> CountryManager.getByName(String substringDestination)) method!");
-              //  callList = CallManager.getByDestination(CountryManager.getByName(text));
-              //  messageList = MessageManager.getByDestination(CountryManager.getByName(text));              
+                //throw new UnsupportedOperationException("Implement CallManager.getByDestination(List<Country> CountryManager.getByName(String substringDestination)) method!");
+                //TO BE TESTED
+                callList = CallManager.getByDestination(CountryManager.getByName(text));
+                messageList = MessageManager.getByDestination(CountryManager.getByName(text));              
             } else if ("Direction".equals(selected)) {
-                throw new UnsupportedOperationException("Implement CallManager.getByDirection(String substringDirection) method!");
-              //  callList = CallManager.getByDirection(String substringDirection); 
-              //  MessageList = MessageManager.getByDirection(String substringDirection);                              
+                //throw new UnsupportedOperationException("Implement CallManager.getByDirection(String substringDirection) method!");
+                //TO BE TESTED
+                if("in".contains(text.toLowerCase())) {
+                    callList = CallManager.getByDirection(Direction.IN); 
+                    messageList = MessageManager.getByDirection(Direction.IN);                              
+                } else if ("out".contains(text.toLowerCase())) {
+                    callList = CallManager.getByDirection(Direction.OUT); 
+                    messageList = MessageManager.getByDirection(Direction.OUT);                              
+                } else {
+                    callList = new ArrayList<>();
+                    messageList = new ArrayList();
+                }
+                
             } else if ("Length".equals(selected)) {
                 callList = CallManager.getByLength(text); 
                 messageList = MessageManager.getByLength(text);                               

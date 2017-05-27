@@ -262,6 +262,16 @@ public class MessageManager {
         return out;
     }
     
+    public static List<Message> getByDestination(List<Country> countries) {
+        List<Message> out = new ArrayList();
+        for(Message message : getAll()) {
+            if(countries.contains(message.getDestination())) {
+                out.add(message);
+            }
+        }
+        return out;
+    }
+    
     /**
      * Returns messages by given direction from all stored messages
      * @param direction of the message
@@ -318,6 +328,17 @@ public class MessageManager {
             return null;
         }
         return out;        
+    }
+    
+    public static List<Message> getByPrefix(List<Country> countries) {
+        List<Message> out = new ArrayList<>();
+        for(Message message : getAll()) {
+            if(countries.contains(message.getDestination())) {
+                out.add(message);
+            }
+        }
+        return out;
+            
     }
     
     /**
