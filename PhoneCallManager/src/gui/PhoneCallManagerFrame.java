@@ -52,37 +52,45 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTableMessages = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableCalls = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTableMessages = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(900, 300));
+        setPreferredSize(new java.awt.Dimension(870, 500));
 
-        jTableMessages.setModel(new gui.MessageTableModel(messageModel));
-        jScrollPane2.setViewportView(jTableMessages);
-
-        jTabbedPane2.addTab("Messages", jScrollPane2);
+        jTabbedPane2.setMaximumSize(new java.awt.Dimension(850, 150));
+        jTabbedPane2.setMinimumSize(new java.awt.Dimension(850, 150));
+        jTabbedPane2.setName(""); // NOI18N
 
         jTableCalls.setModel(new CallTableModel(callModel));
-        jTableCalls.setMaximumSize(new java.awt.Dimension(850, 150));
-        jTableCalls.setMinimumSize(new java.awt.Dimension(850, 150));
+        jTableCalls.setMaximumSize(new java.awt.Dimension(800, 150));
+        jTableCalls.setMinimumSize(new java.awt.Dimension(800, 150));
         jScrollPane1.setViewportView(jTableCalls);
 
         jTabbedPane2.addTab("Calls", jScrollPane1);
+
+        jTableMessages.setModel(new gui.MessageTableModel(messageModel));
+        jTableMessages.setMaximumSize(new java.awt.Dimension(850, 150));
+        jTableMessages.setMinimumSize(new java.awt.Dimension(850, 150));
+        jScrollPane2.setViewportView(jTableMessages);
+
+        jTabbedPane2.addTab("Messages", jScrollPane2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 714, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(282, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(522, Short.MAX_VALUE))
         );
 
         pack();
