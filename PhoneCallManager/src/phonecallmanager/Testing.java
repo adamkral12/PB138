@@ -39,7 +39,7 @@ public class Testing {
         System.out.println("---TEST START--");
         //true - run test, false - dont ; in if statement
         // <editor-fold defaultstate="collapsed" desc="TEST: List all objects, do basic stuff if them">
-        if(true) {
+        if(false) {
             System.out.println("TEST: List all objects, do basic stuff if them");
             
             
@@ -126,7 +126,7 @@ public class Testing {
         // </editor-fold>
         
         // <editor-fold defaultstate="collapsed" desc="TEST : Price tests">
-        if(true){
+        if(false){
             System.out.println("Testing prices");
 
             Double[] callPrices = {0.0, 2.0, 0.0, 0.0, 1.0};
@@ -147,7 +147,7 @@ public class Testing {
         }
         // </editor-fold>
         // <editor-fold defaultstate="collapsed" desc="TEST : Sort tests">
-        if(true) {
+        if(false) {
             System.out.println("SORTING TESTS");
             // <editor-fold defaultstate="collapsed" desc="TEST : Sorting calls">
             if(true) {
@@ -277,7 +277,7 @@ public class Testing {
             
             
             // <editor-fold defaultstate="collapsed" desc="TEST : Sorting calls">
-            if(true) {
+            if(false) {
                 
                 System.out.println("Sort messages by id");
 
@@ -404,7 +404,7 @@ public class Testing {
         }
         // </editor-fold>
         // <editor-fold defaultstate="collapsed" desc="TEST : get by day,month,year">
-        if(true) {
+        if(false) {
             System.out.println("Get by date: 2017-05-01");
             System.out.println("Calls");
             Calendar cal = Calendar.getInstance();
@@ -444,6 +444,55 @@ public class Testing {
             
         }
         // </editor-fold>
+        
+        // <editor-fold defaultstate="collapsed" desc="TEST : Filter tests">
+        if(true) {
+            System.out.println("Filter tests");
+            
+            if(true) {
+                System.out.println("All calls");
+                List<Call> list = CallManager.getAll();
+                for(Call call : list) {
+                    System.out.println(call);
+                }
+                System.out.println("Filter calls by OUTcoming");
+
+                list = CallManager.getByDirection(list, Direction.OUT);
+                for(Call call : list) {
+                    System.out.println(call);
+                }
+
+                System.out.println("than by destination Mexico");
+                list = CallManager.getByDestination(list, CountryManager.getById("MEX"));
+                for(Call call : list) {
+                    System.out.println(call);
+                }
+            }
+            if(true) {
+                System.out.println("All messages");
+
+                List<Message> list = MessageManager.getAll();
+                for(Message message : list) {
+                    System.out.println(message);
+                }
+                
+                System.out.println("Filter by date 29.4.2017");
+                Calendar cal = Calendar.getInstance();
+                cal.set(2017, 3, 29);
+                list = MessageManager.getByDay(list, cal);
+                for(Message message : list) {
+                    System.out.println(message);
+                }
+                
+                System.out.println("then by country Czech republic");
+                list = MessageManager.getByDestination(list, CountryManager.getById("CZE"));
+                for(Message message : list) {
+                    System.out.println(message);
+                }
+            }
+        }
+        // </editor-fold>
+
         System.out.println("---TEST END---");
     }
     

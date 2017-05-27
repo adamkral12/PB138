@@ -86,7 +86,8 @@ public class CallManager {
             try {
                 cal.setTime(df.parse(pDate));
             } catch (ParseException ex) {
-                System.out.println("Getting date and time for the call failed.");
+                System.out.println("Getting date and time for the call "
+                        + "failed.");
             }
 
             Call call = new Call(cid, length, callee, destination, direction,
@@ -131,12 +132,22 @@ public class CallManager {
     }
     
     /**
-     * Returns call by given id
+     * Returns call by given id from all stored calls
      * @param id of a call
      * @return call with id id
      */
     public static Call getById(int id) {
-        for(Call call : getAll()) {
+        return getById(getAll(), id);
+    }
+    
+    /**
+     * Returns call by given id from given set of calls
+     * @param list list of calls to get call from
+     * @param id of a call
+     * @return call with id id
+     */
+    public static Call getById(List<Call> list, int id) {
+        for(Call call : list) {
             if(call.getId() == id) {
                 return call;
             }
@@ -145,13 +156,23 @@ public class CallManager {
     }
     
     /**
-     * Returns list of calls with specific callee
+     * Returns list of calls with specific callee from all stored calls
      * @param callee of the calls
      * @return List of calls with given callee
      */
     public static List<Call> getByCallee(String callee) {
+        return getByCallee(getAll(), callee);
+    }
+    
+    /**
+     * Returns list of calls with specific callee for given list of calls
+     * @param list list of calls to filter from
+     * @param callee of the calls
+     * @return List of calls with given callee
+     */
+    public static List<Call> getByCallee(List<Call> list, String callee) {
         List<Call> out = new ArrayList();
-        for(Call call : getAll()) {
+        for(Call call : list) {
             if(call.getCallee().equals(callee)) {
                 out.add(call);
             }
@@ -163,13 +184,24 @@ public class CallManager {
     }
     
     /**
-     * Returns calls by given destination
+     * Returns calls by given destination from all calls
      * @param country of the call
      * @return List of calls with specific country
      */
     public static List<Call> getByDestination(Country country) {
+        return getByDestination(getAll(), country);
+    }
+    
+    /**
+     * Returns calls by given destination from given list of calls
+     * @param list list of calls to filter from
+     * @param country of the call
+     * @return List of calls with specific country
+     */
+    public static List<Call> getByDestination(List<Call> list
+            , Country country) {
         List<Call> out = new ArrayList();
-        for(Call call : getAll()) {
+        for(Call call : list) {
             if(call.getDestination().equals(country)) {
                 out.add(call);
             }
@@ -181,13 +213,24 @@ public class CallManager {
     }
     
     /**
-     * Returns calls by given direction
+     * Returns calls by given direction from all calls
      * @param direction of the calls
      * @return List of calls
      */
     public static List<Call> getByDirection(Direction direction) {
+        return getByDirection(getAll(), direction);
+    }
+    
+    /**
+     * Returns calls by given direction from given list of calls
+     * @param list list of calls to filter from
+     * @param direction of the calls
+     * @return List of calls
+     */
+    public static List<Call> getByDirection(List<Call> list
+            , Direction direction) {
         List<Call> out = new ArrayList();
-        for(Call call : getAll()) {
+        for(Call call : list) {
             if(call.getDirection() == direction) {
                 out.add(call);
             }
@@ -199,13 +242,23 @@ public class CallManager {
     }
     
     /**
-     * Returns calls with specific date
+     * Returns calls with specific date from all calls
      * @param date of the call, must be the same as in call
      * @return List of calls
      */
     public static List<Call> getByDate(Calendar date) {
+        return getByDate(getAll(), date);
+    }
+    
+    /**
+     * Returns calls with specific date from given list of calls
+     * @param list list of calls to filter from
+     * @param date of the call, must be the same as in call
+     * @return List of calls
+     */
+    public static List<Call> getByDate(List<Call> list, Calendar date) {
         List<Call> out = new ArrayList();
-        for(Call call : getAll()) {
+        for(Call call : list) {
             if(call.getDateTime().equals(date)) {
                 out.add(call);
             }
@@ -216,9 +269,30 @@ public class CallManager {
         return out;
     }
     
+    /**
+     * Get calls by specified Year, Month and Day in the year from all calls
+     * Caution: Month starts from 0 - January
+     * @param cal Calendar with a year, month and day to get calls for, it 
+     * should have specified YEAR, MONTH and DAY
+     * @return list of calls
+     */
     public static List<Call> getByDay(Calendar cal) {
+        return getByDay(getAll(), cal);
+    }
+    
+    /**
+     * Get calls by specified Year, Month and Day in the year from given 
+     * list of calls
+     * Caution: Month starts from 0 - January
+     * @param list list of calls to filter from
+     * @param cal Calendar with a year, month and day to get calls for, it 
+     * should have specified YEAR, MONTH and DAY
+     * @return list of calls
+     */
+    
+    public static List<Call> getByDay(List<Call> list, Calendar cal) {
         List<Call> out = new ArrayList();
-        for(Call call : getAll()) {
+        for(Call call : list) {
             SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
             if(fmt.format(cal.getTime())
                     .equals(fmt.format(call.getDateTime().getTime()))) {
@@ -232,9 +306,31 @@ public class CallManager {
     
     }
     
+    /**
+     * Get calls by specified Year and Month in the year from all calls
+     * Caution: Month starts from 0 - January
+     * @param cal Calendar with a year and month to get calls for, it should 
+     * have specified YEAR and MONTH
+     * @return list of calls
+     */
+    
     public static List<Call> getByMonth(Calendar cal) {
+        return getByMonth(getAll(), cal);
+    }
+    
+    /**
+     * Get calls by specified Year and Month in the year from given list of 
+     * calls
+     * Caution: Month starts from 0 - January
+     * @param list list of calls to filter from
+     * @param cal Calendar with a year and month to get calls for, it should 
+     * have specified YEAR and MONTH
+     * @return list of calls
+     */
+    
+    public static List<Call> getByMonth(List<Call> list, Calendar cal) {
         List<Call> out = new ArrayList();
-        for(Call call : getAll()) {
+        for(Call call : list) {
             SimpleDateFormat fmt = new SimpleDateFormat("yyyyMM");
             if(fmt.format(cal.getTime())
                     .equals(fmt.format(call.getDateTime().getTime()))) {
@@ -247,9 +343,28 @@ public class CallManager {
         return out;
     }
     
+    /**
+     * Get calls by specified year from all calls
+     * @param cal Calendar with a year to get calls for, it should have 
+     * specified YEAR
+     * @return list of calls
+     */
+    
     public static List<Call> getByYear(Calendar cal) {
+        return getByYear(getAll(), cal);
+    }
+    
+    /**
+     * Get calls by specified year from given list of calls
+     * @param list list of calls to filter from
+     * @param cal Calendar with a year to get calls for, it should have 
+     * specified YEAR
+     * @return list of calls
+     */
+    
+    public static List<Call> getByYear(List<Call> list, Calendar cal) {
         List<Call> out = new ArrayList();
-        for(Call call : getAll()) {
+        for(Call call : list) {
             SimpleDateFormat fmt = new SimpleDateFormat("yyyy");
             if(fmt.format(cal.getTime())
                     .equals(fmt.format(call.getDateTime().getTime()))) {

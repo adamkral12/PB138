@@ -86,7 +86,8 @@ public class MessageManager {
             try {
                 cal.setTime(df.parse(pDate));
             } catch (ParseException ex) {
-                System.out.println("Getting time and date for the message failed.");
+                System.out.println("Getting time and date for the message "
+                        + "failed.");
             }
                         
             Message message = new Message(mid, length, callee, destination, 
@@ -114,7 +115,8 @@ public class MessageManager {
                 return false;
             }
         } catch (XPathExpressionException ex) {
-            Logger.getLogger(MessageManager.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MessageManager.class.getName()).log(Level.SEVERE
+                    , null, ex);
         }
         return false;
     }
@@ -128,12 +130,22 @@ public class MessageManager {
     }
     
     /**
-     * Returns message by given id
-     * @param id of the message
+     * Returns message by given id from all stored messages
+     * @param id of a message
      * @return message with id id
      */
     public static Message getById(int id) {
-        for(Message message : getAll()) {
+        return getById(getAll(), id);
+    }
+    
+    /**
+     * Returns message by given id from given set of messages
+     * @param list list of messages to get message from
+     * @param id of the message
+     * @return message with id id
+     */
+    public static Message getById(List<Message> list, int id) {
+        for(Message message : list) {
             if(message.getId() == id) {
                 return message;
             }
@@ -142,13 +154,23 @@ public class MessageManager {
     }
     
     /**
-     * Returns messages with a specific callee
+     * Returns list of messages by specific callee from all messages
      * @param callee of the messages
      * @return List of messages
      */
     public static List<Message> getByCallee(String callee) {
+        return getByCallee(getAll(), callee);
+    }
+    
+    /**
+     * Returns messages with a specific callee from given list of messages
+     * @param list list of calls to filter from
+     * @param callee of the messages
+     * @return List of messages
+     */
+    public static List<Message> getByCallee(List<Message> list, String callee) {
         List<Message> out = new ArrayList<>();
-        for(Message message : getAll()) {
+        for(Message message : list) {
             if(message.getCallee().equals(callee)) {
                 out.add(message);
             }
@@ -161,13 +183,24 @@ public class MessageManager {
     }
     
     /**
-     * Returns messages by given destination
+     * Returns messages by given destination from all stored calls
+     * @param country of the message
+     * @return List of messages
+     */
+    public static List<Message> getByDestination(Country country) {
+        return getByDestination(getAll(), country);
+    }
+    
+    /**
+     * Returns messages by given destination from given list of messages
+     * @param list list of messages to filter from
      * @param country of the message
      * @return  List of messages
      */
-    public static List<Message> getByDestination(Country country) {
+    public static List<Message> getByDestination(List<Message> list
+            , Country country) {
         List<Message> out = new ArrayList<>();
-        for(Message message : getAll()) {
+        for(Message message : list) {
             if(message.getDestination().equals(country)) {
                 out.add(message);
             }
@@ -179,13 +212,25 @@ public class MessageManager {
     }
     
     /**
-     * Returns messages by given direction
+     * Returns messages by given direction from all stored messages
+     * @param direction of the message
+     * @return List of messages
+     */
+    
+    public static List<Message> getByDirection(Direction direction) {
+        return getByDirection(getAll(), direction);
+    }
+    
+    /**
+     * Returns messages by given direction from given list of messages
+     * @param list list of messages to filter from
      * @param direction of the messages
      * @return List of messages
      */
-    public static List<Message> getByDirection(Direction direction) {
+    public static List<Message> getByDirection(List<Message> list
+            , Direction direction) {
         List<Message> out = new ArrayList<>();
-        for(Message message : getAll()) {
+        for(Message message : list) {
             if(message.getDirection() == direction) {
                 out.add(message);
             }
@@ -197,13 +242,23 @@ public class MessageManager {
     }
     
     /**
-     * Return messages with specific date
+     * Return messages with specific date from all stored messages
      * @param date of the message
      * @return List of messages
      */
-    public static List<Message> getByDate(Date date) {
+    public static List<Message> getByDate(Calendar date) {
+        return getByDate(getAll(), date);
+    }
+    
+    /**
+     * Return messages with specific date from given messages
+     * @param list list of messages to filter from
+     * @param date of the message
+     * @return List of messages
+     */
+    public static List<Message> getByDate(List<Message> list, Calendar date) {
         List<Message> out = new ArrayList<>();
-        for(Message message : getAll()) {
+        for(Message message : list) {
             if(message.getDateTime().equals(date)) {
                 out.add(message);
             }
@@ -214,9 +269,30 @@ public class MessageManager {
         return out;        
     }
     
+    /**
+     * Get messages by specified Year, Month and Day in the year from all 
+     * messages
+     * Caution: Month starts from 0 - January
+     * @param cal Calendar with a year, month and day to get messages for, it 
+     * should have specified YEAR, MONTH and DAY
+     * @return list of messages
+     */
     public static List<Message> getByDay(Calendar cal) {
+        return getByDay(getAll(), cal);
+    }
+    
+    /**
+     * Get messages by specified Year, Month and Day in the year from given 
+     * list of messages
+     * Caution: Month starts from 0 - January
+     * @param list list of messages to filter from
+     * @param cal Calendar with a year, month and day to get messages for, it 
+     * should have specified YEAR, MONTH and DAY
+     * @return list of messages
+     */
+    public static List<Message> getByDay(List<Message> list, Calendar cal) {
         List<Message> out = new ArrayList();
-        for(Message message : getAll()) {
+        for(Message message : list) {
             SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
             if(fmt.format(cal.getTime())
                     .equals(fmt.format(message.getDateTime().getTime()))) {
@@ -230,9 +306,29 @@ public class MessageManager {
     
     }
     
+    /**
+     * Get messages by specified Year and Month in the year from all messages
+     * Caution: Month starts from 0 - January
+     * @param cal Calendar with a year and month to get messages for, it should 
+     * have specified YEAR and MONTH
+     * @return list of messages
+     */
     public static List<Message> getByMonth(Calendar cal) {
+        return getByMonth(getAll(), cal);
+    }
+    
+    /**
+     * Get messages by specified Year and Month in the year from given list of 
+     * messages
+     * Caution: Month starts from 0 - January
+     * @param list list of messages to filter from
+     * @param cal Calendar with a year and month to get messages for, it should 
+     * have specified YEAR and MONTH
+     * @return list of messages
+     */
+    public static List<Message> getByMonth(List<Message> list, Calendar cal) {
         List<Message> out = new ArrayList();
-        for(Message message : getAll()) {
+        for(Message message : list) {
             SimpleDateFormat fmt = new SimpleDateFormat("yyyyMM");
             if(fmt.format(cal.getTime())
                     .equals(fmt.format(message.getDateTime().getTime()))) {
@@ -244,10 +340,26 @@ public class MessageManager {
         }
         return out;
     }
-    
+    /**
+     * Get messages by specified year from all messages
+     * @param cal Calendar with a year to get messages for, it should have 
+     * specified YEAR
+     * @return list of message
+     */
     public static List<Message> getByYear(Calendar cal) {
+        return getByYear(getAll(), cal);
+    }
+    
+    /**
+     * Get messages by specified year from given list of messages
+     * @param list list of messages to filter from
+     * @param cal Calendar with a year to get messages for, it should have 
+     * specified YEAR
+     * @return List of messages
+     */
+    public static List<Message> getByYear(List<Message> list, Calendar cal) {
         List<Message> out = new ArrayList();
-        for(Message message : getAll()) {
+        for(Message message : list) {
             SimpleDateFormat fmt = new SimpleDateFormat("yyyy");
             if(fmt.format(cal.getTime())
                     .equals(fmt.format(message.getDateTime().getTime()))) {
