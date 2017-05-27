@@ -1,10 +1,18 @@
 package gui;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.RowFilter;
 import javax.swing.RowSorter;
 import javax.swing.SortOrder;
+import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
 /**
@@ -29,8 +37,8 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
        // jTableCalls.setRowSorter(sorter);
        jTableCalls.setAutoCreateRowSorter(true);
        jTableMessages.setAutoCreateRowSorter(true);
-   
-       /*
+     //  TableRowSorter<CallTableModel> sorter = jTableCalls.getRowSorter();
+                /*
        TableRowSorter<CallTableModel> sorter = new TableRowSorter<CallTableModel>(callModel);
        jTableCalls.setRowSorter(sorter);
 
@@ -39,6 +47,26 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
        sortKeys.add(new RowSorter.SortKey(2, SortOrder.ASCENDING));
        sorter.setSortKeys(sortKeys);
        */
+       
+  JPanel pnl = new JPanel();
+    pnl.add(new JLabel("Filter expression:"));
+    final JTextField txtFE = new JTextField(25);
+    pnl.add(txtFE);
+    JButton btnSetFE = new JButton("Set Filter Expression");
+    ActionListener al;
+    al = new ActionListener() {
+      
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        String expr = txtFE.getText();
+     //   jTableCalls.getRowSorter().setRowFilter(RowFilter.regexFilter(expr));
+        jTableCalls.getRowSorter().setSortKeys(null);
+      }
+
+    };
+    btnSetFE.addActionListener(al);
+    pnl.add(btnSetFE);
+    
     }
 
     /**
@@ -56,6 +84,8 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         jTableCalls = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableMessages = new javax.swing.JTable();
+        jComboBoxFilterBy = new javax.swing.JComboBox<>();
+        jTextFieldFilter = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(870, 500));
@@ -78,24 +108,86 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Messages", jScrollPane2);
 
+        jComboBoxFilterBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nothing", "Date", "Callee", "Prefix", "Destination", "Direction", "Length", "Note" }));
+        jComboBoxFilterBy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxFilterByActionPerformed(evt);
+            }
+        });
+
+        jTextFieldFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldFilterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jComboBoxFilterBy, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextFieldFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(282, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(522, Short.MAX_VALUE))
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxFilterBy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldFilter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(436, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jComboBoxFilterByActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxFilterByActionPerformed
+        updateFilter();
+    }//GEN-LAST:event_jComboBoxFilterByActionPerformed
+
+    private void jTextFieldFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldFilterActionPerformed
+        updateFilter();
+    }//GEN-LAST:event_jTextFieldFilterActionPerformed
+
+    protected void updateFilter() {
+        Object selected = jComboBoxFilterBy.getSelectedItem();
+        TableRowSorter<TableModel> sorterMessages = (TableRowSorter<TableModel>) jTableMessages.getRowSorter();
+        TableRowSorter<TableModel> sorterCalls = (TableRowSorter<TableModel>) jTableCalls.getRowSorter();
+        String text = "(?i)" + jTextFieldFilter.getText();
+        if ("Nothing".equals(selected)) {
+            sorterMessages.setRowFilter(null);
+            sorterCalls.setRowFilter(null);            
+        } else {
+            int col = -1;
+            if ("Date".equals(selected)) {
+                col = 0;
+            } else if ("Callee".equals(selected)) {
+                col = 1;
+            } else if ("Prefix".equals(selected)) {
+                col = 2;
+            } else if ("Destination".equals(selected)) {
+                col = 3;
+            } else if ("Direction".equals(selected)) {
+                col = 4;
+            } else if ("Length".equals(selected)) {
+                col = 5;
+            } else if ("Note".equals(selected)) {
+                col = 6;
+            }
+            System.out.println("text " + text);
+            System.out.println("col " + col);
+            sorterMessages.setRowFilter(RowFilter.regexFilter(text, col));
+            sorterCalls.setRowFilter(RowFilter.regexFilter(text, col));            
+        }
+    }  
     /**
      * @param args the command line arguments
      */
@@ -135,11 +227,13 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBoxFilterBy;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTableCalls;
     private javax.swing.JTable jTableMessages;
+    private javax.swing.JTextField jTextFieldFilter;
     // End of variables declaration//GEN-END:variables
 }
