@@ -37,7 +37,7 @@ public class MessageTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 6;
+        return 7;
     }
 
     @Override
@@ -47,14 +47,16 @@ public class MessageTableModel extends AbstractTableModel {
             case 0:
                 return message.getDateTime().getTime(); 
             case 1:
-                return message.getDestination().getPrefix() + " " + message.getCallee();
+                return message.getDestination().getPrefix();
             case 2:
-                return message.getDestination().getName();
+                return  message.getCallee();
             case 3:
-                return message.getDirection();
+                return message.getDestination().getName();
             case 4:
-                return message.getLenght();
+                return message.getDirection();
             case 5:
+                return message.getLenght();
+            case 6:
                 return message.getNote();
             default:
                 throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
@@ -67,14 +69,16 @@ public class MessageTableModel extends AbstractTableModel {
             case 0:
                 return texts.getString("DATETIME");
             case 1:
-                return texts.getString("CALLEE");
+                return texts.getString("PREFIX");
             case 2:
-                return texts.getString("DESTINATION");
+                return texts.getString("CALLEE");
             case 3:
+                return texts.getString("DESTINATION");
+            case 4:    
                 return texts.getString("DIRECTION");
-            case 4:
-                return texts.getString("LENGTH");
             case 5:
+                return texts.getString("LENGTH");
+            case 6:
                 return texts.getString("NOTE");
             default:
                 throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
@@ -91,10 +95,12 @@ public class MessageTableModel extends AbstractTableModel {
             case 2:
                 return String.class;
             case 3:
-                return Direction.class;
+                return String.class;
             case 4:
-                return Integer.class;
+                return Direction.class;
             case 5:
+                return Integer.class;
+            case 6:
                 return String.class;
             default:
                 throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));

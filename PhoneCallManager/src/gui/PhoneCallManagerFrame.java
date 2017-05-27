@@ -1,6 +1,11 @@
 package gui;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -24,6 +29,16 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
        // jTableCalls.setRowSorter(sorter);
        jTableCalls.setAutoCreateRowSorter(true);
        jTableMessages.setAutoCreateRowSorter(true);
+   
+       /*
+       TableRowSorter<CallTableModel> sorter = new TableRowSorter<CallTableModel>(callModel);
+       jTableCalls.setRowSorter(sorter);
+
+       List<RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>();
+       sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
+       sortKeys.add(new RowSorter.SortKey(2, SortOrder.ASCENDING));
+       sorter.setSortKeys(sortKeys);
+       */
     }
 
     /**

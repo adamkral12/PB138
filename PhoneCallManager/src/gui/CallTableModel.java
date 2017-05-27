@@ -39,7 +39,7 @@ public class CallTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 6;
+        return 7;
     }
 
     @Override
@@ -49,14 +49,16 @@ public class CallTableModel extends AbstractTableModel {
             case 0:
                 return call.getDateTime().getTime(); 
             case 1:
-                return call.getDestination().getPrefix() + " " + call.getCallee();
+                return call.getDestination().getPrefix();
             case 2:
-                return call.getDestination().getName();
+                return call.getCallee();
             case 3:
-                return call.getDirection();
+                return call.getDestination().getName();
             case 4:
-                return call.getLenght();
+                return call.getDirection();
             case 5:
+                return call.getLenght();
+            case 6:
                 return call.getNote();
             default:
                 throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
@@ -71,12 +73,14 @@ public class CallTableModel extends AbstractTableModel {
             case 1:
                 return texts.getString("CALLEE");
             case 2:
-                return texts.getString("DESTINATION");
+                return texts.getString("PREFIX");                
             case 3:
-                return texts.getString("DIRECTION");
+                return texts.getString("DESTINATION");
             case 4:
-                return texts.getString("LENGTH");
+                return texts.getString("DIRECTION");
             case 5:
+                return texts.getString("LENGTH");
+            case 6:
                 return texts.getString("NOTE");
             default:
                 throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
@@ -91,12 +95,14 @@ public class CallTableModel extends AbstractTableModel {
             case 1:
                 return String.class;
             case 2:
-                return String.class;
+                return String.class;    
             case 3:
-                return Direction.class;
+                return String.class;
             case 4:
-                return Integer.class;
+                return Direction.class;
             case 5:
+                return Integer.class;
+            case 6:
                 return String.class;
             default:
                 throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
