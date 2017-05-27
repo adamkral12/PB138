@@ -1,5 +1,7 @@
 package gui;
 
+import core.Call;
+import core.Message;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ import javax.swing.RowSorter;
 import javax.swing.SortOrder;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import managers.*;
 
 /**
  *
@@ -23,6 +26,10 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
 
     private final CallTableModel callModel;
     private final MessageTableModel messageModel;
+    private final MessageManager messageManager;
+    private final CallManager callManager;
+    private List<Call> callList;
+    private List<Message> messageList;
     
    private static final ResourceBundle texts = ResourceBundle.getBundle("i18n/texts");
     /**
@@ -33,20 +40,17 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         initComponents();
         callModel = (CallTableModel) jTableCalls.getModel();
         messageModel = (MessageTableModel) jTableMessages.getModel();
+        messageManager = LoadDataManager.getInstance().getMessageManager();
+        callManager = LoadDataManager.getInstance().getCallManager();
+        callList = callManager.getAll();
+        System.out.println("Call list = " + callList);
+        messageList = messageManager.getAll();
       //  TableRowSorter sorter = new TableRowSorter<CallTableModel>(callModel);
        // jTableCalls.setRowSorter(sorter);
        jTableCalls.setAutoCreateRowSorter(true);
        jTableMessages.setAutoCreateRowSorter(true);
      //  TableRowSorter<CallTableModel> sorter = jTableCalls.getRowSorter();
-                /*
-       TableRowSorter<CallTableModel> sorter = new TableRowSorter<CallTableModel>(callModel);
-       jTableCalls.setRowSorter(sorter);
 
-       List<RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>();
-       sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
-       sortKeys.add(new RowSorter.SortKey(2, SortOrder.ASCENDING));
-       sorter.setSortKeys(sortKeys);
-       */
        
   JPanel pnl = new JPanel();
     pnl.add(new JLabel("Filter expression:"));
@@ -170,7 +174,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
             if ("Date".equals(selected)) {
                 col = 0;
             } else if ("Callee".equals(selected)) {
-                col = 1;
+           //     callList = callManager.getByCallee(text);
             } else if ("Prefix".equals(selected)) {
                 col = 2;
             } else if ("Destination".equals(selected)) {
@@ -184,8 +188,8 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
             }
             System.out.println("text " + text);
             System.out.println("col " + col);
-            sorterMessages.setRowFilter(RowFilter.regexFilter(text, col));
-            sorterCalls.setRowFilter(RowFilter.regexFilter(text, col));            
+           // sorterMessages.setRowFilter(RowFilter.regexFilter(text, col));
+           // sorterCalls.setRowFilter(RowFilter.regexFilter(text, col));            
         }
     }  
     /**

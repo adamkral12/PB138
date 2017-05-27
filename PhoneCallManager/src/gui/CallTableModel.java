@@ -122,7 +122,6 @@ public class CallTableModel extends AbstractTableModel {
         @Override
         protected Void doInBackground() throws Exception {            
             calls = callManager.getAll();
-        //    log.info("Retrieving employees: " + calls);
             return null;
         }
 
@@ -135,5 +134,32 @@ public class CallTableModel extends AbstractTableModel {
             }
         }
     }
+        
+    private static class UpdateSwingWorker extends SwingWorker<Void, Void> {
+
+        private final List<Call> calls;
+        private final CallManager callManager;
+        private final WeakReference<CallTableModel> tableModel; 
+        
+        public UpdateSwingWorker(List<Call> calls, CallTableModel workModel) {
+            this.calls = calls;
+            this.tableModel = new WeakReference<>(workModel);
+            callManager = LoadDataManager.getInstance().getCallManager();           
+        }
+
+        @Override
+        protected Void doInBackground() throws Exception {
+            System.out.println("Updating calls: " + calls);
+            return null;
+        }
+
+        @Override
+        protected void done() {
+            CallTableModel workModel = tableModel.get();
+            if (workModel != null){
+            workModel.fireTableDataChanged();
+            }
+        }
+    }    
     
 }
