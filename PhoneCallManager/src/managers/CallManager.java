@@ -156,6 +156,31 @@ public class CallManager {
     }
     
     /**
+     * Returns call(s) by given note from given set of calls
+     * @param note of the calls
+     * @return List of calls with given note (substring)
+     */
+    public static List<Call> getByNote(String note) {
+        return getByNote(getAll(), note);
+    }
+    
+        /**
+     * Returns call(s) by given note from given set of calls
+     * @param list list of calls to get call from
+     * @param note of a call
+     * @return List<Call> list of calls with note containing substring
+     */
+    public static List<Call> getByNote(List<Call> list, String note) {
+        List<Call> out = new ArrayList<Call>();
+        for(Call call : list) {
+            if(call.getNote().toLowerCase().contains(note.toLowerCase())) {
+                out.add(call);
+            }
+        }
+        return out;
+    }
+    
+    /**
      * Returns list of calls with specific callee from all stored calls
      * @param callee of the calls
      * @return List of calls with given callee
@@ -173,7 +198,8 @@ public class CallManager {
     public static List<Call> getByCallee(List<Call> list, String callee) {
         List<Call> out = new ArrayList();
         for(Call call : list) {
-            if(call.getCallee().equals(callee)) {
+            System.out.println("Get by callee, callee = " + call.getCallee() + ", given string = " + callee);
+            if(call.getCallee().toLowerCase().contains(callee.toLowerCase())) {
                 out.add(call);
             }
         }
