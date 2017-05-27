@@ -190,7 +190,6 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
               //  callList = CallManager.getByDirection(String substringDirection); 
               //  MessageList = MessageManager.getByDirection(String substringDirection);                              
             } else if ("Length".equals(selected)) {
-              //  throw new UnsupportedOperationException("Implement CallManager.getByLength(String substringLength) method!");
                 callList = CallManager.getByLength(text); 
                 messageList = MessageManager.getByLength(text);                               
             } else if ("Note".equals(selected)) {
