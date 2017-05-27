@@ -1,5 +1,6 @@
 package gui;
 
+import core.Direction;
 import core.Message;
 import managers.MessageManager;
 import java.lang.ref.WeakReference;
@@ -90,7 +91,7 @@ public class MessageTableModel extends AbstractTableModel {
             case 2:
                 return String.class;
             case 3:
-                return String.class;
+                return Direction.class;
             case 4:
                 return Integer.class;
             case 5:
