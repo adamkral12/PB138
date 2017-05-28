@@ -5,6 +5,7 @@ import core.Message;
 import managers.MessageManager;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -46,7 +47,12 @@ public class MessageTableModel extends AbstractTableModel {
         Message message = messages.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return message.getDateTime().getTime(); 
+                Calendar dateTime = message.getDateTime();
+                return dateTime.get(Calendar.YEAR) + "-" + 
+                        dateTime.get(Calendar.MONTH) + "-" + 
+                        dateTime.get(Calendar.DAY_OF_MONTH) + " " + 
+                        dateTime.get(Calendar.HOUR) + ":" +
+                        dateTime.get(Calendar.MINUTE); 
             case 1:
                 return message.getDestination().getPrefix();
             case 2:
@@ -90,7 +96,7 @@ public class MessageTableModel extends AbstractTableModel {
     public Class<?> getColumnClass(int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return Date.class;
+                return String.class;
             case 1:
                 return String.class;
             case 2:
