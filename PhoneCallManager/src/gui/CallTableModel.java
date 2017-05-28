@@ -54,7 +54,8 @@ public class CallTableModel extends AbstractTableModel {
                         new SimpleDateFormat("MM").format(dateTime.getTime()) + "-" + 
                         new SimpleDateFormat("dd").format(dateTime.getTime()) + " " + 
                         new SimpleDateFormat("kk").format(dateTime.getTime()) + ":" +
-                        dateTime.get(Calendar.MINUTE); 
+                        dateTime.get(Calendar.MINUTE) + ":" +
+                        dateTime.get(Calendar.SECOND);
             case 1:
                 return call.getDestination().getPrefix();
             case 2:

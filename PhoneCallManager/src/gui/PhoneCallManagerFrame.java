@@ -55,6 +55,8 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
        // jTableCalls.setRowSorter(sorter);
        jTableCalls.setAutoCreateRowSorter(true);
        jTableMessages.setAutoCreateRowSorter(true);
+       jTableCalls.getColumnModel().getColumn(0).setMinWidth(150);
+       jTableMessages.getColumnModel().getColumn(0).setMinWidth(150);
      //  TableRowSorter<CallTableModel> sorter = jTableCalls.getRowSorter();
 
        

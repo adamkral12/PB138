@@ -53,7 +53,8 @@ public class MessageTableModel extends AbstractTableModel {
                         new SimpleDateFormat("MM").format(dateTime.getTime()) + "-" + 
                         new SimpleDateFormat("dd").format(dateTime.getTime()) + " " + 
                         new SimpleDateFormat("kk").format(dateTime.getTime()) + ":" +
-                        dateTime.get(Calendar.MINUTE); 
+                        dateTime.get(Calendar.MINUTE) + ":" + 
+                        dateTime.get(Calendar.SECOND);
             case 1:
                 return message.getDestination().getPrefix();
             case 2:
