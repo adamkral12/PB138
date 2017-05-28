@@ -50,9 +50,9 @@ public class MessageTableModel extends AbstractTableModel {
             case 0:
                 Calendar dateTime = message.getDateTime();
                 return dateTime.get(Calendar.YEAR) + "-" + 
-                        new SimpleDateFormat("MM").format(dateTime.getTime()) + "-" + 
-                        new SimpleDateFormat("dd").format(dateTime.getTime()) + " " + 
-                        new SimpleDateFormat("kk").format(dateTime.getTime()) + ":" +
+                        (dateTime.get(Calendar.MONTH)+1) + "-" + 
+                        dateTime.get(Calendar.DAY_OF_MONTH) + " " + 
+                        dateTime.get(Calendar.HOUR) + ":" +
                         dateTime.get(Calendar.MINUTE); 
             case 1:
                 return message.getDestination().getPrefix();
