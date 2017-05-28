@@ -255,9 +255,9 @@ public class CallManager {
             , Country country) {
         List<Call> out = new ArrayList();
         for(Call call : list) {
-            if(call.getDestination().equals(country)) {
-                out.add(call);
-            }
+                if(call.getDestination().toString().toLowerCase().contains(country.getName().toLowerCase())) {
+                    out.add(call);
+                }
         }
         if(out.isEmpty()) {
             return null;
@@ -268,8 +268,11 @@ public class CallManager {
     public static List<Call> getByDestination(List<Country> countries) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
-            if(countries.contains(call.getDestination())) {
-                out.add(call);
+            for(Country country: countries) {
+                System.out.println("Country name = " + country.getName() + ", call destination = " + call.getDestination());
+                if(country.getName().toLowerCase().contains(call.getDestination().getName().toLowerCase())) {
+                    out.add(call);
+                }
             }
         }
         return out;

@@ -209,7 +209,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                                 messageList = MessageManager.getByMonth(cal);
                             } catch (NumberFormatException e) {
                                 //TODO show alert window with correct format smaples
-                                System.out.println("wrong date");
+                                System.out.println("Wrong date format");
                             }
                             
                         } else if(dateFields.length == 3) {
@@ -221,12 +221,12 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                                 messageList = MessageManager.getByDay(cal);
                             } catch (NumberFormatException e) {
                                 //TODO show alert window with correct format smaples
-                                System.out.println("wrong date");
+                                System.out.println("Wrong date format");
                             }
                             
                         } else {
                             //TODO show alert window with correct format smaples
-                            System.out.println("wrong date");
+                            System.out.println("Wrong date format");
                         }
                     } else {
                         //neobsahuje '-', takze len format yyyy akceptujem

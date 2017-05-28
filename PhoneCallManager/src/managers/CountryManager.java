@@ -122,13 +122,14 @@ public class CountryManager {
      * @param name - name of a country
      * @return country with code id, null otherwise
      */
-    public static Country getByName(String name) {
+    public static List<Country> getByName(String name) {
+        List<Country> out = new ArrayList<Country>();
         for (Country country : countries) {
-            if (country.getId().contains(name)) {
-                return country;
+            if (country.getName().toLowerCase().contains(name.toLowerCase())) {
+                out.add(country);
             }
         }
-        return null;
+        return out;
     }
     
     /**
