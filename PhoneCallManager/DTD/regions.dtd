@@ -1,0 +1,9 @@
+<!ELEMENT regions (region*)>
+<!ELEMENT region (name, prices)>
+<!ATTLIST region rid CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT prices (calls,messages)>
+<!ELEMENT calls (incoming, outcoming)>
+<!ELEMENT incoming (#PCDATA)>
+<!ELEMENT outcoming (#PCDATA)>
+<!ELEMENT messages (incoming, outcoming)>

@@ -1,0 +1,9 @@
+<!ELEMENT calls (call*)>
+<!ELEMENT call (length,callee,destination,direction,dateTime,note)>
+<!ATTLIST call cid CDATA #REQUIRED>
+<!ELEMENT length (#PCDATA)>
+<!ELEMENT callee (#PCDATA)>
+<!ELEMENT destination (#PCDATA)>
+<!ELEMENT direction (#PCDATA)>
+<!ELEMENT dateTime (#PCDATA)>
+<!ELEMENT note (#PCDATA)>
