@@ -49,7 +49,7 @@ public class MessageTableModel extends AbstractTableModel {
             case 0:
                 Calendar dateTime = message.getDateTime();
                 return dateTime.get(Calendar.YEAR) + "-" + 
-                        dateTime.get(Calendar.MONTH) + "-" + 
+                        (dateTime.get(Calendar.MONTH)+1) + "-" + 
                         dateTime.get(Calendar.DAY_OF_MONTH) + " " + 
                         dateTime.get(Calendar.HOUR) + ":" +
                         dateTime.get(Calendar.MINUTE); 

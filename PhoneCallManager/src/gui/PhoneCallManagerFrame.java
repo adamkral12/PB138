@@ -180,7 +180,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                 //accepts year-month yyyy-MM
                 //accepts year-month-day yyyy-MM-dd
                 //accepts whole format year-month-dayThh:mm:ss
-                if(text.isEmpty()) {
+                if(text == null) {
                     callList = CallManager.getAll();
                     messageList = MessageManager.getAll();
                     
