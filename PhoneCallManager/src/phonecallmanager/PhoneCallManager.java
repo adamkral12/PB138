@@ -11,6 +11,7 @@ import core.Direction;
 import core.Message;
 import core.Region;
 import core.SortParameter;
+import gui.PhoneCallManagerFrame;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.util.ArrayList;
@@ -58,19 +59,8 @@ public class PhoneCallManager extends JApplet {
                 } catch (Exception e) {
                 }
 
-                JFrame frame = new JFrame("JavaFX 2 in Swing");
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-                JApplet applet = new PhoneCallManager();
-                applet.init();
-
-                frame.setContentPane(applet.getContentPane());
-
-                frame.pack();
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
-
-                applet.start();
+                PhoneCallManagerFrame appFrame = new PhoneCallManagerFrame();
+                appFrame.setVisible(true);
             }
         });
     }
