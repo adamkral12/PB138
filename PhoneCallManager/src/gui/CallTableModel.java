@@ -149,7 +149,6 @@ public class CallTableModel extends AbstractTableModel {
         private final WeakReference<CallTableModel> tableModel; 
         
         public UpdateSwingWorker(List<Call> callList, CallTableModel callModel) {
-            System.out.println("updating calls " + calls);
             this.tableModel = new WeakReference<>(callModel);
             if (callList != null) {
                 this.callList = callList;

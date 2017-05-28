@@ -225,7 +225,6 @@ public class CallManager {
     public static List<Call> getByCallee(List<Call> list, String callee) {
         List<Call> out = new ArrayList();
         for(Call call : list) {
-            System.out.println("Get by callee, callee = " + call.getCallee() + ", given string = " + callee);
             if(call.getCallee().toLowerCase().contains(callee.toLowerCase())) {
                 out.add(call);
             }
@@ -269,7 +268,6 @@ public class CallManager {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
             for(Country country: countries) {
-                System.out.println("Country name = " + country.getName() + ", call destination = " + call.getDestination());
                 if(country.getName().toLowerCase().contains(call.getDestination().getName().toLowerCase())) {
                     out.add(call);
                 }
@@ -338,12 +336,22 @@ public class CallManager {
     }
     
     public static List<Call> getByPrefix(List<Country> countries) {
+        
+        if (countries == null) {
+            return null;
+        }
+        
         List<Call> out = new ArrayList<>();
         for(Call call : getAll()) {
             if(countries.contains(call.getDestination())) {
                 out.add(call);
             }
         }
+        
+        if (out.isEmpty()) {
+            return null;
+        }
+        
         return out;
             
     }

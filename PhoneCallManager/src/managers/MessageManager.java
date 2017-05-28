@@ -405,7 +405,13 @@ public class MessageManager {
     }
     
     public static List<Message> getByPrefix(List<Country> countries) {
+        
+        if (countries == null) {
+            return null;
+        }
+        
         List<Message> out = new ArrayList<>();
+        
         for(Message message : getAll()) {
             if(countries.contains(message.getDestination())) {
                 out.add(message);

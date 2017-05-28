@@ -149,7 +149,6 @@ public class MessageTableModel extends AbstractTableModel {
         private final WeakReference<MessageTableModel> tableModel; 
         
         public UpdateSwingWorker(List<Message> messageList, MessageTableModel messageModel) {
-            System.out.println("updating messages " + messages);
             this.tableModel = new WeakReference<>(messageModel);
             if (messageList != null) {
                 this.messageList = messageList;

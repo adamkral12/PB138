@@ -49,7 +49,6 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         messageManager = LoadDataManager.getInstance().getMessageManager();
         callManager = LoadDataManager.getInstance().getCallManager();
         callList = callManager.getAll();
-        System.out.println("Call list = " + callList);
         messageList = messageManager.getAll();
       //  TableRowSorter sorter = new TableRowSorter<CallTableModel>(callModel);
        // jTableCalls.setRowSorter(sorter);
@@ -322,7 +321,6 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                 messageList = MessageManager.getByNote(text);                 
             }
         
-            System.out.println("text " + text);
         
         callModel.updateTable(callList, callModel);
         messageModel.updateTable(messageList, messageModel);
