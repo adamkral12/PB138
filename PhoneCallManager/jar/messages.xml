@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!-- example structure of messages.xml -->
+<messages>
+    <!-- 0..n messages, mid unique -->
+    <message mid="1">
+        <length>143</length> <!-- non empty int >= 0, number of chars -->
+        <!-- <price></price> // computed -->
+        <callee>905678678</callee> <!-- non empty string, length 9 -->
+        <destination>CZE</destination> <!-- non empty, country id from config.xml? -->
+        <direction>in</direction> <!-- one of "in" and "out" case-insensitive -->
+        <dateTime>2017-04-29T10:45:20</dateTime> <!-- non empty, xs:dateTime, format =YYYY-MM-DDThh:mm:ss -->
+        <note></note> <!-- optional note -->
+    </message>
+    <message mid="2">
+        <length>123</length>
+        <callee>905678021</callee>
+        <destination>MEX</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-29T15:35:22</dateTime>
+        <note></note>
+    </message>
+    <message mid="3">
+        <length>87</length>
+        <callee>905678678</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-31T20:45:25</dateTime>
+        <note></note>
+    </message>
+    <message mid="4">
+        <length>98</length>
+        <callee>905678678</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-01T07:45:11</dateTime>
+        <note></note>
+    </message>
+    <message mid="5">
+        <length>250</length>
+        <callee>906536233</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-02T17:37:20</dateTime>
+        <note>2 messages</note>
+    </message>
+    <message mid="6">
+        <length>325</length>
+        <callee>748598668</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-10-11T00:32:00</dateTime>
+        <note></note>
+    </message>
+    <message mid="7">
+        <length>13</length>
+        <callee>857469855</callee>
+        <destination>AUT</destination>
+        <direction>in</direction>
+        <dateTime>2017-10-05T19:06:40</dateTime>
+        <note></note>
+    </message>
+    <message mid="8">
+        <length>79</length>
+        <callee>800533246</callee>
+        <destination>HUN</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-29T11:04:22</dateTime>
+        <note></note>
+    </message>
+    <message mid="9">
+        <length>80</length>
+        <callee>755896548</callee>
+        <destination>POL</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-28T10:00:27</dateTime>
+        <note></note>
+    </message>
+    <message mid="10">
+        <length>5</length>
+        <callee>555245896</callee>
+        <destination>GRE</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-14T03:00:48</dateTime>
+        <note></note>
+    </message>
+    <message mid="11">
+        <length>50</length>
+        <callee>857669853</callee>
+        <destination>NEP</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-05T08:01:42</dateTime>
+        <note></note>
+    </message>
+    <message mid="12">
+        <length>98</length>
+        <callee>855698574</callee>
+        <destination>OMA</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-04T12:24:35</dateTime>
+        <note></note>
+    </message>
+    <message mid="13">
+        <length>5</length>
+        <callee>758896854</callee>
+        <destination>IRN</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-14T03:00:48</dateTime>
+        <note></note>
+    </message>
+    <message mid="14">
+        <length>758</length>
+        <callee>542573366</callee>
+        <destination>SKO</destination>
+        <direction>out</direction>
+        <dateTime>2017-12-22T11:00:25</dateTime>
+        <note></note>
+    </message>
+    <message mid="15">
+        <length>268</length>
+        <callee>444875965</callee>
+        <destination>SRL</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-15T04:00:08</dateTime>
+        <note></note>
+    </message>
+    <message mid="16">
+        <length>213</length>
+        <callee>844869236</callee>
+        <destination>QTR</destination>
+        <direction>out</direction>
+        <dateTime>2017-11-18T01:13:40</dateTime>
+        <note></note>
+    </message>
+    <message mid="17">
+        <length>7</length>
+        <callee>380213759</callee>
+        <destination>OMA</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-26T19:49:42</dateTime>
+        <note></note>
+    </message>
+    <message mid="18">
+        <length>388</length>
+        <callee>775888854</callee>
+        <destination>GEO</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-07T12:35:28</dateTime>
+        <note></note>
+    </message>
+    <message mid="19">
+        <length>312</length>
+        <callee>653193794</callee>
+        <destination>ISR</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-16T17:23:46</dateTime>
+        <note></note>
+    </message>
+    <message mid="20">
+        <length>461</length>
+        <callee>681792575</callee>
+        <destination>UZB</destination>
+        <direction>out</direction>
+        <dateTime>2017-06-13T20:02:28</dateTime>
+        <note></note>
+    </message>
+    <message mid="21">
+        <length>61</length>
+        <callee>350659100</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-17T06:58:21</dateTime>
+        <note></note>
+    </message>
+    <message mid="22">
+        <length>214</length>
+        <callee>943563903</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-09T19:44:01</dateTime>
+        <note></note>
+    </message>
+    <message mid="23">
+        <length>9</length>
+        <callee>998103611</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-10T00:26:44</dateTime>
+        <note></note>
+    </message>
+    <message mid="24">
+        <length>210</length>
+        <callee>465944791</callee>
+        <destination>POL</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-08T04:17:05</dateTime>
+        <note></note>
+    </message>
+    <message mid="25">
+        <length>118</length>
+        <callee>872037748</callee>
+        <destination>FR</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-05T09:06:38</dateTime>
+        <note></note>
+    </message>
+    <message mid="26">
+        <length>102</length>
+        <callee>130681930</callee>
+        <destination>SPA</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-24T10:27:42</dateTime>
+        <note></note>
+    </message>
+    <message mid="27">
+        <length>200</length>
+        <callee>945972085</callee>
+        <destination>BEL</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-22T10:19:03</dateTime>
+        <note></note>
+    </message>
+    <message mid="28">
+        <length>46</length>
+        <callee>238813232</callee>
+        <destination>GIB</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-18T00:56:34</dateTime>
+        <note></note>
+    </message>
+    <message mid="29">
+        <length>95</length>
+        <callee>997904809</callee>
+        <destination>POR</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-06T11:48:10</dateTime>
+        <note></note>
+    </message>
+    <message mid="30">
+        <length>426</length>
+        <callee>397771512</callee>
+        <destination>SPA</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-21T16:24:44</dateTime>
+        <note></note>
+    </message>
+    <message mid="31">
+        <length>341</length>
+        <callee>341014829</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-17T19:43:06</dateTime>
+        <note></note>
+    </message>
+    <message mid="32">
+        <length>101</length>
+        <callee>765569656</callee>
+        <destination>SPA</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-27T07:51:18</dateTime>
+        <note></note>
+    </message>
+    <message mid="33">
+        <length>14</length>
+        <callee>707750099</callee>
+        <destination>GIB</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-23T22:44:41</dateTime>
+        <note></note>
+    </message>
+    <message mid="34">
+        <length>293</length>
+        <callee>291142623</callee>
+        <destination>BEL</destination>
+        <direction>in</direction>
+        <dateTime>2017-10-07T13:34:04</dateTime>
+        <note></note>
+    </message>
+    <message mid="35">
+        <length>104</length>
+        <callee>161716159</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-21T20:45:27</dateTime>
+        <note></note>
+    </message>
+    <message mid="36">
+        <length>119</length>
+        <callee>855949442</callee>
+        <destination>POL</destination>
+        <direction>in</direction>
+        <dateTime>2017-00-14T23:30:56</dateTime>
+        <note></note>
+    </message>
+    <message mid="37">
+        <length>167</length>
+        <callee>510757887</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-11T06:21:04</dateTime>
+        <note></note>
+    </message>
+    <message mid="38">
+        <length>345</length>
+        <callee>735718102</callee>
+        <destination>SPA</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-02T06:16:44</dateTime>
+        <note></note>
+    </message>
+    <message mid="39">
+        <length>261</length>
+        <callee>155064911</callee>
+        <destination>FR</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-14T09:33:44</dateTime>
+        <note></note>
+    </message>
+    <message mid="40">
+        <length>35</length>
+        <callee>917362681</callee>
+        <destination>ICE</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-22T15:43:00</dateTime>
+        <note></note>
+    </message>
+    <message mid="41">
+        <length>300</length>
+        <callee>634555708</callee>
+        <destination>LUX</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-07T20:47:14</dateTime>
+        <note></note>
+    </message>
+    <message mid="42">
+        <length>374</length>
+        <callee>442879089</callee>
+        <destination>ALB</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-20T15:14:26</dateTime>
+        <note></note>
+    </message>
+    <message mid="43">
+        <length>369</length>
+        <callee>242292464</callee>
+        <destination>ICE</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-01T06:24:31</dateTime>
+        <note></note>
+    </message>
+    <message mid="44">
+        <length>153</length>
+        <callee>707775431</callee>
+        <destination>IRE</destination>
+        <direction>in</direction>
+        <dateTime>2017-10-11T17:53:51</dateTime>
+        <note></note>
+    </message>
+    <message mid="45">
+        <length>152</length>
+        <callee>739299022</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-26T21:13:17</dateTime>
+        <note></note>
+    </message>
+    <message mid="46">
+        <length>433</length>
+        <callee>962743659</callee>
+        <destination>ALB</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-10T05:46:24</dateTime>
+        <note></note>
+    </message>
+    <message mid="47">
+        <length>188</length>
+        <callee>984468322</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-25T07:19:45</dateTime>
+        <note></note>
+    </message>
+    <message mid="48">
+        <length>114</length>
+        <callee>926074589</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-02T01:06:38</dateTime>
+        <note></note>
+    </message>
+    <message mid="49">
+        <length>231</length>
+        <callee>618400112</callee>
+        <destination>LUX</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-03T22:58:41</dateTime>
+        <note></note>
+    </message>
+    <message mid="50">
+        <length>255</length>
+        <callee>613825147</callee>
+        <destination>MAL</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-27T17:57:22</dateTime>
+        <note></note>
+    </message>
+    <message mid="51">
+        <length>319</length>
+        <callee>392912117</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-04T17:00:02</dateTime>
+        <note></note>
+    </message>
+    <message mid="52">
+        <length>338</length>
+        <callee>226559232</callee>
+        <destination>THA</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-21T16:29:13</dateTime>
+        <note></note>
+    </message>
+    <message mid="53">
+        <length>422</length>
+        <callee>803407702</callee>
+        <destination>SGP</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-17T14:32:25</dateTime>
+        <note></note>
+    </message>
+    <message mid="54">
+        <length>74</length>
+        <callee>986114284</callee>
+        <destination>THA</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-19T15:27:18</dateTime>
+        <note></note>
+    </message>
+    <message mid="55">
+        <length>313</length>
+        <callee>397869676</callee>
+        <destination>THA</destination>
+        <direction>in</direction>
+        <dateTime>2017-00-14T06:58:37</dateTime>
+        <note></note>
+    </message>
+    <message mid="56">
+        <length>273</length>
+        <callee>556389068</callee>
+        <destination>MAL</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-10T07:16:25</dateTime>
+        <note></note>
+    </message>
+    <message mid="57">
+        <length>42</length>
+        <callee>953777350</callee>
+        <destination>USA</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-05T08:55:25</dateTime>
+        <note></note>
+    </message>
+    <message mid="58">
+        <length>12</length>
+        <callee>895313075</callee>
+        <destination>USA</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-26T12:42:05</dateTime>
+        <note></note>
+    </message>
+    <message mid="59">
+        <length>211</length>
+        <callee>662190420</callee>
+        <destination>USA</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-12T04:14:53</dateTime>
+        <note></note>
+    </message>
+    <message mid="60">
+        <length>363</length>
+        <callee>939719973</callee>
+        <destination>CAN</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-26T19:42:01</dateTime>
+        <note></note>
+    </message>
+    <message mid="61">
+        <length>43</length>
+        <callee>954729102</callee>
+        <destination>CAN</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-04T12:59:14</dateTime>
+        <note></note>
+    </message>
+    <message mid="62">
+        <length>116</length>
+        <callee>207960200</callee>
+        <destination>CAN</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-26T08:23:43</dateTime>
+        <note></note>
+    </message>
+    <message mid="63">
+        <length>380</length>
+        <callee>802766186</callee>
+        <destination>CAN</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-13T15:13:33</dateTime>
+        <note></note>
+    </message>
+    <message mid="64">
+        <length>49</length>
+        <callee>857794525</callee>
+        <destination>MEX</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-06T15:10:00</dateTime>
+        <note></note>
+    </message>
+    <message mid="65">
+        <length>62</length>
+        <callee>249480544</callee>
+        <destination>BRA</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-12T14:51:00</dateTime>
+        <note></note>
+    </message>
+    <message mid="66">
+        <length>398</length>
+        <callee>716117242</callee>
+        <destination>CAN</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-08T21:47:03</dateTime>
+        <note></note>
+    </message>
+    <message mid="67">
+        <length>309</length>
+        <callee>163813153</callee>
+        <destination>BRA</destination>
+        <direction>in</direction>
+        <dateTime>2017-00-17T02:51:20</dateTime>
+        <note></note>
+    </message>
+    <message mid="68">
+        <length>30</length>
+        <callee>904222492</callee>
+        <destination>CAN</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-19T18:28:45</dateTime>
+        <note></note>
+    </message>
+    <message mid="69">
+        <length>107</length>
+        <callee>936802546</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-10T21:45:07</dateTime>
+        <note></note>
+    </message>
+    <message mid="70">
+        <length>129</length>
+        <callee>348569170</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-27T03:41:16</dateTime>
+        <note></note>
+    </message>
+    <message mid="71">
+        <length>28</length>
+        <callee>695502642</callee>
+        <destination>POL</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-06T02:25:16</dateTime>
+        <note></note>
+    </message>
+    <message mid="72">
+        <length>352</length>
+        <callee>420769567</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-01T19:51:30</dateTime>
+        <note></note>
+    </message>
+    <message mid="73">
+        <length>47</length>
+        <callee>596743093</callee>
+        <destination>CRI</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-27T07:04:40</dateTime>
+        <note></note>
+    </message>
+    <message mid="74">
+        <length>394</length>
+        <callee>429909520</callee>
+        <destination>BOL</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-15T07:23:47</dateTime>
+        <note></note>
+    </message>
+    <message mid="75">
+        <length>190</length>
+        <callee>501034356</callee>
+        <destination>BRA</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-24T13:18:14</dateTime>
+        <note></note>
+    </message>
+    <message mid="76">
+        <length>448</length>
+        <callee>626783886</callee>
+        <destination>MEX</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-19T15:33:12</dateTime>
+        <note></note>
+    </message>
+    <message mid="77">
+        <length>263</length>
+        <callee>275006823</callee>
+        <destination>USA</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-02T23:01:56</dateTime>
+        <note></note>
+    </message>
+    <message mid="78">
+        <length>353</length>
+        <callee>999522430</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-20T15:37:52</dateTime>
+        <note></note>
+    </message>
+    <message mid="79">
+        <length>442</length>
+        <callee>329748909</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-10T01:18:37</dateTime>
+        <note></note>
+    </message>
+    <message mid="80">
+        <length>75</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-15T17:24:24</dateTime>
+        <note></note>
+    </message>
+    <message mid="81">
+        <length>429</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-23T06:21:40</dateTime>
+        <note></note>
+    </message>
+    <message mid="82">
+        <length>230</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-06-01T19:30:01</dateTime>
+        <note></note>
+    </message>
+    <message mid="83">
+        <length>263</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-15T10:23:16</dateTime>
+        <note></note>
+    </message>
+    <message mid="84">
+        <length>78</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-20T04:50:48</dateTime>
+        <note></note>
+    </message>
+    <message mid="85">
+        <length>472</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-01T05:43:16</dateTime>
+        <note></note>
+    </message>
+    <message mid="86">
+        <length>201</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-19T08:41:25</dateTime>
+        <note></note>
+    </message>
+    <message mid="87">
+        <length>60</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-23T11:32:23</dateTime>
+        <note></note>
+    </message>
+    <message mid="88">
+        <length>111</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-21T22:26:22</dateTime>
+        <note></note>
+    </message>
+    <message mid="89">
+        <length>35</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-26T03:11:48</dateTime>
+        <note></note>
+    </message>
+    <message mid="90">
+        <length>151</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-01T11:36:13</dateTime>
+        <note></note>
+    </message>
+    <message mid="91">
+        <length>313</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-06T08:01:15</dateTime>
+        <note></note>
+    </message>
+    <message mid="92">
+        <length>401</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-11-08T18:53:00</dateTime>
+        <note></note>
+    </message>
+    <message mid="93">
+        <length>496</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-14T21:16:47</dateTime>
+        <note></note>
+    </message>
+    <message mid="94">
+        <length>21</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-18T20:32:17</dateTime>
+        <note></note>
+    </message>
+    <message mid="95">
+        <length>63</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-06T02:24:34</dateTime>
+        <note></note>
+    </message>
+    <message mid="96">
+        <length>239</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-13T19:20:32</dateTime>
+        <note></note>
+    </message>
+    <message mid="97">
+        <length>335</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-03T04:44:51</dateTime>
+        <note></note>
+    </message>
+    <message mid="98">
+        <length>358</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-11T13:38:19</dateTime>
+        <note></note>
+    </message>
+    <message mid="99">
+        <length>91</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-20T11:08:52</dateTime>
+        <note></note>
+    </message>
+    <message mid="100">
+        <length>323</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-21T16:48:40</dateTime>
+        <note></note>
+    </message>
+    <message mid="101">
+        <length>341</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-05T01:27:04</dateTime>
+        <note></note>
+    </message>
+    <message mid="102">
+        <length>132</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-24T06:36:20</dateTime>
+        <note></note>
+    </message>
+    <message mid="103">
+        <length>127</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-07T21:36:11</dateTime>
+        <note></note>
+    </message>
+    <message mid="104">
+        <length>490</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-02T21:33:27</dateTime>
+        <note></note>
+    </message>
+    <message mid="105">
+        <length>372</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-11T14:12:31</dateTime>
+        <note></note>
+    </message>
+    <message mid="106">
+        <length>321</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-21T05:39:24</dateTime>
+        <note></note>
+    </message>
+    <message mid="107">
+        <length>375</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-22T21:56:09</dateTime>
+        <note></note>
+    </message>
+    <message mid="108">
+        <length>113</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-01T19:44:53</dateTime>
+        <note></note>
+    </message>
+    <message mid="109">
+        <length>242</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-13T17:44:40</dateTime>
+        <note></note>
+    </message>
+    <message mid="110">
+        <length>156</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-11T03:31:43</dateTime>
+        <note></note>
+    </message>
+    <message mid="111">
+        <length>419</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-09T14:28:00</dateTime>
+        <note></note>
+    </message>
+    <message mid="112">
+        <length>59</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-03T12:19:23</dateTime>
+        <note></note>
+    </message>
+    <message mid="113">
+        <length>121</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-11T12:01:31</dateTime>
+        <note></note>
+    </message>
+    <message mid="114">
+        <length>15</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-24T17:46:53</dateTime>
+        <note></note>
+    </message>
+    <message mid="115">
+        <length>137</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-18T12:26:23</dateTime>
+        <note></note>
+    </message>
+    <message mid="116">
+        <length>396</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-16T03:51:00</dateTime>
+        <note></note>
+    </message>
+    <message mid="117">
+        <length>222</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-05T12:05:30</dateTime>
+        <note></note>
+    </message>
+    <message mid="118">
+        <length>218</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-26T01:40:18</dateTime>
+        <note></note>
+    </message>
+    <message mid="119">
+        <length>222</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-02T01:47:56</dateTime>
+        <note></note>
+    </message>
+</messages>

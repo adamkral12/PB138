@@ -1,0 +1,1606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!-- example layout of calls.xml -->
+<calls>
+    <!-- 0...n calls -->
+    <!-- unique cid - used as key -->
+    <call cid="1">
+        <length>63</length> <!-- non empty int > 0 (in seconds) -->
+        <!--   <price>\</price> non empty float, 2 decimals precision, > 0 -> calculated from regions.xml -->
+        <callee>905678678</callee> <!-- non empty string, length 9 -->
+        <destination>CZE</destination> <!-- non empty, country id from config.xml? -->
+        <direction>out</direction> <!-- one of "in" and "out" case-insensitive -->
+        <dateTime>2017-05-01T20:54:20</dateTime> <!-- non empty, xs:dateTime, format=YYYY-MM-DDThh:mm:ss-->
+        <note></note> <!-- optional note -->
+    </call>
+    <call cid="2">
+        <length>125</length>
+        <callee>905678678</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-01T19:20:00</dateTime>
+        <note></note>
+    </call>
+    <call cid="3">
+        <length>5</length>
+        <callee>905678000</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-02T15:31:00</dateTime>
+        <note></note>
+    </call>
+    <call cid="4">
+        <length>15</length>
+        <callee>905678021</callee>
+        <destination>MEX</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-25T07:51:20</dateTime>
+        <note></note>
+    </call>
+    <call cid="5">
+        <length>250</length>
+        <callee>420158722</callee>
+        <destination>POR</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-20T22:18:08</dateTime>
+        <note></note>
+    </call>
+    <call cid="6">
+        <length>60</length>
+        <callee>420158722</callee>
+        <destination>USA</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-17T06:47:39</dateTime>
+        <note></note>
+    </call>
+    <call cid="7">
+        <length>392</length>
+        <callee>478233698</callee>
+        <destination>SRL</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-06T22:16:50</dateTime>
+        <note></note>
+    </call>
+    <call cid="8">
+        <length>170</length>
+        <callee>475898742</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-12T12:17:15</dateTime>
+        <note></note>
+    </call>
+    <call cid="9">
+        <length>282</length>
+        <callee>558324596</callee>
+        <destination>BRA</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-09T20:56:56</dateTime>
+        <note></note>
+    </call>
+    <call cid="10">
+        <length>311</length>
+        <callee>588965874</callee>
+        <destination>BRA</destination>
+        <direction>in</direction>
+        <dateTime>2017-10-19T21:50:47</dateTime>
+        <note></note>
+    </call>
+    <call cid="11">
+        <length>355</length>
+        <callee>475898742</callee>
+        <destination>POR</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-07T22:15:01</dateTime>
+        <note></note>
+    </call>
+    <call cid="12">
+        <length>364</length>
+        <callee>873579855</callee>
+        <destination>MEX</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-27T12:37:12</dateTime>
+        <note></note>
+    </call>
+    <call cid="13">
+        <length>454</length>
+        <callee>420158722</callee>
+        <destination>AUT</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-21T19:02:38</dateTime>
+        <note></note>
+    </call>
+    <call cid="14">
+        <length>318</length>
+        <callee>420158722</callee>
+        <destination>AFG</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-15T19:14:28</dateTime>
+        <note></note>
+    </call>
+    <call cid="15">
+        <length>372</length>
+        <callee>579663546</callee>
+        <destination>GEO</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-13T12:09:30</dateTime>
+        <note></note>
+    </call>
+    <call cid="16">
+        <length>287</length>
+        <callee>475898742</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-10-01T09:56:42</dateTime>
+        <note></note>
+    </call>
+    <call cid="17">
+        <length>88</length>
+        <callee>588965874</callee>
+        <destination>CRI</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-02T07:20:15</dateTime>
+        <note></note>
+    </call>
+    <call cid="18">
+        <length>331</length>
+        <callee>475898742</callee>
+        <destination>ISR</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-13T22:20:35</dateTime>
+        <note></note>
+    </call>
+    <call cid="19">
+        <length>355</length>
+        <callee>475898742</callee>
+        <destination>GEO</destination>
+        <direction>out</direction>
+        <dateTime>2017-06-24T08:17:12</dateTime>
+        <note></note>
+    </call>
+    <call cid="20">
+        <length>379</length>
+        <callee>588965874</callee>
+        <destination>USA</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-09T01:21:22</dateTime>
+        <note></note>
+    </call>
+    <call cid="21">
+        <length>374</length>
+        <callee>257698553</callee>
+        <destination>GEO</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-27T12:14:43</dateTime>
+        <note></note>
+    </call>
+    <call cid="22">
+        <length>481</length>
+        <callee>558324596</callee>
+        <destination>MEX</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-08T23:11:11</dateTime>
+        <note></note>
+    </call>
+    <call cid="23">
+        <length>427</length>
+        <callee>558324596</callee>
+        <destination>ISR</destination>
+        <direction>out</direction>
+        <dateTime>2017-11-07T16:29:53</dateTime>
+        <note></note>
+    </call>
+    <call cid="24">
+        <length>157</length>
+        <callee>873579855</callee>
+        <destination>POL</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-14T01:04:45</dateTime>
+        <note></note>
+    </call>
+    <call cid="25">
+        <length>251</length>
+        <callee>588965874</callee>
+        <destination>GEO</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-04T22:53:33</dateTime>
+        <note></note>
+    </call>
+    <call cid="26">
+        <length>326</length>
+        <callee>588965874</callee>
+        <destination>ISR</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-18T03:14:11</dateTime>
+        <note></note>
+    </call>
+    <call cid="27">
+        <length>51</length>
+        <callee>589336875</callee>
+        <destination>SRL</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-25T06:04:16</dateTime>
+        <note></note>
+    </call>
+    <call cid="28">
+        <length>338</length>
+        <callee>579663546</callee>
+        <destination>BOL</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-10T20:29:02</dateTime>
+        <note></note>
+    </call>
+    <call cid="29">
+        <length>5</length>
+        <callee>558324596</callee>
+        <destination>CRI</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-04T03:02:51</dateTime>
+        <note></note>
+    </call>
+    <call cid="30">
+        <length>392</length>
+        <callee>558324596</callee>
+        <destination>AFG</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-27T16:19:32</dateTime>
+        <note></note>
+    </call>
+    <call cid="31">
+        <length>251</length>
+        <callee>588965874</callee>
+        <destination>MEX</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-23T01:50:36</dateTime>
+        <note></note>
+    </call>
+    <call cid="32">
+        <length>27</length>
+        <callee>579663546</callee>
+        <destination>GEO</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-20T02:59:48</dateTime>
+        <note></note>
+    </call>
+    <call cid="33">
+        <length>497</length>
+        <callee>574698223</callee>
+        <destination>POL</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-17T09:56:35</dateTime>
+        <note></note>
+    </call>
+    <call cid="34">
+        <length>498</length>
+        <callee>475898742</callee>
+        <destination>MEX</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-04T06:01:58</dateTime>
+        <note></note>
+    </call>
+    <call cid="35">
+        <length>354</length>
+        <callee>475898742</callee>
+        <destination>ISR</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-01T17:48:10</dateTime>
+        <note></note>
+    </call>
+    <call cid="36">
+        <length>83</length>
+        <callee>574698223</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-09T09:18:19</dateTime>
+        <note></note>
+    </call>
+    <call cid="37">
+        <length>246</length>
+        <callee>579663546</callee>
+        <destination>MYA</destination>
+        <direction>out</direction>
+        <dateTime>2017-11-16T14:33:09</dateTime>
+        <note></note>
+    </call>
+    <call cid="38">
+        <length>202</length>
+        <callee>873579855</callee>
+        <destination>MYA</destination>
+        <direction>in</direction>
+        <dateTime>2017-08-07T06:45:23</dateTime>
+        <note></note>
+    </call>
+    <call cid="39">
+        <length>134</length>
+        <callee>478233698</callee>
+        <destination>BRA</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-23T23:37:33</dateTime>
+        <note></note>
+    </call>
+    <call cid="40">
+        <length>262</length>
+        <callee>558324596</callee>
+        <destination>AFG</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-03T04:22:27</dateTime>
+        <note></note>
+    </call>
+    <call cid="41">
+        <length>188</length>
+        <callee>257698553</callee>
+        <destination>CRI</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-27T18:33:46</dateTime>
+        <note></note>
+    </call>
+    <call cid="42">
+        <length>368</length>
+        <callee>420158722</callee>
+        <destination>ISR</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-23T15:42:02</dateTime>
+        <note></note>
+    </call>
+    <call cid="43">
+        <length>360</length>
+        <callee>579663546</callee>
+        <destination>GEO</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-25T01:11:15</dateTime>
+        <note></note>
+    </call>
+    <call cid="44">
+        <length>370</length>
+        <callee>558324596</callee>
+        <destination>AFG</destination>
+        <direction>in</direction>
+        <dateTime>2017-00-09T22:02:54</dateTime>
+        <note></note>
+    </call>
+    <call cid="45">
+        <length>60</length>
+        <callee>574698223</callee>
+        <destination>SRL</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-15T15:27:40</dateTime>
+        <note></note>
+    </call>
+    <call cid="46">
+        <length>59</length>
+        <callee>475898742</callee>
+        <destination>MYA</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-20T16:34:59</dateTime>
+        <note></note>
+    </call>
+    <call cid="47">
+        <length>392</length>
+        <callee>257698553</callee>
+        <destination>ISR</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-27T19:20:17</dateTime>
+        <note></note>
+    </call>
+    <call cid="48">
+        <length>486</length>
+        <callee>475898742</callee>
+        <destination>CRI</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-23T12:22:32</dateTime>
+        <note></note>
+    </call>
+    <call cid="49">
+        <length>216</length>
+        <callee>579663546</callee>
+        <destination>IRE</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-13T18:49:58</dateTime>
+        <note></note>
+    </call>
+    <call cid="50">
+        <length>321</length>
+        <callee>998756985</callee>
+        <destination>MAL</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-05T01:48:07</dateTime>
+        <note></note>
+    </call>
+    <call cid="51">
+        <length>10</length>
+        <callee>223857965</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-14T19:57:55</dateTime>
+        <note></note>
+    </call>
+    <call cid="52">
+        <length>197</length>
+        <callee>112398756</callee>
+        <destination>HUN</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-20T20:07:01</dateTime>
+        <note></note>
+    </call>
+    <call cid="53">
+        <length>494</length>
+        <callee>117859687</callee>
+        <destination>PAK</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-03T22:57:31</dateTime>
+        <note></note>
+    </call>
+    <call cid="54">
+        <length>314</length>
+        <callee>477888555</callee>
+        <destination>ISA</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-05T07:48:55</dateTime>
+        <note></note>
+    </call>
+    <call cid="55">
+        <length>18</length>
+        <callee>117859687</callee>
+        <destination>ETH</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-04T21:31:26</dateTime>
+        <note></note>
+    </call>
+    <call cid="56">
+        <length>186</length>
+        <callee>477888555</callee>
+        <destination>NZL</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-04T08:32:52</dateTime>
+        <note></note>
+    </call>
+    <call cid="57">
+        <length>292</length>
+        <callee>221368995</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-11T17:24:20</dateTime>
+        <note></note>
+    </call>
+    <call cid="58">
+        <length>444</length>
+        <callee>112896547</callee>
+        <destination>EGY</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-13T11:25:06</dateTime>
+        <note></note>
+    </call>
+    <call cid="59">
+        <length>360</length>
+        <callee>477888555</callee>
+        <destination>CHN</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-27T00:05:54</dateTime>
+        <note></note>
+    </call>
+    <call cid="60">
+        <length>9</length>
+        <callee>477888555</callee>
+        <destination>ARG</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-16T01:54:23</dateTime>
+        <note></note>
+    </call>
+    <call cid="61">
+        <length>79</length>
+        <callee>223857965</callee>
+        <destination>EGY</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-10T03:23:28</dateTime>
+        <note></note>
+    </call>
+    <call cid="62">
+        <length>94</length>
+        <callee>115874223</callee>
+        <destination>ETH</destination>
+        <direction>out</direction>
+        <dateTime>2017-11-15T06:31:12</dateTime>
+        <note></note>
+    </call>
+    <call cid="63">
+        <length>400</length>
+        <callee>223857965</callee>
+        <destination>ARG</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-17T23:16:31</dateTime>
+        <note></note>
+    </call>
+    <call cid="64">
+        <length>290</length>
+        <callee>223685798</callee>
+        <destination>PAK</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-25T01:27:33</dateTime>
+        <note></note>
+    </call>
+    <call cid="65">
+        <length>9</length>
+        <callee>221368995</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-01T09:24:18</dateTime>
+        <note></note>
+    </call>
+    <call cid="66">
+        <length>147</length>
+        <callee>223857965</callee>
+        <destination>ARG</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-10T07:11:45</dateTime>
+        <note></note>
+    </call>
+    <call cid="67">
+        <length>56</length>
+        <callee>112896547</callee>
+        <destination>TUR</destination>
+        <direction>in</direction>
+        <dateTime>2017-08-02T11:33:53</dateTime>
+        <note></note>
+    </call>
+    <call cid="68">
+        <length>463</length>
+        <callee>998756985</callee>
+        <destination>TUR</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-18T20:25:34</dateTime>
+        <note></note>
+    </call>
+    <call cid="69">
+        <length>147</length>
+        <callee>112398756</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-08-18T00:49:44</dateTime>
+        <note></note>
+    </call>
+    <call cid="70">
+        <length>38</length>
+        <callee>223685798</callee>
+        <destination>AUS</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-08T17:02:41</dateTime>
+        <note></note>
+    </call>
+    <call cid="71">
+        <length>482</length>
+        <callee>258965887</callee>
+        <destination>CRO</destination>
+        <direction>in</direction>
+        <dateTime>2017-00-07T09:42:36</dateTime>
+        <note></note>
+    </call>
+    <call cid="72">
+        <length>319</length>
+        <callee>998756985</callee>
+        <destination>CHN</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-22T10:01:31</dateTime>
+        <note></note>
+    </call>
+    <call cid="73">
+        <length>487</length>
+        <callee>115874223</callee>
+        <destination>ISA</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-01T14:44:52</dateTime>
+        <note></note>
+    </call>
+    <call cid="74">
+        <length>323</length>
+        <callee>998756985</callee>
+        <destination>ARG</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-02T08:22:08</dateTime>
+        <note></note>
+    </call>
+    <call cid="75">
+        <length>240</length>
+        <callee>223685798</callee>
+        <destination>IND</destination>
+        <direction>in</direction>
+        <dateTime>2017-08-20T12:38:11</dateTime>
+        <note></note>
+    </call>
+    <call cid="76">
+        <length>462</length>
+        <callee>223685798</callee>
+        <destination>TUR</destination>
+        <direction>out</direction>
+        <dateTime>2017-06-14T21:03:05</dateTime>
+        <note></note>
+    </call>
+    <call cid="77">
+        <length>267</length>
+        <callee>220003590</callee>
+        <destination>TUR</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-12T09:30:34</dateTime>
+        <note></note>
+    </call>
+    <call cid="78">
+        <length>84</length>
+        <callee>477888555</callee>
+        <destination>PAK</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-06T03:03:06</dateTime>
+        <note></note>
+    </call>
+    <call cid="79">
+        <length>191</length>
+        <callee>445872001</callee>
+        <destination>NZL</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-04T07:32:03</dateTime>
+        <note></note>
+    </call>
+    <call cid="80">
+        <length>32</length>
+        <callee>221368995</callee>
+        <destination>EGY</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-20T14:56:21</dateTime>
+        <note></note>
+    </call>
+    <call cid="81">
+        <length>203</length>
+        <callee>998756985</callee>
+        <destination>CRO</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-08T11:27:08</dateTime>
+        <note></note>
+    </call>
+    <call cid="82">
+        <length>372</length>
+        <callee>115874223</callee>
+        <destination>IND</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-09T06:53:41</dateTime>
+        <note></note>
+    </call>
+    <call cid="83">
+        <length>295</length>
+        <callee>223685798</callee>
+        <destination>ETH</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-02T15:09:42</dateTime>
+        <note></note>
+    </call>
+    <call cid="84">
+        <length>91</length>
+        <callee>223857965</callee>
+        <destination>CHN</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-20T05:44:31</dateTime>
+        <note></note>
+    </call>
+    <call cid="85">
+        <length>157</length>
+        <callee>223685798</callee>
+        <destination>CAN</destination>
+        <direction>in</direction>
+        <dateTime>2017-08-23T10:22:05</dateTime>
+        <note></note>
+    </call>
+    <call cid="86">
+        <length>9</length>
+        <callee>477888555</callee>
+        <destination>LIT</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-01T23:31:10</dateTime>
+        <note></note>
+    </call>
+    <call cid="87">
+        <length>284</length>
+        <callee>220003590</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-02T04:04:48</dateTime>
+        <note></note>
+    </call>
+    <call cid="88">
+        <length>411</length>
+        <callee>112398756</callee>
+        <destination>TUR</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-13T04:36:29</dateTime>
+        <note></note>
+    </call>
+    <call cid="89">
+        <length>70</length>
+        <callee>223685798</callee>
+        <destination>HUN</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-21T00:10:40</dateTime>
+        <note></note>
+    </call>
+    <call cid="90">
+        <length>223</length>
+        <callee>117859687</callee>
+        <destination>AUS</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-02T18:29:04</dateTime>
+        <note></note>
+    </call>
+    <call cid="91">
+        <length>477</length>
+        <callee>477888555</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-00-18T14:19:09</dateTime>
+        <note></note>
+    </call>
+    <call cid="92">
+        <length>19</length>
+        <callee>221368995</callee>
+        <destination>TUR</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-08T09:24:39</dateTime>
+        <note></note>
+    </call>
+    <call cid="93">
+        <length>313</length>
+        <callee>477888555</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-01T05:18:42</dateTime>
+        <note></note>
+    </call>
+    <call cid="94">
+        <length>343</length>
+        <callee>223857965</callee>
+        <destination>ETH</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-27T00:20:06</dateTime>
+        <note></note>
+    </call>
+    <call cid="95">
+        <length>107</length>
+        <callee>117859687</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-17T23:28:15</dateTime>
+        <note></note>
+    </call>
+    <call cid="96">
+        <length>441</length>
+        <callee>115874223</callee>
+        <destination>MAL</destination>
+        <direction>out</direction>
+        <dateTime>2017-11-22T20:56:50</dateTime>
+        <note></note>
+    </call>
+    <call cid="97">
+        <length>476</length>
+        <callee>477888555</callee>
+        <destination>ETH</destination>
+        <direction>in</direction>
+        <dateTime>2017-10-06T00:18:33</dateTime>
+        <note></note>
+    </call>
+    <call cid="98">
+        <length>162</length>
+        <callee>117859687</callee>
+        <destination>HUN</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-06T06:31:40</dateTime>
+        <note></note>
+    </call>
+    <call cid="99">
+        <length>53</length>
+        <callee>445872001</callee>
+        <destination>ARG</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-09T05:05:29</dateTime>
+        <note></note>
+    </call>
+    <call cid="100">
+        <length>336</length>
+        <callee>477888555</callee>
+        <destination>MNG</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-12T10:57:00</dateTime>
+        <note></note>
+    </call>
+    <call cid="101">
+        <length>351</length>
+        <callee>117859687</callee>
+        <destination>CRO</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-19T23:00:58</dateTime>
+        <note></note>
+    </call>
+    <call cid="102">
+        <length>28</length>
+        <callee>477888555</callee>
+        <destination>PHI</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-15T21:18:47</dateTime>
+        <note></note>
+    </call>
+    <call cid="103">
+        <length>411</length>
+        <callee>117859687</callee>
+        <destination>TUR</destination>
+        <direction>in</direction>
+        <dateTime>2017-10-24T05:42:03</dateTime>
+        <note></note>
+    </call>
+    <call cid="104">
+        <length>81</length>
+        <callee>223685798</callee>
+        <destination>EGY</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-16T14:55:46</dateTime>
+        <note></note>
+    </call>
+    <call cid="105">
+        <length>240</length>
+        <callee>221368995</callee>
+        <destination>CAN</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-03T22:04:23</dateTime>
+        <note></note>
+    </call>
+    <call cid="106">
+        <length>149</length>
+        <callee>112398756</callee>
+        <destination>EGY</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-27T20:53:57</dateTime>
+        <note></note>
+    </call>
+    <call cid="107">
+        <length>18</length>
+        <callee>258965887</callee>
+        <destination>PAK</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-10T16:02:33</dateTime>
+        <note></note>
+    </call>
+    <call cid="108">
+        <length>379</length>
+        <callee>258965887</callee>
+        <destination>LIT</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-04T04:28:57</dateTime>
+        <note></note>
+    </call>
+    <call cid="109">
+        <length>431</length>
+        <callee>221368995</callee>
+        <destination>NZL</destination>
+        <direction>in</direction>
+        <dateTime>2017-10-08T07:39:11</dateTime>
+        <note></note>
+    </call>
+    <call cid="110">
+        <length>169</length>
+        <callee>223685798</callee>
+        <destination>ETH</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-27T17:37:40</dateTime>
+        <note></note>
+    </call>
+    <call cid="111">
+        <length>168</length>
+        <callee>998756985</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-18T17:02:04</dateTime>
+        <note></note>
+    </call>
+    <call cid="112">
+        <length>208</length>
+        <callee>223857965</callee>
+        <destination>MAL</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-23T23:46:23</dateTime>
+        <note></note>
+    </call>
+    <call cid="113">
+        <length>254</length>
+        <callee>998756985</callee>
+        <destination>CAN</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-11T14:32:15</dateTime>
+        <note></note>
+    </call>
+    <call cid="114">
+        <length>495</length>
+        <callee>112398756</callee>
+        <destination>HUN</destination>
+        <direction>out</direction>
+        <dateTime>2017-06-12T08:51:35</dateTime>
+        <note></note>
+    </call>
+    <call cid="115">
+        <length>482</length>
+        <callee>220003590</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-13T10:58:00</dateTime>
+        <note></note>
+    </call>
+    <call cid="116">
+        <length>158</length>
+        <callee>258965887</callee>
+        <destination>CAN</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-02T03:19:14</dateTime>
+        <note></note>
+    </call>
+    <call cid="117">
+        <length>262</length>
+        <callee>221368995</callee>
+        <destination>PAK</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-11T21:12:15</dateTime>
+        <note></note>
+    </call>
+    <call cid="118">
+        <length>96</length>
+        <callee>112398756</callee>
+        <destination>MAL</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-07T08:36:07</dateTime>
+        <note></note>
+    </call>
+    <call cid="119">
+        <length>121</length>
+        <callee>445872001</callee>
+        <destination>PHI</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-09T00:38:13</dateTime>
+        <note></note>
+    </call>
+
+    <call cid="120">
+        <length>433</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-06-16T07:57:06</dateTime>
+        <note></note>
+    </call>
+    <call cid="121">
+        <length>433</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-23T07:18:02</dateTime>
+        <note></note>
+    </call>
+    <call cid="122">
+        <length>493</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-01T12:01:38</dateTime>
+        <note></note>
+    </call>
+    <call cid="123">
+        <length>26</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-00-11T11:19:56</dateTime>
+        <note></note>
+    </call>
+    <call cid="124">
+        <length>278</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-06-22T03:31:58</dateTime>
+        <note></note>
+    </call>
+    <call cid="125">
+        <length>268</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-07T03:57:12</dateTime>
+        <note></note>
+    </call>
+    <call cid="126">
+        <length>314</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-23T03:49:42</dateTime>
+        <note></note>
+    </call>
+    <call cid="127">
+        <length>358</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-10T02:23:20</dateTime>
+        <note></note>
+    </call>
+    <call cid="128">
+        <length>233</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-06T22:46:23</dateTime>
+        <note></note>
+    </call>
+    <call cid="129">
+        <length>4</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-00-10T19:24:07</dateTime>
+        <note></note>
+    </call>
+    <call cid="130">
+        <length>339</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-10T12:42:56</dateTime>
+        <note></note>
+    </call>
+    <call cid="131">
+        <length>411</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-08-02T23:36:10</dateTime>
+        <note></note>
+    </call>
+    <call cid="132">
+        <length>159</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-20T12:50:36</dateTime>
+        <note></note>
+    </call>
+    <call cid="133">
+        <length>212</length>
+        <callee>793220093</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-04T11:21:59</dateTime>
+        <note></note>
+    </call>
+    <call cid="134">
+        <length>93</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-14T14:58:43</dateTime>
+        <note></note>
+    </call>
+    <call cid="135">
+        <length>396</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-05T07:24:21</dateTime>
+        <note></note>
+    </call>
+    <call cid="136">
+        <length>47</length>
+        <callee>793220093</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-26T14:18:11</dateTime>
+        <note></note>
+    </call>
+    <call cid="137">
+        <length>449</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-02T08:48:16</dateTime>
+        <note></note>
+    </call>
+    <call cid="138">
+        <length>209</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-23T08:18:50</dateTime>
+        <note></note>
+    </call>
+    <call cid="139">
+        <length>410</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-11T02:44:27</dateTime>
+        <note></note>
+    </call>
+    <call cid="140">
+        <length>277</length>
+        <callee>793220093</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-15T14:56:57</dateTime>
+        <note></note>
+    </call>
+    <call cid="141">
+        <length>307</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-15T03:58:34</dateTime>
+        <note></note>
+    </call>
+    <call cid="142">
+        <length>118</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-17T04:55:56</dateTime>
+        <note></note>
+    </call>
+    <call cid="143">
+        <length>303</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-08-16T10:05:22</dateTime>
+        <note></note>
+    </call>
+    <call cid="144">
+        <length>394</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-26T19:26:58</dateTime>
+        <note></note>
+    </call>
+    <call cid="145">
+        <length>403</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-02T02:30:13</dateTime>
+        <note></note>
+    </call>
+    <call cid="146">
+        <length>417</length>
+        <callee>793220093</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-17T04:37:40</dateTime>
+        <note></note>
+    </call>
+    <call cid="147">
+        <length>29</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-00-11T15:51:25</dateTime>
+        <note></note>
+    </call>
+    <call cid="148">
+        <length>227</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-05T21:02:11</dateTime>
+        <note></note>
+    </call>
+    <call cid="149">
+        <length>399</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-19T17:24:59</dateTime>
+        <note></note>
+    </call>
+    <call cid="150">
+        <length>360</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-05T16:29:52</dateTime>
+        <note></note>
+    </call>
+    <call cid="151">
+        <length>422</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-08-26T19:25:01</dateTime>
+        <note></note>
+    </call>
+    <call cid="152">
+        <length>356</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-05T07:37:48</dateTime>
+        <note></note>
+    </call>
+    <call cid="153">
+        <length>82</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-00-15T00:36:12</dateTime>
+        <note></note>
+    </call>
+    <call cid="154">
+        <length>55</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-20T13:39:58</dateTime>
+        <note></note>
+    </call>
+    <call cid="155">
+        <length>455</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-16T04:29:40</dateTime>
+        <note></note>
+    </call>
+    <call cid="156">
+        <length>181</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-15T15:31:49</dateTime>
+        <note></note>
+    </call>
+    <call cid="157">
+        <length>105</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-04T02:27:41</dateTime>
+        <note></note>
+    </call>
+    <call cid="158">
+        <length>220</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-25T09:34:06</dateTime>
+        <note></note>
+    </call>
+    <call cid="159">
+        <length>49</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-04T01:44:15</dateTime>
+        <note></note>
+    </call>
+    <call cid="160">
+        <length>424</length>
+        <callee>793220093</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-11-01T23:29:42</dateTime>
+        <note></note>
+    </call>
+    <call cid="161">
+        <length>396</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-23T07:14:24</dateTime>
+        <note></note>
+    </call>
+    <call cid="162">
+        <length>156</length>
+        <callee>793220093</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-02T04:58:16</dateTime>
+        <note></note>
+    </call>
+    <call cid="163">
+        <length>154</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-02T15:27:35</dateTime>
+        <note></note>
+    </call>
+    <call cid="164">
+        <length>478</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-05T18:45:51</dateTime>
+        <note></note>
+    </call>
+    <call cid="165">
+        <length>18</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-05T08:20:05</dateTime>
+        <note></note>
+    </call>
+    <call cid="166">
+        <length>267</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-19T23:55:56</dateTime>
+        <note></note>
+    </call>
+    <call cid="167">
+        <length>58</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-25T21:08:57</dateTime>
+        <note></note>
+    </call>
+    <call cid="168">
+        <length>303</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-22T22:23:27</dateTime>
+        <note></note>
+    </call>
+    <call cid="169">
+        <length>484</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-04T06:15:20</dateTime>
+        <note></note>
+    </call>
+    <call cid="170">
+        <length>428</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-12T18:26:25</dateTime>
+        <note></note>
+    </call>
+    <call cid="171">
+        <length>221</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-08-02T07:53:20</dateTime>
+        <note></note>
+    </call>
+    <call cid="172">
+        <length>191</length>
+        <callee>793220093</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-16T06:24:31</dateTime>
+        <note></note>
+    </call>
+    <call cid="173">
+        <length>101</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-01T13:38:21</dateTime>
+        <note></note>
+    </call>
+    <call cid="174">
+        <length>38</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-13T21:54:15</dateTime>
+        <note></note>
+    </call>
+    <call cid="175">
+        <length>449</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-01T05:03:51</dateTime>
+        <note></note>
+    </call>
+    <call cid="176">
+        <length>410</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-12T14:08:21</dateTime>
+        <note></note>
+    </call>
+    <call cid="177">
+        <length>378</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-11T21:17:11</dateTime>
+        <note></note>
+    </call>
+    <call cid="178">
+        <length>351</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-15T00:25:30</dateTime>
+        <note></note>
+    </call>
+    <call cid="179">
+        <length>339</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-08-03T01:09:48</dateTime>
+        <note></note>
+    </call>
+    <call cid="180">
+        <length>140</length>
+        <callee>793220093</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-10T06:32:53</dateTime>
+        <note></note>
+    </call>
+    <call cid="181">
+        <length>15</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-05T20:01:49</dateTime>
+        <note></note>
+    </call>
+    <call cid="182">
+        <length>315</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-19T05:52:15</dateTime>
+        <note></note>
+    </call>
+    <call cid="183">
+        <length>494</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-07T17:15:06</dateTime>
+        <note></note>
+    </call>
+    <call cid="184">
+        <length>450</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-12T21:18:08</dateTime>
+        <note></note>
+    </call>
+    <call cid="185">
+        <length>419</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-07-17T04:40:29</dateTime>
+        <note></note>
+    </call>
+    <call cid="186">
+        <length>161</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-12T04:16:13</dateTime>
+        <note></note>
+    </call>
+    <call cid="187">
+        <length>465</length>
+        <callee>793220093</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-07T03:50:55</dateTime>
+        <note></note>
+    </call>
+    <call cid="188">
+        <length>495</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-19T03:45:33</dateTime>
+        <note></note>
+    </call>
+    <call cid="189">
+        <length>493</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-26T17:07:09</dateTime>
+        <note></note>
+    </call>
+    <call cid="190">
+        <length>169</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-21T08:28:34</dateTime>
+        <note></note>
+    </call>
+    <call cid="191">
+        <length>430</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-23T01:24:47</dateTime>
+        <note></note>
+    </call>
+    <call cid="192">
+        <length>28</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-15T19:30:05</dateTime>
+        <note></note>
+    </call>
+    <call cid="193">
+        <length>216</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-06T10:39:46</dateTime>
+        <note></note>
+    </call>
+    <call cid="194">
+        <length>489</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-01T16:45:27</dateTime>
+        <note></note>
+    </call>
+    <call cid="195">
+        <length>255</length>
+        <callee>720876223</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-16T20:13:12</dateTime>
+        <note></note>
+    </call>
+    <call cid="196">
+        <length>245</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-18T07:35:29</dateTime>
+        <note></note>
+    </call>
+    <call cid="197">
+        <length>48</length>
+        <callee>720876223</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-14T05:28:08</dateTime>
+        <note></note>
+    </call>
+    <call cid="198">
+        <length>109</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-14T07:00:15</dateTime>
+        <note></note>
+    </call>
+    <call cid="199">
+        <length>340</length>
+        <callee>793220093</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-19T14:36:03</dateTime>
+        <note></note>
+    </call>
+</calls>
