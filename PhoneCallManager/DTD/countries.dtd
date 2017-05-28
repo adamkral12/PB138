@@ -1,0 +1,6 @@
+<!ELEMENT countries (country*)>
+<!ELEMENT country (name, region, prefix)>
+<!ATTLIST country cid CDATA #REQUIRED>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT region (#PCDATA)>
+<!ELEMENT prefix (#PCDATA)>
