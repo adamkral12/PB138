@@ -4,6 +4,7 @@ import core.Direction;
 import core.Message;
 import managers.MessageManager;
 import java.lang.ref.WeakReference;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -96,7 +97,7 @@ public class MessageTableModel extends AbstractTableModel {
     public Class<?> getColumnClass(int columnIndex) {
         switch (columnIndex) {
             case 0:
-                return String.class;
+                return SimpleDateFormat.class;
             case 1:
                 return String.class;
             case 2:
