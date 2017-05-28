@@ -244,20 +244,14 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                     }
                     
                 }
-              //callList = CallManager.getByDate(text);
-              //messageList = MessageManager.getByDate(text);
-               //throw new UnsupportedOperationException("Implement CallManager.getByDate(String substringDate) method!");
+
             } else if ("Callee".equals(selected)) {
                 callList = CallManager.getByCallee(text);
                 messageList = MessageManager.getByCallee(text);
             } else if ("Prefix".equals(selected)) {
-                //throw new UnsupportedOperationException("Implement CallManager.getByPrefix(List<Country> CountryManager.getByPrefix(String substringPrefix)) method!");
-                //TO BE TESTED
                 callList = CallManager.getByPrefix(CountryManager.getByPrefix(text));
                 messageList = MessageManager.getByPrefix(CountryManager.getByPrefix(text));
             } else if ("Destination".equals(selected)) {
-                //throw new UnsupportedOperationException("Implement CallManager.getByDestination(List<Country> CountryManager.getByName(String substringDestination)) method!");
-                //TO BE TESTED
                 if(text.isEmpty()) {
                     callList = CallManager.getAll();
                     messageList = MessageManager.getAll();
@@ -266,8 +260,6 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                     messageList = MessageManager.getByDestination(CountryManager.getByName(text));              
                 }
             } else if ("Direction".equals(selected)) {
-                //throw new UnsupportedOperationException("Implement CallManager.getByDirection(String substringDirection) method!");
-                //TO BE TESTED
                 if(text.isEmpty()) {
                     callList = CallManager.getAll();
                     messageList = MessageManager.getAll();
