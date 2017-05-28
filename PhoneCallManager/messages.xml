@@ -641,4 +641,324 @@ and open the template in the editor.
         <dateTime>2017-04-10T01:18:37</dateTime>
         <note></note>
     </message>
+    <message mid="80">
+        <length>75</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-15T17:24:24</dateTime>
+        <note></note>
+    </message>
+    <message mid="81">
+        <length>429</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-23T06:21:40</dateTime>
+        <note></note>
+    </message>
+    <message mid="82">
+        <length>230</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-06-01T19:30:01</dateTime>
+        <note></note>
+    </message>
+    <message mid="83">
+        <length>263</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-15T10:23:16</dateTime>
+        <note></note>
+    </message>
+    <message mid="84">
+        <length>78</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-20T04:50:48</dateTime>
+        <note></note>
+    </message>
+    <message mid="85">
+        <length>472</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-01T05:43:16</dateTime>
+        <note></note>
+    </message>
+    <message mid="86">
+        <length>201</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-05-19T08:41:25</dateTime>
+        <note></note>
+    </message>
+    <message mid="87">
+        <length>60</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-03-23T11:32:23</dateTime>
+        <note></note>
+    </message>
+    <message mid="88">
+        <length>111</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-21T22:26:22</dateTime>
+        <note></note>
+    </message>
+    <message mid="89">
+        <length>35</length>
+        <callee>890339287</callee>
+        <destination>SVK</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-26T03:11:48</dateTime>
+        <note></note>
+    </message>
+    <message mid="90">
+        <length>151</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-08-01T11:36:13</dateTime>
+        <note></note>
+    </message>
+    <message mid="91">
+        <length>313</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-02-06T08:01:15</dateTime>
+        <note></note>
+    </message>
+    <message mid="92">
+        <length>401</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-11-08T18:53:00</dateTime>
+        <note></note>
+    </message>
+    <message mid="93">
+        <length>496</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-14T21:16:47</dateTime>
+        <note></note>
+    </message>
+    <message mid="94">
+        <length>21</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-18T20:32:17</dateTime>
+        <note></note>
+    </message>
+    <message mid="95">
+        <length>63</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-06T02:24:34</dateTime>
+        <note></note>
+    </message>
+    <message mid="96">
+        <length>239</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-01-13T19:20:32</dateTime>
+        <note></note>
+    </message>
+    <message mid="97">
+        <length>335</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-03T04:44:51</dateTime>
+        <note></note>
+    </message>
+    <message mid="98">
+        <length>358</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-11T13:38:19</dateTime>
+        <note></note>
+    </message>
+    <message mid="99">
+        <length>91</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-20T11:08:52</dateTime>
+        <note></note>
+    </message>
+    <message mid="100">
+        <length>323</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-21T16:48:40</dateTime>
+        <note></note>
+    </message>
+    <message mid="101">
+        <length>341</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-09-05T01:27:04</dateTime>
+        <note></note>
+    </message>
+    <message mid="102">
+        <length>132</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-09-24T06:36:20</dateTime>
+        <note></note>
+    </message>
+    <message mid="103">
+        <length>127</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-07T21:36:11</dateTime>
+        <note></note>
+    </message>
+    <message mid="104">
+        <length>490</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-02T21:33:27</dateTime>
+        <note></note>
+    </message>
+    <message mid="105">
+        <length>372</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-11T14:12:31</dateTime>
+        <note></note>
+    </message>
+    <message mid="106">
+        <length>321</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-02-21T05:39:24</dateTime>
+        <note></note>
+    </message>
+    <message mid="107">
+        <length>375</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-04-22T21:56:09</dateTime>
+        <note></note>
+    </message>
+    <message mid="108">
+        <length>113</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-07-01T19:44:53</dateTime>
+        <note></note>
+    </message>
+    <message mid="109">
+        <length>242</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-13T17:44:40</dateTime>
+        <note></note>
+    </message>
+    <message mid="110">
+        <length>156</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-11T03:31:43</dateTime>
+        <note></note>
+    </message>
+    <message mid="111">
+        <length>419</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-06-09T14:28:00</dateTime>
+        <note></note>
+    </message>
+    <message mid="112">
+        <length>59</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-10-03T12:19:23</dateTime>
+        <note></note>
+    </message>
+    <message mid="113">
+        <length>121</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-05-11T12:01:31</dateTime>
+        <note></note>
+    </message>
+    <message mid="114">
+        <length>15</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-04-24T17:46:53</dateTime>
+        <note></note>
+    </message>
+    <message mid="115">
+        <length>137</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-18T12:26:23</dateTime>
+        <note></note>
+    </message>
+    <message mid="116">
+        <length>396</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-00-16T03:51:00</dateTime>
+        <note></note>
+    </message>
+    <message mid="117">
+        <length>222</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-11-05T12:05:30</dateTime>
+        <note></note>
+    </message>
+    <message mid="118">
+        <length>218</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>out</direction>
+        <dateTime>2017-03-26T01:40:18</dateTime>
+        <note></note>
+    </message>
+    <message mid="119">
+        <length>222</length>
+        <callee>749090987</callee>
+        <destination>CZE</destination>
+        <direction>in</direction>
+        <dateTime>2017-01-02T01:47:56</dateTime>
+        <note></note>
+    </message>
 </messages>
