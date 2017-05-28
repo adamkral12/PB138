@@ -6,6 +6,7 @@
 package managers;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,9 +31,14 @@ public class FileManager {
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
             return builder.parse(file);
+        } catch (FileNotFoundException ex) {
+            System.out.println("The xml files (databases with calls, messages "
+                    + "...) should be in directory, from which the java -jar "
+                    + "command is executed");
+            System.exit(-1);
         } catch (ParserConfigurationException | SAXException | IOException ex) {
             Logger.getLogger(FileManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
         return null;
         
     }
