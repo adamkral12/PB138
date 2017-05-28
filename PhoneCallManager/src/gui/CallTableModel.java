@@ -49,11 +49,11 @@ public class CallTableModel extends AbstractTableModel {
         Call call = calls.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                Calendar dateTime = call.getDateTime();               
+                Calendar dateTime = call.getDateTime();
                 return dateTime.get(Calendar.YEAR) + "-" + 
-                        (dateTime.get(Calendar.MONTH)+1) + "-" + 
-                        dateTime.get(Calendar.DAY_OF_MONTH) + " " + 
-                        dateTime.get(Calendar.HOUR) + ":" +
+                        new SimpleDateFormat("MM").format(dateTime.getTime()) + "-" + 
+                        new SimpleDateFormat("dd").format(dateTime.getTime()) + " " + 
+                        new SimpleDateFormat("kk").format(dateTime.getTime()) + ":" +
                         dateTime.get(Calendar.MINUTE); 
             case 1:
                 return call.getDestination().getPrefix();
