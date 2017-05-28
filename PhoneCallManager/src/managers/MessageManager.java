@@ -302,6 +302,80 @@ public class MessageManager {
         return out;
     }
     
+         /**
+     * Get calls by specified Year, Month, Day and hour in the year from all calls
+     * Caution: Month starts from 0 - January
+     * @param cal Calendar with a year, month and day to get calls for, it 
+     * should have specified YEAR, MONTH, DAY and HOUR
+     * @return list of calls
+     */
+    public static List<Message> getByMinute(Calendar cal) {
+        return getByMinute(getAll(), cal);
+    }
+    
+    /**
+     * Get calls by specified Year, Month, Day and Hour in the year from given 
+     * list of calls
+     * Caution: Month starts from 0 - January
+     * @param list list of calls to filter from
+     * @param cal Calendar with a year, month and day to get calls for, it 
+     * should have specified YEAR, MONTH, DAY annd HOUR
+     * @return list of calls
+     */
+    
+    public static List<Message> getByMinute(List<Message> list, Calendar cal) {
+        List<Message> out = new ArrayList();
+        for(Message call : list) {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd'T'hh:mm");
+            if(fmt.format(cal.getTime())
+                    .equals(fmt.format(call.getDateTime().getTime()))) {
+                out.add(call);
+            }
+        }
+        if(out.isEmpty()) {
+            return null;
+        }
+        return out;
+    
+    }
+    
+        /**
+     * Get calls by specified Year, Month, Day and hour in the year from all calls
+     * Caution: Month starts from 0 - January
+     * @param cal Calendar with a year, month and day to get calls for, it 
+     * should have specified YEAR, MONTH, DAY and HOUR
+     * @return list of calls
+     */
+    public static List<Message> getByHour(Calendar cal) {
+        return getByHour(getAll(), cal);
+    }
+    
+    /**
+     * Get calls by specified Year, Month, Day and Hour in the year from given 
+     * list of calls
+     * Caution: Month starts from 0 - January
+     * @param list list of calls to filter from
+     * @param cal Calendar with a year, month and day to get calls for, it 
+     * should have specified YEAR, MONTH, DAY annd HOUR
+     * @return list of calls
+     */
+    
+    public static List<Message> getByHour(List<Message> list, Calendar cal) {
+        List<Message> out = new ArrayList();
+        for(Message call : list) {
+            SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd'T'hh");
+            if(fmt.format(cal.getTime())
+                    .equals(fmt.format(call.getDateTime().getTime()))) {
+                out.add(call);
+            }
+        }
+        if(out.isEmpty()) {
+            return null;
+        }
+        return out;
+    
+    }
+    
     /**
      * Return messages with specific date from all stored messages
      * @param date of the message

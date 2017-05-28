@@ -180,15 +180,46 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                     messageList = MessageManager.getAll();
                     
                 } else if(text.contains("T")) {
-                    //ak obsahuje T, musi sediet cely format
+                    
                     Calendar cal = Calendar.getInstance();
-                    try {
-                        cal.setTime(new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss").parse(text));
-                    } catch (ParseException e) {
-                        throw e;
+                    //ak obsahuje T, musi sediet cely format
+                    String[] dateAndTime = text.split("T");
+                    if (dateAndTime.length != 2) {
+                        throw new NumberFormatException("To many Ts");
                     }
-                    callList = CallManager.getByDate(cal);
-                    messageList = MessageManager.getByDate(cal);
+                    
+                    String[] timeFields = dateAndTime[1].split(":");
+                    
+                    if (timeFields.length == 1) {
+                        try {
+                            cal.setTime(new SimpleDateFormat("yyyy-MM-dd'T'hh").parse(text));
+                        } catch (ParseException e) {
+                            throw e;
+                        }
+                        callList = CallManager.getByHour(cal);
+                        messageList = MessageManager.getByHour(cal);
+                    } else if (timeFields.length == 2) {
+                        //hours:minutes
+                        try {
+                            cal.setTime(new SimpleDateFormat("yyyy-MM-dd'T'hh:mm").parse(text));
+                        } catch (ParseException e) {
+                            throw e;
+                        }
+                        callList = CallManager.getByMinute(cal);
+                        messageList = MessageManager.getByMinute(cal);                        
+                    } else if (timeFields.length == 3) {
+                        //hours:minutes:seconds
+                        try {
+                            cal.setTime(new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss").parse(text));
+                        } catch (ParseException e) {
+                            throw e;
+                        }
+                        callList = CallManager.getByDate(cal);
+                        messageList = MessageManager.getByDate(cal);                          
+                    } else {
+                        throw new NumberFormatException("Too many double dots");
+                    }
+
                 } else {
                     //ak neobsahuje T, musi byt rok, rok-mesiac, rok-mesiac-den
                     if(text.contains("-")) {
