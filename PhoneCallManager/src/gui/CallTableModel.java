@@ -20,6 +20,7 @@ import java.util.ResourceBundle;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.SwingWorker;
 import javax.swing.table.TableRowSorter;
+import managers.PriceManager;
 
 /**
  *
@@ -41,7 +42,7 @@ public class CallTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 7;
+        return 8;
     }
 
     @Override
@@ -68,6 +69,8 @@ public class CallTableModel extends AbstractTableModel {
                 return call.getLength();
             case 6:
                 return call.getNote();
+            case 7:
+                return PriceManager.getPrice(call);
             default:
                 throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
         }
@@ -90,6 +93,8 @@ public class CallTableModel extends AbstractTableModel {
                 return texts.getString("LENGTH");
             case 6:
                 return texts.getString("NOTE");
+            case 7:
+                return texts.getString("PRICE");
             default:
                 throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
         }
@@ -112,6 +117,8 @@ public class CallTableModel extends AbstractTableModel {
                 return Integer.class;
             case 6:
                 return String.class;
+            case 7:
+                return Double.class;
             default:
                 throw new IllegalArgumentException(texts.getString("COLUMNINDEX"));
         }
