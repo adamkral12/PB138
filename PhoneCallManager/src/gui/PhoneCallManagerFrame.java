@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
@@ -214,8 +215,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                             }
                             
                         } else {
-                            //TODO show alert window with correct format smaples
-                            System.out.println("Wrong date format");
+                            throw new NumberFormatException("Wrong date format");
                         }
                     } else {
                         //neobsahuje '-', takze len format yyyy akceptujem
@@ -247,7 +247,9 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
              try {
                 checkDateFormat(text); 
              } catch (ParseException | NumberFormatException e) {
-                 //TODO: throw alert
+                callList = CallManager.getAll();
+                messageList = MessageManager.getAll();
+                JOptionPane.showMessageDialog(this, texts.getString("WRONG DATE FORMAT"), texts.getString("WARNING"), JOptionPane.WARNING_MESSAGE);
              }
 
             } else if ("Callee".equals(selected)) {
