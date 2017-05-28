@@ -166,21 +166,13 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
         updateFilter();
     }//GEN-LAST:event_jTextFieldFilterActionPerformed
 
-    protected void updateFilter() {
-        Object selected = jComboBoxFilterBy.getSelectedItem();
-        TableRowSorter<TableModel> sorterMessages = (TableRowSorter<TableModel>) jTableMessages.getRowSorter();
-        TableRowSorter<TableModel> sorterCalls = (TableRowSorter<TableModel>) jTableCalls.getRowSorter();
-        String text = jTextFieldFilter.getText();
-        if ("Nothing".equals(selected)) {
-            callList = CallManager.getAll();
-            messageList = MessageManager.getAll();
-        } else if ("Date".equals(selected)) {
+    protected void checkDateFormat(String text) throws ParseException, NumberFormatException {
                 //format yyyy-MM-ddThh:mm:ss
                 //accepts year yyyy
                 //accepts year-month yyyy-MM
                 //accepts year-month-day yyyy-MM-dd
                 //accepts whole format year-month-dayThh:mm:ss
-                if(text == null) {
+                if(text == null || text.trim().isEmpty()) {
                     callList = CallManager.getAll();
                     messageList = MessageManager.getAll();
                     
@@ -190,8 +182,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                     try {
                         cal.setTime(new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss").parse(text));
                     } catch (ParseException e) {
-                        //TODO show allert window with correct format samlpes
-                        System.out.println("wrong date format");
+                        throw e;
                     }
                     callList = CallManager.getByDate(cal);
                     messageList = MessageManager.getByDate(cal);
@@ -208,8 +199,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                                 callList = CallManager.getByMonth(cal);
                                 messageList = MessageManager.getByMonth(cal);
                             } catch (NumberFormatException e) {
-                                //TODO show alert window with correct format smaples
-                                System.out.println("Wrong date format");
+                                throw e;
                             }
                             
                         } else if(dateFields.length == 3) {
@@ -220,8 +210,7 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                                 callList = CallManager.getByDay(cal);
                                 messageList = MessageManager.getByDay(cal);
                             } catch (NumberFormatException e) {
-                                //TODO show alert window with correct format smaples
-                                System.out.println("Wrong date format");
+                                throw e;
                             }
                             
                         } else {
@@ -236,14 +225,30 @@ public class PhoneCallManagerFrame extends javax.swing.JFrame {
                             callList = CallManager.getByYear(cal);
                             messageList = MessageManager.getByYear(cal);
                         } catch (NumberFormatException e) {
-                            //TODO show alert windows with ocrrect format samples
-                            System.out.println("wrong year");
+                            throw e;
                         }
                         
                         
                     }
                     
-                }
+                }        
+    }
+    
+    
+    protected void updateFilter() {
+        Object selected = jComboBoxFilterBy.getSelectedItem();
+        TableRowSorter<TableModel> sorterMessages = (TableRowSorter<TableModel>) jTableMessages.getRowSorter();
+        TableRowSorter<TableModel> sorterCalls = (TableRowSorter<TableModel>) jTableCalls.getRowSorter();
+        String text = jTextFieldFilter.getText();
+        if ("Nothing".equals(selected)) {
+            callList = CallManager.getAll();
+            messageList = MessageManager.getAll();
+        } else if ("Date".equals(selected)) {
+             try {
+                checkDateFormat(text); 
+             } catch (ParseException | NumberFormatException e) {
+                 //TODO: throw alert
+             }
 
             } else if ("Callee".equals(selected)) {
                 callList = CallManager.getByCallee(text);
