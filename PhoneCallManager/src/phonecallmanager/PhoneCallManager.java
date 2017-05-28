@@ -67,10 +67,6 @@ public class PhoneCallManager extends JApplet {
 
     @Override
     public void init() {
-        fxContainer = new JFXPanel();
-        fxContainer.setPreferredSize(new Dimension(JFXPANEL_WIDTH_INT, JFXPANEL_HEIGHT_INT));
-        add(fxContainer, BorderLayout.CENTER);
-        // create JavaFX scene
         Platform.runLater(new Runnable() {
 
             @Override
@@ -82,19 +78,6 @@ public class PhoneCallManager extends JApplet {
 
     private void createScene() {
         Testing.testing();
-/*
-        Button btn = new Button();
-    //    btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
-        fxContainer.setScene(new Scene(root));*/
     }
 
     
