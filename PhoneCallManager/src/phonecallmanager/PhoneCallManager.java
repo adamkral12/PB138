@@ -37,8 +37,8 @@ import managers.PriceManager;
 import managers.SortManager;
 
 /**
- *
- * @author xkral3
+ * The base class of the application
+ * @author xkral3, xvalko, xmikova
  */
 public class PhoneCallManager extends JApplet {
 

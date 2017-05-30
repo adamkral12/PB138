@@ -6,8 +6,8 @@
 package managers;
 
 /**
- *
- * @author pmikova
+ * Singleton, that loads data from XML files, returns all managers
+ * @author xkral3, xvalko, xmikova
  */
 public class LoadDataManager {
     
@@ -24,14 +24,20 @@ public class LoadDataManager {
         messageManager = new MessageManager();
         this.loadData();
     }
-    
+    /**
+     * Singleton help method
+     * @return if the class is already initiated, the instance, otherwise just 
+     *         returns the instance
+     */
     public static LoadDataManager getInstance() {
         if (instance == null) {
             instance = new LoadDataManager();
         }
         return instance;
     }
-    
+    /**
+     * Fills data from XML to classes
+     */
     private void loadData() {
         regionManager.reloadRegions();
         countryManager.reloadCountries();

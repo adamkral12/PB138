@@ -9,7 +9,7 @@ import core.*;
 
 /**
  * Calculates prices of calls and messages.
- * @author marek
+ * @author xkral3, xvalko, xmikova
  */
 public class PriceManager {
     private static final double PRICE = 1.0;

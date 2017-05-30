@@ -155,7 +155,7 @@ public class MessageManager {
     
     /**
      * Returns message(s) by given note from given set of messages
-     * @param note of the mesages
+     * @param note of the messages
      * @return List of messages with given note (substring)
      */
     public static List<Message> getByNote(String note) {
@@ -209,7 +209,7 @@ public class MessageManager {
     
     /**
      * Returns message(s) by given length from given set of messages
-     * @param legnth of the messages
+     * @param length of the messages
      * @return List of messages with given length (substring)
      */
     public static List<Message> getByLength(String length) {
@@ -261,7 +261,11 @@ public class MessageManager {
         }
         return out;
     }
-    
+    /**
+     * Returns messages by given countries from all messages
+     * @param countries countries we want to get messages from
+     * @return list of messages
+     */
     public static List<Message> getByDestination(List<Country> countries) {
         List<Message> out = new ArrayList();
         for(Message message : getAll()) {
@@ -319,7 +323,7 @@ public class MessageManager {
      * Caution: Month starts from 0 - January
      * @param list list of calls to filter from
      * @param cal Calendar with a year, month and day to get calls for, it 
-     * should have specified YEAR, MONTH, DAY annd HOUR
+     * should have specified YEAR, MONTH, DAY and HOUR
      * @return list of calls
      */
     
@@ -356,7 +360,7 @@ public class MessageManager {
      * Caution: Month starts from 0 - January
      * @param list list of calls to filter from
      * @param cal Calendar with a year, month and day to get calls for, it 
-     * should have specified YEAR, MONTH, DAY annd HOUR
+     * should have specified YEAR, MONTH, DAY and HOUR
      * @return list of calls
      */
     
@@ -403,7 +407,11 @@ public class MessageManager {
         }
         return out;        
     }
-    
+    /**
+     * Gets messages by given list of countries
+     * @param countries countries we want messages from 
+     * @return list of messages
+     */
     public static List<Message> getByPrefix(List<Country> countries) {
         
         if (countries == null) {

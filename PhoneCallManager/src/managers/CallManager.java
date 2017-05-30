@@ -263,7 +263,11 @@ public class CallManager {
         }
         return out;
     }
-    
+    /**
+     * Returns calls by given countries from all calls
+     * @param countries countries we want to get calls from
+     * @return list of messages
+     */
     public static List<Call> getByDestination(List<Country> countries) {
         List<Call> out = new ArrayList();
         for(Call call : getAll()) {
@@ -334,7 +338,11 @@ public class CallManager {
         }
         return out;
     }
-    
+    /**
+     * Gets calls by given list of countries
+     * @param countries countries we want calls from 
+     * @return list of calls
+     */
     public static List<Call> getByPrefix(List<Country> countries) {
         
         if (countries == null) {
@@ -537,9 +545,6 @@ public class CallManager {
             return null;
         }
         return out;
-    }
-    
-    
-    
+    } 
     
 }

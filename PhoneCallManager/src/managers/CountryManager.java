@@ -117,7 +117,7 @@ public class CountryManager {
         return null;
     }
     
-        /**
+     /**
      * Returns country by its name (or substring of name)
      * @param name - name of a country
      * @return country with code id, null otherwise
