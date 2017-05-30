@@ -55,7 +55,7 @@ and open the template in the editor.
         <region>EU</region>
         <prefix>+32</prefix>
     </country>
-    <country cid="FR">
+    <country cid="FRA">
         <name>France</name>
         <!-- must match one of the rids in regions.xml -->
         <region>EU</region>
@@ -103,7 +103,7 @@ and open the template in the editor.
         <region>EU</region>
         <prefix>+355</prefix>
     </country>
-    <country cid="MAL">
+    <country cid="MLT">
         <name>Malta</name>
         <!-- must match one of the rids in regions.xml -->
         <region>EU</region>
@@ -193,7 +193,7 @@ and open the template in the editor.
         <region>OC</region>
         <prefix>+64</prefix>
     </country>
-    <country cid="MAL">
+    <country cid="MYS">
         <name>Malaysia</name>
         <!-- must match one of the rids in regions.xml -->
         <region>OC</region>
