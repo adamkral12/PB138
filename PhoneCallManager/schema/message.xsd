@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:simpleType name="nonEmptyString">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1">
+            </xs:minLength>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="nonEmptyInt">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1">
+            </xs:minInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="inOrOut">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="in"/>
+            <xs:enumeration value="out"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="lenString">
+        <xs:restriction base="xs:string">
+            <xs:length value="9"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="messages">
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element name="message">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="length" type="nonEmptyInt"/>
+                            <xs:element name="callee" type="lenString"/>
+                            <xs:element name="destination" type="nonEmptyString"/>
+                            <xs:element name="direction" type="inOrOut"/>
+                            <xs:element name="dateTime" type="xs:dateTime"/>
+                            <xs:element name="note" type="xs:string"/>
+                        </xs:sequence> 
+                        <xs:attribute name="mid" type="xs:integer"/>                      
+                    </xs:complexType>                    
+                </xs:element>               
+            </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="uniqueID">
+            <xs:selector xpath="message"/>
+            <xs:field xpath="@mid"/>
+        </xs:unique>
+    </xs:element>
+    
+</xs:schema>

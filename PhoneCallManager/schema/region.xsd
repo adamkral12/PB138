@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified">
+    <xs:simpleType name="nonEmptyString">
+    	<xs:restriction base="xs:string">
+            <xs:minLength value = "1">
+            </xs:minLength>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="twoDigitDecimal">
+    	<xs:restriction base="xs:decimal">
+						<xs:fractionDigits value="2"/>
+                    	<xs:minInclusive value="0"/>
+					</xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="priceStructure">
+    	<xs:sequence>
+    		<xs:element name="incoming" type="twoDigitDecimal"/>
+			<xs:element name="outcoming" type="twoDigitDecimal"/>
+    	</xs:sequence>
+    </xs:complexType>
+	<xs:element name="regions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="region" minOccurs="6" maxOccurs="6">
+					<xs:complexType>
+						
+						<xs:sequence>
+							<xs:element name="name" type="nonEmptyString"/>
+							<xs:element name="prices">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="calls" type="priceStructure"/>
+										<xs:element name="messages" type="priceStructure"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="rid" use="required" type="nonEmptyString"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="uniqueID">
+			<xs:selector xpath="region"/>
+			<xs:field xpath="@rid"/>
+		</xs:unique>
+	</xs:element>
+</xs:schema>
