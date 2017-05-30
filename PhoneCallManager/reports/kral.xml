@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<article>
+  <articleinfo>
+    <title>Projekt do PB138 - Správa telefonního účtu</title>
+
+    <author>
+      <firstname>Adam</firstname>
+
+      <surname>Král</surname>
+
+      <affiliation>
+        <orgname/>
+      </affiliation>
+    </author>
+
+    <pubdate>2017-05-30</pubdate>
+  </articleinfo>
+
+  <section>
+    <title>Návrh</title>
+
+    <para>Projekt jsme začali vedením diskuze o návrhu struktury XML souborů.
+    Následně jsem vytvořil ukázkové XML soubory (countries, messages, calls
+    regions), do kterých poté byla dosazena data.</para>
+
+    <para>Dle vytvořených souborů jsem naimplementoval základní třídy v Javě s
+    namapovanými atributy.</para>
+
+    <para/>
+  </section>
+
+  <section>
+    <title>GUI</title>
+
+    <para>V projektu jsem vytvořil celé GUI. Skládá se ze základního rámce,
+    který obsahuje dva tabulkové modely a pole pro filtrování. Obdržení dat a
+    jejich aktualizace je zajištěna pomocí swingworkerů, tyto operace tedy
+    probíhají v samostnatných vláknech. Řazení je zajištěno pomocí
+    implementace abstrakních metod třídy AbstractTableModel a řazení se
+    dosáhne pomocí kliknutí na hlavičku daného sloupce.</para>
+
+    <para>Dále se v GUI nachází filtrovací okno. To by se dalo sice
+    naimplementovat také pomocí metod třídy AbstractTableModel, v rámci
+    předvedení funkčnosti však byly použity vlastní naimplementované
+    filtrovací metody. Vedle okna se nachází list pro výběr parametru
+    filtrování. Filter se aplikuje zároveň na zprávy i hovory.</para>
+
+    <para>Při tvorbě GUI vznikala ke správné funkčnosti potřeba úpravy
+    filtrovacích metod (práce se stringy misto tříd, popřípadě kolekce tříd),
+    ty jsem tedy také upravoval, popřípadě implementoval, pokud chyběly
+    úplně.</para>
+
+    <para>GUI je také připraveno na lokalizaci zobrazených textů.</para>
+  </section>
+
+  <section>
+    <title>Společné diskuze</title>
+
+    <para>Každý týden, převážně ve čtvrtky, jsme se jako tým scházeli a
+    diskutovali o problémech, které se během řešení projektu naskytly a
+    následně jsme se snažili dojít k co nejlepšímu řešení. Mimo to také
+    probíhala průběžná diskuze na sociální síti.</para>
+  </section>
+</article>
