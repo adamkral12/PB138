@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<article>
+  <articleinfo>
+    <title>Projekt PB138 - správa telefónneho účtu</title>
+
+    <author>
+      <firstname>Marek</firstname>
+
+      <surname>Vaľko</surname>
+
+      <affiliation>
+        <orgname/>
+      </affiliation>
+    </author>
+
+    <pubdate>30.5.2017</pubdate>
+  </articleinfo>
+
+  <section>
+    <title>Návrh</title>
+
+    <para>Na začiatku sme spoločne navrhli formát XML súborov. </para>
+  </section>
+
+  <section>
+    <title>Managers, funkcionalita</title>
+
+    <para>Postupne som začal podľa potreby vytvárať rôznych manažérov pre
+    vykonávanie rôznych funkcii. Najskôr to boli Region-, Country-, Call- a
+    MessageManager. Títo manažéri majú za úlohu načítavať jendotlivé entity z
+    XML súborov a uložiť si ich. Ďalej som pracoval na jendoduchom filtrovaní,
+    t. j. získavaní jendotlivých entít podľa parametrov, metódy getById a
+    podobné.</para>
+
+    <para>Vytvoril som FIleManager, ktorý mi spracuje File objekt na w3c
+    dokument. Túto funkciu som vytvoril preto, lebo sa používa v každóm zo
+    štyroch vyššie menovaných manažrov. Ďalej som používal w3c dom na základné
+    spracovanie xml dokumentu a xpath na získavanie jednotlivých
+    hodnôt.</para>
+
+    <para>Popri vytváraní všetkých tried som si vytvoril pomocné funkcie na
+    testovanie. Neskôr tieto funkcie boli presunuté do súboru Testing.java .
+    Jednoduché testy mi slúžili na potvrdenie, že som jednotlivé funkcie
+    naimplementoval správne, no určite nezachycujú všetky možnosti.</para>
+
+    <para>Ďalej som pracoval na PriceManageri. Už z názvu vidieť, že jeho
+    úlohou je počítať cenu hovorov a správ. Cena sa počíta zo základnej ceny,
+    definovanej v tomto manažéri, regiónu, kam alebo odkiaľ sa volá a potom
+    prepočtu na minúty (60 sekúnd) v prípade hovoru, alebo jednotkovú SMS (160
+    znakov) v prípade správ.</para>
+
+    <para>Vytvoril som aj SortManagera. Pôvodna myšlienka bola, že zoradí
+    získanú kolekciu hovorov alebo správ podľa zadaného parametra. No po
+    vytvorení GUI mojim kolegom sme zistili, že tabuľka, v ktorej sa zobrazujú
+    hovory a správy to dokáže automaticky.</para>
+
+    <para>Taktiež po vytvorení GUI vznikli nové potrebné funkcie na
+    filtrovanie. Niektoré z nich som implementoval.</para>
+
+    <para>Vzniknuté problémy sme zaznamenávali pomocou GH Issues, neskôr o
+    nich diskutovali a hľadali riešenia.</para>
+  </section>
+
+  <section>
+    <title>Spoločná práca</title>
+
+    <para>Na týždennej báze sme sa stretávali a diskutovali vzniknuté
+    problémy. Hľadali sme riešenia väčšinou spoločne, aby neskôr nedošlo k
+    nedorozumeniam, že sa projekt uberá zlým smerom. Jednoduchšie problémy
+    boli diskutované na socialnej sieti.</para>
+  </section>
+</article>
