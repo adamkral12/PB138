@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<article>
+  <articleinfo>
+    <title>Projekt do PB138 PhoneCallManager</title>
+
+    <author>
+      <firstname>Petra</firstname>
+
+      <surname>Mikova</surname>
+
+      <affiliation>
+        <orgname/>
+      </affiliation>
+    </author>
+
+    <pubdate>30.05.2017</pubdate>
+  </articleinfo>
+
+  <section>
+    <title>Návrh projektu</title>
+
+    <para>Při prvním setkání našeho projektu jsme společně vymýšleli
+    funkcionalitu naší aplikace, požadavky na ni, domlouvali se na struktuře a
+    implementovali základní třídy. Také jsme vymýšleli rozvržení balíků,
+    strukturu tříd a rozebírali si práci na projektu. Tyto dohodnuté požadavky
+    jsme pak dynamicky přizpůsobovali aktuálním problémům i časovým možnostem
+    jednotlivých členů týmu. Byl vytvořen repozitář na portále github na účtu
+    jednoho z členů týmu, do kterého jsme následně začali commitovat první
+    soubory našeho projektu. Také zde byl dohodnut formát XML databáze.</para>
+  </section>
+
+  <section>
+    <title>XML schéma a DTD</title>
+
+    <para>Pro náš projekt jsem vytvořila XML schémata pro všechny XML soubory,
+    obsahující data, které využívá naše aplikace. Tato schémata poskytují
+    záruku validity dat v XML souborech a zároveň poskytují návrhový vzor pro
+    případné budoucí funkce programu. Dále jsem vytvořila pro naše projektové
+    XML databáze DTD.</para>
+  </section>
+
+  <section>
+    <title>XML databáze projektu a testovací data</title>
+
+    <para>Pro ověření a demonstraci funkcionality našeho programu bylo třeba
+    vytvořit množství testovacích dat. Napsala jsem tedy několik skriptů v
+    jazyce Python, které generovaly vzorové zprávy, hovory a parsovaly data o
+    prefixech států a jejich příslušnosti do regionů a generovaly xml
+    soubory.</para>
+  </section>
+
+  <section>
+    <title>LoadDataManager a následná úprava PhoneCallManager, přetypování
+    dateTime na Calendar</title>
+
+    <para>Jelikož bylo potřeba inicializovat množství manažerů, sloučili jsme
+    tyto kroky do jednoho LoadDataManagera, který nahrál všechna data do
+    objektů a obstaral vše potřebné. Tuto funkcionalitu jsem pak
+    implementovala do třídy PhoneCallManager, finální podobu pak ještě upravil
+    Adam, aby to bylo možné použít v GUI. Také bylo třeba přetypovat metody
+    využívající obsolete dateTime na Calendar, nastudovala jsem si tedy
+    dokumentaci k této třídě a přetypovala všechny metody a atributy.</para>
+  </section>
+
+  <section>
+    <title>JavaDoc</title>
+
+    <para>V závěru vývojového procesu jsem zkontrolovala všechny zdrojové
+    soubory a vytvořila chybějící JavaDoc u některých metod a tříd.</para>
+  </section>
+
+  <section>
+    <title>Wikipedie projektu</title>
+
+    <para>Součástí zadání projektu bylo také vytvoření projektové wikipedie na
+    GitHubu, takže jsem vytvořila stránky pro naše XML databáze, návod na
+    spuštění aplikace z .jar souboru, zdokumentovala strukturu projektu,
+    vytvořila README projektu a začala tvořit stránku o způsobu využívání
+    filtrů, kterou aktivně dokončil Marek.</para>
+
+    <para/>
+  </section>
+
+  <section>
+    <title>Průběh vývoje</title>
+
+    <para>Většina komunikace probíhala při pravidelných setkáních týmu a na
+    skupině na sociální síti Facebook. Na těch jsme diskutovali problémy,
+    navrhovali řešení a došli k společným závěrům, jak nejlépe a efektivně
+    implementovat vzniklé myšlenky, případně implementovali řešení, která jsme
+    na daných setkáních vymysleli. Práce v týmu byla pohodová, na řešeních
+    jsme se většinou snadno shodli a v týmu nepanovaly žádné rozepře.</para>
+  </section>
+</article>
